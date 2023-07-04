@@ -1,0 +1,41 @@
+live server
+웹이 실시간으로 변하는걸 보여줌
+
+여러개의 디바이스에서 페이지를 여는 것을
+크로스 브라우저
+
+웹페이지는 3가지의 규칙을 지켜야 한다
+웹표준, 접근성, 호환성
+
+div>header 
+부모, 자식 만드는 코드
+
+$는 순번을 붙힘
+
+순서형 ol, 비순서형 ul, 나열형 dl
+
+;은 continue의 역할
+
+웹 환경에서는 디렉토리를 /로 표시
+
+jdk
+zulu 페이지
+https://www.azul.com/downloads/#zulu
+
+zulu -> 17(LTS) -> windows -> x86 64bit
+
+user 변수에 등록하면 해당 user만 사용이 가능하다.
+
+C:\Program Files\Zulu\zulu-17 여기까지를 자바 홈으로 사용
+시스템 변수에 JAVA_HOME : C:\Program Files\Zulu\zulu-17 추가
+Path %HAVA_HOME%\bin 추가
+
+vs_code java 연결
+ctr+shift+p create:java project
+기본 자바는 no build
+
+psvm -> 기본 메인 함수 생성
+sout -> 출력 함수 약어
+
+bin에 들어있는 클래스 파일을 이용한다.
+src는 개발자가 코딩할 때 저장되는 자바 파일
