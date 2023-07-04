@@ -39,3 +39,9 @@ sout -> 출력 함수 약어
 
 bin에 들어있는 클래스 파일을 이용한다.
 src는 개발자가 코딩할 때 저장되는 자바 파일
+
+자바 구성
+project > package > java
+
+vscode에서 java를 실행하는데 bin에 class 파일이 생성되지 않는 경우
+java를 만든 폴더를 root로 지정해서 실행해야 class 파일이 제대로 생성된다.

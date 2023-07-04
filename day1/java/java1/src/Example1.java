@@ -1,5 +1,6 @@
-public class Example1 {
-    public static void main(String[] args) {
-        System.out.println("안녕"); //sout + enter
+public class Example1 { // vscode
+    public static void main(String[] args) { // psvm
+        // vscode에서는 sout
+        System.out.println("안녕"); //sout
     }
 }
