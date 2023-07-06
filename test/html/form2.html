@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼2</title>
+    <link rel="stylesheet" href="../css/form2.css">
+</head>
+<body>
+    <form action="" method="post">
+        <fieldset>
+            <h2>프런트 엔드 개발자 지원서</h2>
+            <p>HTML, CSS, 자바스크립트의 기술을 이해하고 실무 경험이 있는 분을 찾습니다.</p>
+            <hr>
+        </fieldset>
+        <fieldset>
+            <legend><strong>개인 정보</strong></legend>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <th><label for="name">이름</label></th>
+                        <td><input type="text" placeholder="공백 없이 입력하세요" id="name"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="tel">연락처</label></th>
+                        <td><input type="tel" id="tel"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend><strong>지원 분야</strong></legend>
+            <ul>
+                <!-- radio 버튼은 name이 같고 id는 달라야 한다. -->
+                <li><input type="radio" name="rb" id="rb1" checked>웹 퍼블리싱</li>
+                <li><input type="radio" name="rb" id="rb2">웹 애플리케이션 개발</li>
+                <li><input type="radio" name="rb" id="rb3">개발 환경 개선</li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend><strong>지원 동기</strong></legend>
+            <textarea name="area" id="area" cols="60" rows="5" 
+            placeholder="본사 지원 동기를 간략히 써 주세요."></textarea>
+        </fieldset>
+        <fieldset>
+            <input type="submit" value="접수하기">
+            <input type="reset" value="다시 쓰기">
+        </fieldset>
+    </form>
+</body>
+</html>
