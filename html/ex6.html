@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 관련 태그</title>
+    <style>
+        /* 가로 800픽셀 크기로 테이블 위치는 가운데 */
+        .tb1{ width: 800px; margin:10px auto;}
+        .tb1 th{background-color: deeppink; color: #fff; line-height: 42px;}
+        .tb1 td{border-bottom: 2px solid #333; text-align: center; line-height: 38px;}
+    </style>
+</head>
+<body>
+    <h1>테이블 태그</h1>
+    <!-- table에 border 직접 금지-->
+    <table class="tb1">
+        <!-- 테이블의 제목, caption은 안 넣어도 상관 없음 -->
+        <caption>
+            <h2>천재교육 풀스택 2기 성적표</h2>
+        </caption>
+        <thead>
+            <!-- 줄(행) -->
+            <tr>
+                <!-- 열 제목 -->
+                <th>번호</th><th>이름</th><th>점수</th>
+            </tr>
+        </thead>
+
+        <!-- 테이블의 내용, tbody, tr, th, td는 필수 -->
+        <tbody>
+            <!-- 줄(행)-->
+            <tr>
+                <!-- 열 내용 -->
+                <td>1</td><td>오세훈</td><td>100</td>
+            </tr>
+            <tr>
+                <td>2</td><td>오성준</td><td>90</td>
+            </tr>
+            <tr>
+                <td>3</td><td>권예성</td><td>80</td>
+            </tr>
+            <tr>
+                <td>4</td><td>윤동준</td><td>70</td>
+            </tr>
+            <tr>
+                <td>5</td><td>석진욱</td><td>60</td>
+            </tr>
+            <tr>
+                <!-- colspan 은 칸을 합친다. -->
+                <td colspan="3">부분 통과</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

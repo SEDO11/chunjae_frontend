@@ -19,15 +19,27 @@
     <h2>오디오</h2>
     <!-- autoplay muted 음소거 상태로 자동 실행 -->
     <!-- controls 오디오 제어 -->
-    <audio src="./sound/sample1.mp3" controls muted=""></audio>
+    <audio controls autoplay muted>
+        <!-- 브라우저 마다 지원하는 파일이 다를 수 있으므로 여러개의 파일을 지정 -->
+        <!-- type은 mime 타입을 검색해서 확인후 입력 -->
+        <!-- 크로스 브라우징 처리 -->
+        <source src="./sound/ditto.mp3" type="audio/mp3">
+        <source src="./sound/ditto.ogg" type="audio/ogg">
+        <source src="./sound/ditto.wav" type="audio/x-wav">
+    </audio>
+    <hr>
+
+    <h2>비디오</h2>
+    <video width="1205" height="678" poster="./img/building.jpg" loop controls controlsList="nodownload" autoplay muted>
+        <source src="./movie/earth.mp4" type="video/mp4">
+        <source src="./movie/ditto.ogv" type="video/ogg">
+        <source src="./movie/ditto.ogv" type="video/webm">
+    </video>
     <hr>
 
     <h2>iframe</h2>
     <iframe width="1205" height="678" src="https://www.youtube.com/embed/ioipXUbjMls" title="그냥 X만 누르면 이기는 사기악세" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <hr>
 
-    <h2>동영상</h2>
-    <video width="1205" height="678" src="./movie/earth.mp4" controls autoplay muted></video>
-    <hr>
 </body>
 </html>
