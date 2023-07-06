@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 관련 태그</title>
+</head>
+<body>
+    <h1>폼 관련 요소</h1>
+    <!-- label의 for를 통해 마우스가 input에 가도록 설정, for의 값은 id의 값을 지정 -->
+    <!-- label[for=""] 속성은 대괄호를 이용한다. -->
+    <!-- form 에서 action은 데이터를 보낼 곳을 지정 -->
+    <!-- a 태그는 get, form은 post 방식을 주로 이용 -->
+    <!-- status code가 200: 성공, 400: 파일 연결 오류, 500: 서버 오류 -->
+    <for action="" method="post">
+        <label for="id">아이디</label>
+        <input type="text" name="id" id="id" placeholder="아이디입력" autofocus><br><br>
+
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name" placeholder="이름입력"><br><br>
+
+        <label for="pw">비밀번호</label>
+        <input type="password" name="pw" id="pw" placeholder="비밀번호"><br><br>
+        <hr>
+        <input type="submit" value="등록"> &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" value="다시시작">
+    </for>
+
+</body>
+</html>
