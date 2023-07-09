@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        body {
+            margin: none;
+        }
+        #container {
+            width: 1200px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        #header {
+            width: 1200px;
+            height: 120px;
+            background-color: aquamarine;
+        }
+        #sidebar {
+            width: 300px;
+            height: 600px;
+            background-color: beige;
+            float: left;
+        }
+        #contents {
+            width: 900px;
+            height: 600px;
+            background-color: coral;
+            float: left;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: cornflowerblue;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+            <h1>헤더</h1>
+        </header>
+        <aside id="sidebar">
+            <h2>사이드 바</h2>
+        </aside>
+        <section id="contents">
+            <h2>섹션</h2>
+        </section>
+        <footer id="footer">
+            <h2>푸터</h2>
+        </footer>
+    </div>
+</body>
+</html>
