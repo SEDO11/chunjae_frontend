@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 속성(properties)</title>
+    <style>
+        /* body, html {overflow: hidden;} 스크롤 없애기 */
+        /* 우선 순위는 id(1) > class(2) > tag(3) 순이다.*/
+
+        strong {
+            color: blue;
+        }
+
+        img {
+            width: 400px;
+            height: 200px;
+            border-radius: 10% 20% 30% 40%;
+            opacity: 0.8;
+        }
+
+        .caution {
+            color: red;
+        }
+
+        /* block 방식만 적용 */
+        .box {
+            width: 200px;
+            height: 100px;
+            margin: 25px;
+            border: 2px solid #f60;
+        }
+
+        .inline .box {
+            display: inline;
+        }
+
+        .block .box {
+            display: block;
+            background-color: rgba(206, 130, 31, 0.35);
+        }
+
+        .inlineblock .box {
+            display: inline-block;
+            width: 150px;
+        }
+
+        .none .box {
+            display: none;
+            /*visibility: hidden;*/
+            background-color: rgba(206, 130, 31, 0.35);
+        }
+
+        .hidden .box {
+            visibility: hidden;
+        }
+
+        /*첫 번째 박스 요소 변환*/
+        /*child는 순서를 따지고 type은 클래스를 따진다.*/
+        .box:first-of-type {
+            border-radius: 50%;
+        }
+
+        /*두 번째 박스 요소 변환*/
+        .box:nth-of-type(2) {
+            border-radius: 2em/5em;
+        }
+
+        /*세 번째 박스 요소 변환*/
+        .box:nth-of-type(3) {
+            border-radius: 30%/15%;
+        }
+
+        /*마지막 박스 요소 변환*/
+        .box:last-of-type {
+            border-radius: 50px 100px;
+        }
+
+        #area {
+            border: 3px solid red;
+            padding: 30px;
+            width: 1000px;
+            margin: 30px auto;
+        }
+
+        .data {
+            display: block;
+            width: 240px;
+            height: 240px;
+        }
+        
+        .over .box:first-of-type {
+            overflow: auto;
+        }
+
+        .over .box:nth-of-type(2) {
+            overflow: hidden;
+        }
+
+        .over .box:nth-of-type(3) {
+            overflow: scroll
+        }
+
+        .over .box:nth-of-type(3) {
+            overflow: visible
+        }
+
+        .box.size {
+            padding: 90px;
+            border-width: 5px;
+            margin: 20px;
+        }
+
+        .box.size:nth-of-type(2) {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CSS 출력 및 박스 관련 속성</h1>
+        <p>display, visibility, opacity, width, height, overflow, margin, padding, border</p>
+        <p>모든 속성의 값에 initial(초기값), inherit(부모요소로 부터 상속)</p>
+        <hr>
+
+        <h2>display(출력속성)</h2>
+        <strong>화면 출력 모드를 지정하는 속성</strong>
+        <p>태그마다 화면 출력 모드가 block, inline, inline-block로 나뉨</p>
+        <p>
+            inline 속성 요소: span, a, strong, em, ins <br>
+            특징: 한 줄 안에 자동 줄바꿈이 될 때까지 배치되고 크기 지정을 할 수 없어 <br>
+            width, height, line-height, text-indent, text-align, padding-top, padding-bottom, margin-top, margin-bottom
+            <br>
+            등의 속성 지정 불가
+        </p>
+        <p>
+            block 속성 요소 : div, h1~h6, p, section, article, header, footer, ... <br>
+            특징: 자동으로 다음줄에 배치가 되며, 크기와 관련된 속성을 지정할 수 있음
+        </p>
+        <p>부여 가능한 속성의 값 : inline | block | inline-block | none</p>
+        <p>
+            부여 가능한 속성의 값2 : contents, flex, grid, box, table, <br>
+            inline-flex, inline-grid, inline-table, list-item, run-in, <br>
+            table-caption, table-column, table-row, table-cell,
+            table-header-group, table-footer-group, ... <br>
+        </p>
+        <hr>
+
+        <h2>visibility(가시속성)</h2>
+        <strong>보일지 보이지 않을지를 나타내는 속성</strong>
+        <p>visible | hidden | collapse</p>
+        <hr>
+
+        <h2>opacity(불투명도속성)</h2>
+        <strong>불투명 정도를 나타내는 속성</strong>
+        <p>
+            값의 범위 : 0~1 까지의 실수 or 정수로 표시, 0은 완전투명, 1은 완전불투명 <br>
+            해당 요소의 글자와 배경색, 이미지를 포함한 모든 콘텐츠를 불투명 또는 투명하게 지정가능
+        </p>
+        <hr>
+
+        <h2>width(너비속성), height(높이속성)</h2>
+        <strong>가로, 세로 크기를 지정하는 속성</strong>
+        <p>속성의 값 : auto | length | % </p>
+        <p>length는 px, pt, pc, cm, mm, in, vw, vmin, vmax 등의 단위로 지정이 가능</p>
+        <p>블록요소 또는 인라인블록요소 등에만 크기지정이 가능</p>
+        <hr>
+
+        <h2>overflow(흘러넘침속성)</h2>
+        <p>콘텐츠의 양이 지정한 크기(폭,높이)보다 더 클 경우 지정</p>
+        <p>
+            visible(넘처도 표시) | hidden(넘치면 숨김) | scroll(넘치든 안넘치든 스크롤바 생성) | auto(넘치면 스크롤바 생성, 안 넘치면 생성안함 | 기본값)
+        </p>
+        <h3>세부 속성 : overflow-x(가로의 overflow만 지정) | overflow-y(세로의 overflow만 지정) |</h3>
+        <hr>
+
+        <h2>margin(바깥여백)</h2>
+        <strong>현재 콘텐츠 영역 영역의 바깥 여백 여러 콘텐츠와 콘텐츠 사이의 여백</strong>
+        <p>속성의 값 : auto | length | % </p>
+        <p>length는 px, pt, pc, cm, mm, in, vw, vmin, vmax 등의 단위로 지정이 가능</p>
+        <p>값 입력 : margin: 상하 좌우 | 상 우 하 좌</p>
+        <p>속성 : margin-top, margin-bottom, margin-left, margin-right</p>
+        <strong class="caution">주의사항 : 전체 속성을 먼저 지정 후 세부속성을 지정해야 한다.</strong>
+        <code id="t">
+
+    </code>
+        <code id="f">
+
+    </code>
+        <hr>
+
+        <h2>padding(안쪽여백)</h2>
+        <strong>테두리와 콘텐츠 사이의 여백</strong>
+        <p>속성의 값 : auto | length | % </p>
+        <p>length는 px, pt, pc, cm, mm, in, vw, vmin, vmax 등의 단위로 지정이 가능</p>
+        <p>값 입력 : padding: 상하 좌우 | 상 우 하 좌</p>
+        <p>속성 : padding-top, padding-bottom, padding-left, padding-right</p>
+        <strong class="caution">주의사항 : 전체 속성을 먼저 지정 후 세부속성을 지정해야 하고 <br>
+            지정한 가로, 세로 크기에 padding 과 border를 더한 값이 실제 콘텐츠 크기가 된다.</strong>
+        <hr>
+
+        <h2>border(테두리)</h2>
+        <p>border : width style color</p>
+        <p>ex&gt; : 1px solid #000 1픽셀 두께의 검은색 실선</p>
+        <p>width는 px, pt, pc, cm, mm, in, vw, vmin, vmax 등의 단위로 지정이 가능</p>
+        <p>
+            style : 선의 모양으로서 solid(기본값, 실선), none(배정x) | hidden(배정o, 안보임) <br>
+            | dotted(둥근 점선) | dashed | double(두줄 실선) | groove | ridge | inset | outset |
+        </p>
+        <p>color 컬러명 | hex코드 | rgb/rgba, hsl/hsla 등으로 지정 가능</p>
+        <br>
+
+        <h3>세부속성</h3>
+        <h4>border-width(선의 두께)</h4>
+        <code>
+            border-width : 2px <br>
+            border-width : 2px 5px <br>
+            border-width : 2px 5px 8px 10px
+        </code>
+        <h4>border-style(선 종류)</h4>
+        <code>
+            border-style : solid <br>
+            border-style : solid dashed <br>
+            border-style : solid dashed double hidden
+        </code>
+        <h4>border-color(선 색상)</h4>
+        <code>
+            border-color : red <br>
+            border-color : red blue <br>
+            border-color : blue gold navy orange
+        </code>
+        <br>
+
+        <h3>방향별 세부 속성</h3>
+        <code>
+            왼쪽 테두리 <br>
+            border-left : 2px double silver <br><br>
+
+            오른쪽 테두리 <br>
+            border-right : 2px double silver <br><br>
+
+            위쪽 테두리 <br>
+            border-top : 2px double silver <br><br>
+
+            아래쪽 테두리 <br>
+            border-bottom : 2px double silver <br><br>
+        </code>
+
+        <h3>방향별 세세 속성</h3>
+        <code>
+            왼쪽 테두리 <br>
+            border-left-width, border-left-style, border-left-color <br><br>
+
+            오른쪽 테두리 <br>
+            border-right-width, border-right-style, border-right-color <br><br>
+
+            위쪽 테두리 <br>
+            border-top-width, border-top-style, border-top-color <br><br>
+
+            아래쪽 테두리 <br>
+            border-bottom-width, border-bottom-style, border-bottom-color <br><br>
+        </code>
+        <hr>
+
+        <h2>box sizing(박스의 크기 산정 방법)</h2>
+        <strong>box sizing은 박스의 크기를 지정한 너비/높이가 콘텐츠 까지만 할지, padding and border를 포함할 지정</strong>
+        <p>content-box | border-box</p>
+        <p>
+            content-box는 지정한 너비/높이가 콘텐츠에만 적용 <br>
+            border box는 지정한 너비/높이에 콘텐츠의 크기+padding+border 로 적용
+        </p>
+        <hr>
+
+        <h2>border-radius(테두리둥글기)</h2>
+        <p>속성의 값 : auto | length | % </p>
+        <p>length는 px, pt, pc, cm, mm, in, vw, vmin, vmax 등의 단위로 지정이 가능</p>
+        <p>값 입력 : padding: 상하 좌우 | 상 우 하 좌</p>
+        <p><strong>세부속성</strong></p>
+        <code>
+            border-radius: 20px; <br>
+            border-radius: 50%; <br>
+            border-radius: 20px 50%; <br>
+            border-radius: 10% 20% 30% 40%; <br>
+        </code>
+        <img src="/img1.jpg" alt="이미지">
+        <br>
+
+        <p><strong>세세속성</strong></p>
+        <code>
+            border-top-left-radius: 20px; <br>
+            border-top-right-radius: 50%; <br>
+            border-bottom-left-radius: 20px; <br>
+            border-bottom-right-radius: 50%; <br>
+        </code>
+        <hr>
+
+        <div id="area">
+            <section>
+                <h2 class="tit">인라인 방식</h2>
+                <span class="box">박스1</span>
+                <span class="box">박스2</span>
+                <span class="box">박스3</span>
+                <span class="box">박스4</span>
+            </section>
+            <br>
+
+            <section>
+                <h2 class="tit">블록 방식</h2>
+                <div class="box">박스1</div>
+                <div class="box">박스2</div>
+                <div class="box">박스3</div>
+                <div class="box">박스4</div>
+            </section>
+            <br>
+
+            <!-- 2중 클래스 선언-->
+            <!-- block 방식의 div 태그를 inline 방식으로 만듬-->
+            <section class="con inline">
+                <h2 class="tit">블록을 인라인으로 바꿔 배치</h2>
+                <div class="box">박스1</div>
+                <div class="box">박스2</div>
+                <div class="box">박스3</div>
+                <div class="box">박스4</div>
+            </section>
+            <br>
+
+            <!-- inline 방식의 span 태그를 block 방식으로 만듬-->
+            <section class="con block">
+                <h2 class="tit">인라인을 블록으로 바꿔 배치</h2>
+                <span class="box">박스1</span>
+                <span class="box">박스2</span>
+                <span class="box">박스3</span>
+                <span class="box">박스4</span>
+            </section>
+            <br>
+
+            <section class="con inlineblock">
+                <h2 class="tit">인라인블록</h2>
+                <div class="box">박스1</div>
+                <div class="box">박스2</div>
+                <div class="box">박스3</div>
+                <div class="box">박스4</div>
+            </section>
+            <br>
+
+            <section class="con none">
+                <h2 class="tit">출력 안함 (none) 배정x</h2>
+                <div class="box">박스1</div>
+                <div class="box">박스2</div>
+                <div class="box">박스3</div>
+                <div class="box">박스4</div>
+            </section>
+            <br>
+
+            <section class="con hidden">
+                <h2 class="tit">출력 안함 (hidden) 배정o</h2>
+                <div class="box">박스1</div>
+                <div class="box">박스2</div>
+                <div class="box">박스3</div>
+                <div class="box">박스4</div>
+            </section>
+            <br>
+
+            <section class="con over">
+                <h2 class="tit">박스 크기를 넘어가는 경우(over)</h2>
+                <h3>overflow: auto; 넘어가면 자동으로 스크롤을 만들어 표현한다.</h3>
+                <div class="box">
+                    <span class="data">
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                    </span>
+                </div>
+                <h3>overflow: hidden; 넘어가면 숨긴다.</h3>
+                <div class="box">
+                    <span class="data">
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                    </span>
+                </div>
+                <h3>overflow: scroll; 크기에 맞든 틀리든 스크롤이 생긴다.</h3>
+                <div class="box">
+                    <span class="data">
+                        오세훈은 천재
+                        </span>
+                </div>
+                <h3>overflow: visible; 범위를 초과해도 그냥 출력한다.</h3>
+                <div class="box">
+                    <span class="data">
+                        오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재오세훈은 천재
+                       </span>
+                </div>
+            </section>
+            <br>
+
+            <h3></h3>
+            <div class="box_size">
+                <div class="box size" id="box1">박스크기1</div>
+                <div class="box size">박스크기2</div>
+                <div class="box size">박스크기3</div>
+                <div class="box size">박스크기4</div>
+                <input type="button" value="버튼" id="btn">
+            </div>
+        </div>
+        <script>
+            let btn = document.getElementById("btn");
+            btn.addEventListener("click", function() {
+                colorTrans()
+            })
+            function colorTrans() {
+                let box = document.getElementById("box1");
+            box.style.backgroundColor="gold";
+            }
+        </script>
+    </div>
+</body>
+
+</html>
