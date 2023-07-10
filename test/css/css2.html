@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동적 웹 css 테스트</title>
+    <style>
+
+        .container {
+            width: 800px;
+            margin: 20px auto;
+        }
+
+        .ra {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            padding: 10px;
+        }
+        label:hover {
+            color: white;
+            background-color: brown;
+        }
+
+        .tab {
+            line-height: 400px; 
+            text-align: center; 
+            font-size: 50px; 
+            overflow: hidden; 
+            transition: 0.6s;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+        .ra:not(:checked)+.tab {
+            height: 0px;
+        }
+
+        .ra:checked+.tab{
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tab_radio">
+            <label for="ra1">선택1</label>
+            <label for="ra2">선택2</label>
+            <label for="ra3">선택3</label>
+
+            <input type="radio" name="ra" id="ra1" class="ra" checked>
+            <div class="tab">선택1</div>
+
+            <input type="radio" name="ra" id="ra2" class="ra">
+            <div class="tab">선택2</div>
+
+            <input type="radio" name="ra" id="ra3" class="ra">
+            <div class="tab">선택3</div>
+        </div>
+    </div>
+</body>
+</html>

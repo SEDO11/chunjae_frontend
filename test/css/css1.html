@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 복습</title>
+    <style>
+        ul, ol, li {
+            list-style: none;
+        }
+
+        .container {
+            width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        .block>li {
+            display: block;
+            width: 200px;
+            border: 2px solid black;
+        }
+
+        .inline>li {
+            display: inline;
+            width: 200px;
+            border: 2px solid black;
+        }
+
+        .over>li {
+            border: 2px solid black;
+            width: 50px;
+            overflow: hidden;
+        }
+
+        .box {
+            width: 600px;
+            height: 300px;
+            background-color: gold;
+            border: 5px solid black;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 600px;
+            border-radius: 50% 60% 70% 80%;
+            opacity: 0.5;
+        }
+
+        img:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="area">
+            <div class="block">
+                <li>가</li>
+                <li>나</li>
+                <li>다</li>
+            </div>
+    
+            <div class="inline">
+                <li>가</li>
+                <li>나</li>
+                <li>다</li>
+            </div>
+
+            <div class="visible">
+                <a href="https://www.naver.com/" target="_blank" >
+                    <img src="../../html/img/desert.jpg" alt="사막">
+                </a>
+            </div>
+
+            <div class="over">
+                <li>isdnfkonawdnfknsdknfvjncxjnfohawdfiohnsadnf</li>
+                <li>isdnfkonawdnfknsdknfvjncxjnfohawdfiohnsadnf</li>
+                <li>isdnfkonawdnfknsdknfvjncxjnfohawdfiohnsadnf</li>
+            </div>
+
+            <div class="box">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
