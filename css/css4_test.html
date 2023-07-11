@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 테스트</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #757575;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        .nav {
+            padding: 20px 20px;
+            float: left;
+        }
+        
+        .nav:hover {
+            background-color: #333;
+            color: aliceblue;
+        }
+
+        ul::after{
+            content: "";
+            clear: both;
+        }
+
+        nav {
+            height: 50px;
+        }
+
+        #contents {
+            clear: both;
+            height: 600px;
+        }
+
+        footer {
+            clear: both;
+        }
+
+        .ra {
+            display: none;
+        }
+
+        .tab {
+            height: 500px;
+            width: 800px;
+            margin: 0px auto;
+            font-size: 24px;
+            overflow: hidden;
+            transition: 0.6s;
+            border: 2px solid black;
+            box-sizing: content-box;
+        }
+
+        .ra:not(:checked) + .tab {height: 0px; } /*버튼이 체크 되있지 않으면*/
+        .ra:checked + #tab1 {height: 500px;}
+        .ra:checked + #tab2 {height: 800px;} /*버튼이 체크 되어 있으면*/
+        
+        table {
+            margin: 0px auto;
+        }
+
+        input {
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+        }
+
+        .tittle { margin: 5px 0px;}
+
+        #canvas {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .posbox {
+            clear: both;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vw;
+            position: relative;
+        }
+
+        .postit {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .lst {
+            list-style: none;
+            clear: both;
+            width: 700px;
+            margin: 20px auto;
+            line-height: 0.5em;
+        }
+
+        .lst::after {
+            content: ""; display: block; width: 100%; clear: both;
+        }
+        
+        .lst li {
+            width: 300px;
+            height: 350px;
+            margin-right : 25px;
+            margin-bottom: 25px;
+            float: left;
+            background-color: white;
+            box-sizing: border-box;
+            border: 1px solid #333;
+        }
+
+        .imgbox {
+            width: 250px;
+            height: 200px;
+            margin: 20px auto;
+            background-color: navajowhite;
+        }
+        
+        .cate_comment {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>웹페이지</h1>
+        </header>
+        <nav>
+            <ul>
+                <li for=""><label for="ra1" class="nav">회원가입 창</label></li>
+                <li for=""><label for="ra2" class="nav">선택2</label></li>
+                <li for=""><label for="ra3" class="nav">선택3</label></li>
+                <li for=""><label for="ra4" class="nav">선택4</label></li>
+            </ul>
+        </nav>
+        <div id="contents">
+            <div class="tab_box">
+
+                <!-- 1번 탭-->
+                <input type="radio" name="ra" id="ra1" class="ra" checked>
+                <div class="tab" id="tab1">
+                    <h3 class="tittle">회원가입</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>아이디</th>
+                                <td><input type="text" placeholder="아이디" id="id" name="id"></td>
+                            </tr>
+                            <tr>
+                                <th>비밀번호</th>
+                                <td><input type="password" placeholder="비밀번호" id="pw" name="pw"></td>
+                            </tr>
+                            <tr>
+                                <th>비밀번호 확인</th>
+                                <td><input type="password" placeholder="비밀번호확인" id="pw2" name="pw2"></td>
+                            </tr>
+                            <tr>
+                                <th>이름</th>
+                                <td><input type="text" placeholder="이름" id="name" name="name"></td>
+                            </tr>
+                            <tr>
+                                <th>생일</th>
+                                <td><input type="date" id="birth" name="birth"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- 2번 탭-->
+                <input type="radio" name="ra" id="ra2" class="ra">
+                <div class="tab" id="tab2">
+                    <div id="canvas">
+                        <h3 class="tittle">사진 모음</h3>
+                        <ul class="lst">
+                            <li>
+                                <div class="imgbox"></div>
+                                <h4 class="cate_tit">카테고리</h4>
+                                <p class="cate_comment">설명</p>
+                            </li>
+                            <li>
+                                <div class="imgbox"></div>
+                                <h4 class="cate_tit">카테고리</h4>
+                                <p class="cate_comment">설명</p>
+                            </li>
+                            <li>
+                                <div class="imgbox"></div>
+                                <h4 class="cate_tit">카테고리</h4>
+                                <p class="cate_comment">설명</p>
+                            </li>
+                            <li>
+                                <div class="imgbox"></div>
+                                <h4 class="cate_tit">카테고리</h4>
+                                <p class="cate_comment">설명</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <input type="radio" name="ra" id="ra3" class="ra">
+                <div class="tab" id="tab3">탭박스3</div>
+
+                <input type="radio" name="ra" id="ra4" class="ra">
+                <div class="tab" id="tab4">탭박스4</div>
+            </div>
+        </div>
+        <footer>
+            
+        </footer>
+    </div>
+</body>
+
+</html>

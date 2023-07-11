@@ -37,5 +37,11 @@ public class Example1 {
         }
         System.out.println(sum4);
 
+        int sum5 = 0;
+        for (int a=1; a<=100; a+=2) {
+            sum5 += a;
+        }
+        System.out.println("홀수의 합: " + sum5);
+
     }
 }
