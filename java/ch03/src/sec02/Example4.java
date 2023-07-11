@@ -56,6 +56,27 @@ public class Example4 {
         }
         System.out.println();
 
+        /*
+        * star3
+        * *****
+        *  ****
+        *   ***
+        *    **
+        *     *
+        * */
+        int s1 = 0;
+        for(int i=5; i>0; i--) {
+            for(int j=0; j<s1; j++) {
+                System.out.print(" ");
+            }
+            for(int j=0; j<i; j++) {
+                System.out.print("*");
+            }
+            s1++;
+            System.out.println();
+        }
+        System.out.println();
+
         // 구구단
         // 2x1=2 ~~~~ 9x9=81
         System.out.println("구구단");
