@@ -15,7 +15,7 @@
         #con {width: 1280px; margin: 30px auto;}
 
         #page2 {
-            background-image: url(./graph.png), url(../html/img/building.jpg); 
+            background-image: url(../img/graph.png), url(../img/building.jpg); 
             background-repeat: no-repeat;
             /* background-size: 300px auto, cover; */
             background-size: 300px auto, cover;
@@ -34,7 +34,7 @@
             font-size: 100px;
             line-height: 600px;
             text-align: center;
-            background-image: url(./img1.jpg);
+            background-image: url(../img/img1.jpg);
             background-size: 100% auto;
             /*background-repeat: repeat-x;*/
             background-repeat: repeat;
@@ -49,7 +49,39 @@
 
         /* 통합 속성 */
         #page4 {
-            background: #ff0 url(./graph.png) center center/100% auto no-repeat fixed;
+            background: #ff0 url(../img/desert.jpg) center center/100% auto no-repeat fixed;
+        }
+        /* 넘어가는 걸 방지 */
+        .page {
+            overflow: hidden;
+        }
+        
+        /*이미지는 width랑 height 둘 중 하나에 꼭 auto를 해준다.*/
+        #page5 #vs {
+            width: 100%;
+            height: auto;
+            max-height: 100vh;
+        }
+
+        #vs img {
+            display: block; width: 100%; height: auto;
+        }
+
+        #page5 img {
+            filter: blur(10px); /*블러*/
+        }
+
+        #page6 img {
+            filter: brightness(50%);/*밝기*/
+        }
+
+        #page7 img {
+            filter: contrast(50%); /*물빠진 색*/
+            /*filter: grayscale(100%);*/ /*회색조*/
+            /*filter: invert(90%);*/ /*색상 반전*/
+            /*filter: hue-rotate(270deg);*/ /*색상 조정*/
+            /*filter: saturate(30%);*/ /*채도*/
+            /*filter: sepia(60%);*/ /*세피아 톤: 먹물 색 기원*/
         }
 
     </style>
@@ -71,6 +103,22 @@
         </section>
         <section class="page" id="page4">
             <h2 class="page_tit">페이지 제목4</h2>
+        </section>
+        <section class="page" id="page5">
+            <h2 class="page_tit">filter: blur(10px);</h2>
+            <figure id="vs"><img src="../img/mountain.jpg"></figure>
+        </section>
+        <section class="page" id="page6">
+            <h2 class="page_tit">filter: brightness();</h2>
+            <figure id="vs"><img src="../img/mountain.jpg" alt=""></figure>
+        </section>
+        <section class="page" id="page7">
+            <h2 class="page_tit">페이지 제목7</h2>
+            <figure id="vs"><img src="../img/mountain.jpg" alt=""></figure>
+        </section>
+        <section class="page" id="page8">
+            <h2 class="page_tit">페이지 제목8</h2>
+            <figure id="vs"><img src="../img/mountain.jpg" alt=""></figure>
         </section>
     </div>
     

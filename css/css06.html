@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 속성 - 글자/문단 관련 속성</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'omyu_pretty';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        strong {
+            color: red;
+        }
+
+        p {
+            line-height: 1.8em;
+        }
+
+        #area {
+            width: 1200px;
+            margin: 20px auto;
+        }
+
+        .f1 {
+            color: #930;
+            font-size: 20pt;
+            line-height: 2em; /* 기본은 1.3em, 글자 크기에 1.3배 */
+            font-weight: bold;
+        }
+
+        .f1 span {
+            font-weight: 200;
+            color: deepskyblue ;
+        }
+
+        .f2 {
+            font-stretch: extra-expanded; /*대부분의 폰트 적용 안됨*/
+            text-transform: uppercase; /*모든 영어 대문자*/
+        }
+
+        .f3 {
+            text-transform: capitalize; /*영어 첫 글자만 대문자*/
+            font-variant: small-caps; /*글자의 크기를 줄임*/
+        }
+
+        .f4 {
+            font-size: 20px;
+            text-indent: 24px; /*들여쓰기*/
+            font-style: italic;
+            font-family: 'Nanum Pen Script', cursive;
+            text-decoration: overline; /*윗 줄*/
+            letter-spacing: 20px;
+        }
+
+        .f5 {
+            font-size: 20px;
+            text-indent: -24px; /*앞으로 들여쓰기*/
+            font-style: oblique;
+            font-family: 'omyu_pretty';
+            text-decoration: line-through; /*취소선*/
+            word-spacing: 20px; 
+        }
+
+        .f6 {
+            text-decoration: underline; /* 밑 줄 */
+        }
+
+        .f7 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; /*텍스트가 넘어가면 ... 표시*/
+        }
+
+        .f8 {
+            width: 120px;
+            margin: 40px auto;
+            /*white-space: pre;*/
+            word-break: keep-all;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="area">
+        <p class="f1">천재 김기태 바보 김기태1 <span>천재 김기태</span> 바보 김기태1 천재 김기태 바보 김기태1 우리나라 천재 김기태 바보 김기태1 대한민국 천재 김기태 바보 김기태1 korean kimkitae korean kimkitae</p>
+        <p class="f2">천재 김기태 바보 김기태2 천재 김기태 바보 김기태2 천재 김기태 바보 김기태2 우리나라 천재 김기태 바보 김기태2 대한민국 천재 김기태 바보 김기태2 korean kimkitae korean kimkitae</p>
+        <p class="f3">천재 김기태 바보 김기태3 천재 김기태 바보 김기태3 천재 김기태 바보 김기태3 우리나라 천재 김기태 바보 김기태3 대한민국 천재 김기태 바보 김기태3 korean kimkitae korean kimkitae</p>
+        <p class="f4">천재 김기태 바보 김기태4 천재 김기태 바보 김기태4 천재 김기태 바보 김기태4 우리나라 천재 김기태 바보 김기태4 대한민국 천재 김기태 바보 김기태4 korean kimkitae korean kimkitae</p>
+        <p class="f5">천재 김기태 바보 김기태5 천재 김기태 바보 김기태5 천재 김기태 바보 김기태5 우리나라 천재 김기태 바보 김기태5 대한민국 천재 김기태 바보 김기태5 korean kimkitae korean kimkitae</p>
+        <p class="f6">천재 김기태 바보 김기태6 천재 김기태 바보 김기태6 천재 김기태 바보 김기태6 우리나라 천재 김기태 바보 김기태6 대한민국 천재 김기태 바보 김기태6 korean kimkitae korean kimkitae</p>
+        <p class="f7">천재 김기태 바보 김기태7 천재 김기태 바보 김기태7 천재 김기태 바보 김기태7 우리나라 천재 김기태 바보 김기태7 대한민국 천재 김기태 바보 김기태7 korean kimkitae korean kimkitae</p>
+        <p class="f8">천재 김기태 바보 김기태8 천재 김기태 바보 김기태8 천재 김기태 바보 김기태8 우리나라 천재 김기태 바보 김기태8 대한민국 천재 김기태 바보 김기태8 korean kimkitae korean kimkitae</p>
+        <p class="f9">천재 김기태 바보 김기태9 천재 김기태 바보 김기태9 천재 김기태 바보 김기태9 우리나라 천재 김기태 바보 김기태9 대한민국 천재 김기태 바보 김기태9 korean kimkitae korean kimkitae</p>
+        <p class="f10">천재 김기태 바보 김기태10 천재 김기태 바보 김기태10 천재 김기태 바보 김기태10 우리나라 천재 김기태 바보 김기태10 대한민국 천재 김기태 바보 김기태10 korean kimkitae korean kimkitae</p>
+    </div>
+
+    <div class="con">
+        <h1>글자/문단 관련 속성</h1>
+        <hr>
+        <h2>글자</h2>
+        <p>
+            color, font-size, font-weight, <br>
+            font-stretch (장평: 한 글자의 가로크기와 세로크기의 비율을 조정 | 보통 영어만 사용), <br>
+            text-transform (대문자를 소문자로, 소문자를 대문자등으로 바꾸는 속성), <br>
+            font-varient (대문자의 폭을 소문자 크기로 줄이는 속성), <br>
+            font-style (폰트의 기울기를 조절), <br>
+            font-family (글꼴 조정), <br>
+            font-kerning (자간, 글자사이의 간격),
+            @font-face () <br>
+        </p>
+        <br>
+
+        <h2>문단 관련</h2>
+        <p>
+            letter-spacing (글자와 글자 사이의 간격), <br>
+            word-spacing (단어와 단어 사이의 간격), <br>
+            line-height, text-align, text-indent, text-decoration, text-jusify, <br>
+            text-orientation, text-overflow, white-space, word-break <br>
+        </p>
+        <br>
+        <strong>폰트에 따라 디자인, 사용되는 게 다 다르니 주의</strong><br>
+        <br>
+        <hr><br>
+
+        <h2>글자색, 중요</h2>
+        <p>color : 웹컬러명 | 16진코드 | rgb()/rgba() | hsl()/hsla()</p>
+        <br>
+        <hr><br>
+
+        <h2>글자 크기, 중요</h2>
+        <p>font-size : keyword | length</p>
+        <p>keyword : xx-small | x-small | smaller | small | medium | large | x-lagre | xx-large</p>
+        <p>length unit : px, em(rem), pt</p>
+        <strong>keyword를 사용하여 글자 크기를 결정할 경우는 브라우저마다 모두 다르므로, length 값으로 지정하도록 하는 것이 좋다.</strong><br>
+        <br>
+        <hr><br>
+
+        <h2>글자 두께, 중요</h2>
+        <p>font-weight : keyword | number(단위가 안 붙고 숫자만 입력)</p>
+        <p>keyword : bolder | bold | normal | lighter</p>
+        <p>number의 범위 100~900 로 100 단위로 기재, 100이 가장 가늘고 900이 가장 굵다</p>
+        <br>
+        <hr><br>
+
+        <h2>글자 장평</h2>
+        <p>font-stretch : ultra-condensed | extra-condensed | condensed | semi-condensed | normal | semi-expanded |
+            expanded
+            | extra-expanded | ultra-expanded |</p>
+        <p>장평(font-stretch)이란? 한 글자의 가로 크기와 세로 크기의 비율이며, 기준은 세로크기에 비해 가로크기가 얼마나 큰지에 대한 값 부여</p>
+        <br>
+        <hr><br>
+
+        <h2>글자 스타일, 중요</h2>
+        <p>font-style : normal | italic | oblique</p>
+        <p>기울임 꼴의 유무를 나타내는 속성, 이태리나 오빌리크나 차이는 없다.</p>
+        <br>
+        <hr><br>
+
+        <h2>글자 변형</h2>
+        <p>font-varient : normal | small-caps</p>
+        <p>영문의 경우 대문자와 소문자의 크기가 각 각 달라서 균일하게 글자 크기나 폭을 지정하기 힘듦으로 대문자를 소문자 크기로 <br>
+            조절하기 위한 속성</p>
+        <br>
+        <hr><br>
+
+        <h2>글자 변환</h2>
+        <p>text-transform : none(기본값) | uppercase | lowercase | capitalize(첫번째만 대문자, 나머지 소문자) </p>
+        <p>해당 단어나 문장의 영문을 대문자 또는 소문자로 변환할 때 사용</p>
+        <br>
+        <hr><br>
+
+        <h2>글꼴 지정, 중요</h2>
+        <p>font-familly : 1차폰트[, 2차폰트][, 3차폰트] - 대활호의 내용은 생략 가능</p>
+        <p>
+            서버에 설치되어 있는 폰트의 이름을 지정, @font-face로 지정된 폰트의 닉네임을 사용한다. <br>
+            만약 공백이 있거나 한글인 경우는 반드싱 인용 부호인 ""나 '' 를 이용해 감싸준다. <br>
+            만약 1차 폰트가 존재하지 않는 경우는 2차 폰트가 적용되고 2차 폰트도 존재하지 않는 경우 3차 폰트가 적용되고 <br>
+            만약 3차 폰트가 적용되지 못하는 경우를 대비하여 3차 폰트는 브라우저에서 기본적으로 제공하는 폰트를 지정해야 한다.
+        </p>
+        <p>
+            브라우저에서 제공하는 기본 폰트는 해당 서버나 클라이언트에 설치가 되어 있지 않아도 자동 제공된다. <br>
+            sans-serif (고딕), serif (명조계열), cursive (궁서계열), monospace (장평(가로세로)이 같은 폰트), fantasy (디자인계열)
+        </p>
+        <br>
+        <hr><br>
+
+        <h2>커서 위치의 자간</h2>
+        <p>font-kerning : auto | normal | none</p>
+        <br>
+        <hr><br>
+
+        <h2>자간</h2>
+        <p>letter-spacing : normal | length</p>
+        <p>length : px, em, pt 등의 단위를 주로 활용</p>
+        <p>글자와 글자 사이의 간격</p>
+        <br>
+        <hr><br>
+
+        <h2>어간</h2>
+        <p>word-spacing : normal | length</p>
+        <p>length : px, em, pt 등의 단위를 주로 활용</p>
+        <p>단어와 단어 사이의 간격</p>
+        <br>
+        <hr><br>
+
+        <h2>행 높이, 중요</h2>
+        <p>line-height : normal | number | length</p>
+        <p>값으로 숫자만 기재할 경우는 em 단위 처럼 현재 문단의 글자 크기의 배수이 되고 <br>
+            숫자 뒤에 단위가 들어가는 경우는 해당하는 단위의 크기가 적용</p>
+        <br>
+        <hr><br>
+
+        <h2>문단 정렬, 중요</h2>
+        <p>text-align : left | right | center | justify(대문정렬, 나눔정렬)</p>
+        <p>문단의 가로 방향에 대한 정렬</p>
+        <p>근데 justify </p>
+        <br>
+        <hr><br>
+
+        <h2>들여쓰기/내어쓰기, 중요</h2>
+        <p>text-indent : length</p>
+        <p>length 단위 : px, %, pt</p>
+        <p>들여쓰기 : 다른 줄에 비해 첫 번째 줄이 더 들어가게 쓰는 것 <br>
+            text-indent: 20px;</p>
+        <p>내어쓰기 : 다른 줄에 비해 첫 번째 줄이 더 나오게 쓰느 것<br>
+            text-indent: -20px;</p>
+        <br>
+        <hr><br>
+
+        <h2>글자 장식, 중요</h2>
+        <p>text-decoration : none(기본값) | underline(a태그만 기본값) | overline | line-through(가운데 선, 취소선)</p>
+        <p>글자의 위, 중간, 아래에 줄을 표시하도록 하는 속성</p>
+        <p>none을 제외한 다른 값은 중복해서 사용할 수 있다. <br>
+            text-decoration:overline underline <br>
+            text-decoration: underline double #369, overline wave #c00;
+        </p>
+        <h3>세부속성</h3>
+        <p>text-decoration-color : 줄의 색</p>
+        <p>text-decoration-line : 줄의 위치(underline/overline/line-through)</p>
+        <p>text-decoration-style : 줄의 종류(solid/wave/double/dotted/dashed)</p>
+        <br>
+        <hr><br>
+
+        <h2>배분 정렬</h2>
+        <p>text-justify : auto | none | inter-chracter(글자로 쪼개라) | inter-word(단어로 쪼개라)</p>
+        <p>단어 또는 글자 단위로 한 줄의 데이터를 분량을 똑같이 배분정렬을 할 수 있는 속성</p>
+        <br>
+        <hr><br>
+
+        <h2>글자 진행 방향</h2>
+        <p>text-orientation : mixed | upright(위에서 오른쪽으로 읽음) | sideways | sideways-right | use-glyph-orientation(사용자의 폰트에
+            맞춰 설정)</p>
+        <br>
+        <hr><br>
+
+        <h2>글자 흘러 넘침, 중요</h2>
+        <p>text-overflow : clip(자름) | ellipsis(동그라미 붙힘) | 특정문자</p>
+        <p>text-overflow 는 overflow:hidden 이고, white-space:nowrap인 경우에 유효</p>
+        <br>
+        <hr><br>
+
+        <h2>내용 보호/줄 끝 처리, 중요</h2>
+        <p>white-space : normal | nowrap(자동 줄바꿈 안하고 한줄 처리) | pre(enter 친걸 그대로 표시) | pre-line(줄바꿈만 자동) |
+            pre-wrap(줄바꿈+enter도 자동) |</p>
+        <p>하나의 단어가 한 줄에 입력되어야만 하기에 그 때 한 줄에 단어가 배치가 되든지, 아니면, 영문배치문법을 무시하고, 단어 중간을 자를지 <br>
+            또는 하나의 문장을 한 줄로만 표시할지 그 문장의 줄의 끝을 어떻게 처리할지 정하는 속성</p>
+        <br>
+        <hr><br>
+
+        <h2>단어 처리 (영문만 사용)</h2>
+        <p>word-break : normal | break-all | keep-all | break-word</p>
+        <p>한 줄 또는 한 문장 안에서의 단어의 끝 처리 부분을 어떻게 할지 정하는 속성</p>
+        <br>
+        <hr><br>
+    </div>
+</body>
+
+</html>
