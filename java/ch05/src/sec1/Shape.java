@@ -7,18 +7,19 @@ public class Shape {
     // public은 어디에서든지 접근 가능
     // default는 같은 패키지 내에서만 접근 가능
     // private은 현재 클래스 내에서만 접근 가능
+    // member field(멤버 필드)
     public String type;
     public int length;
     public double area;
 
-    // 보통은 private으로 만든다.
+    // 보통은 private으로 만들어서 get, set으로 접근하게 만든다.
     private String type2;
     private int length2;
 
+    // 생성자
     // 매개변수를 받는 생성자를 만드는 경우 없는 걸 하나 새로 만들어야 한다.
     public Shape() {}
 
-// 생성자
 //    public Shape(String type) {
 //        this(type, 0);
 //    }
