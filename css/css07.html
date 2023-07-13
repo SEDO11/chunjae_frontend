@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 속성 - 기타 속성</title>
+    <style>
+        /*클래스로 구분할 때에는 하이픈으로*/
+
+        #canvas, #con {
+            width: 1280px;
+            margin: 60px auto;
+        }
+
+        .mouse {
+            width: 1280px; 
+            clear: both; 
+            min-height: 100vh;
+        }
+
+        .mouse::after {
+            content: "";
+            clear: both;
+            display: block;
+            width: 100%;
+        }
+
+        .mouse ul {
+            list-style: none;
+            clear: both;
+        }
+
+        .mouse li {
+            width: 100px;
+            height: 100px;
+            margin: 15px;
+            border: 1px solid #333;
+            float: left;
+        }
+
+        .mouse li.alias {cursor: alias;}
+        .mouse li.all-scroll {cursor: all-scroll;}
+        .mouse li.auto { cursor: auto;}
+        li.cell { cursor: cell;}
+        li.col-resize {cursor: col-resize;}
+        li.context-menu {cursor: context-menu;}
+        li.copy {cursor: copy;}
+        li.crosshair {cursor: crosshair;}
+        li.default {cursor: default;}
+        li.e-resize {cursor: e-resize;}
+        li.ew-resize {cursor: ew-resize;}
+        li.grab {cursor: grab;}
+        li.grabbing {cursor:grabbing}
+        li.help {cursor: help;}
+        li.move {cursor: move;}
+        li.n-resize {cursor: n-resize;}
+        li.no-drop {cursor: no-drop;}
+        li.none {cursor: none;}
+        li.not-allowed {cursor: not-allowed;}
+        li.pointer {cursor: pointer;}
+        li.progress {cursor: progress;}
+        li.row-resize {cursor: row-resize;}
+        li.s-resize {cursor:s-resize}
+        li.text {cursor: text;}
+        li.url {cursor: url(https://ani.cursors-4u.net/games/gam-16/gam1571.ani), url(https://ani.cursors-4u.net/games/gam-16/gam1571.png) 20 30, auto !important;}
+        li.w-resize {cursor: w-resize;}
+        li.wait {cursor: wait;}
+        li.zoom-in {cursor: zoom-in;}
+        li.zoom-out {cursor: zoom-out;}
+        li.url2 {cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat927.ani), url(https://cur.cursors-4u.net/nature/nat-10/nat927.png) 50 80, auto !important;}
+        
+
+        li.disc {list-style-type:disc;}
+        li.armenian {list-style-type:armenian;}
+        li.circle {list-style-type:circle;}
+        li.cjk-ideographic {list-style-type:cjk-ideographic;}
+        li.decimal {list-style-type:decimal;}
+        li.georgian {list-style-type:georgian;}
+        li.hebrew {list-style-type:chebrew;}
+        li.hiragana {list-style-type:hiragana;}
+        li.katakana {list-style-type:katakana;}
+        li.lower-alpha {list-style-type:lower-alpha;}
+        li.lower-greek {list-style-type:lower-greek;}
+        li.lower-latin {list-style-type:lower-latin;}
+        li.lower-roman {list-style-type:lower-roman;}
+        li.none {list-style-type:none;}
+        li.square {list-style-type:square;}
+        li.upper-alpha {list-style-type:upper-alpha;}
+        li.upper-greek {list-style-type:upper-greek;}
+        li.upper-latin {list-style-type:upper-latin;}
+        li.img {list-style-image: url(../img/point.png);}
+
+        .ts {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .ts h2 {
+            font-size: 64px;
+            color: deepskyblue;
+            height: 100px;
+            box-sizing: border-box;
+        }
+
+        .txt-box {width: 900px; height: 150px; line-height: 100px; text-align: center;}
+
+        .ts-tit1 {text-shadow: 3px 3px #0c4569, -3px -3px #b4dffa;}
+
+        h2.ts-tit2 {color: #bc2e1e;
+            background: #edde9c;
+            text-shadow: 0 1px 0px #378ab4, 1px 0 0px #5dabcd, 1px 2px 1px #378ab4, 
+            2px 1px 1px #5dabcd, 2px 3px 2px #378ab4, 3px 2px 2px #5dabcd, 3px 4px 2px #378ab4, 
+            4px 3px 3px #5dabcd, 4px 5px 3px #378ab4, 5px 4px 2px #5dabcd, 5px 6px 2px #378ab4, 
+            6px 5px 2px #5dabcd, 6px 7px 1px #378ab4, 7px 6px 1px #5dabcd, 7px 8px 0px #378ab4, 8px 7px 0px #5dabcd;}
+
+        .tit-box:nth-child(3) {background-color: #fff;}
+        .tit-box h2.ts-tit3 {
+            color: #000; text-shadow: 2px 2px 0px #eee, 4px 4px 0px #000;
+        }
+
+        .tit-box:nth-child(4) {background-color: #000;}
+        .tit-box h2.ts-tit4 {color: #fff;
+            text-shadow: 0 0 1px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 60px #ff00de, 0 0 80px #ff00de,
+            0 0 100px #ff00de, 0 0 110px #ff00de;
+        }
+
+        .tit-box h2.ts-tit5 { text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; color: #fff;}
+
+        .tit-box:nth-child(6) {background-color: #565656;}
+        .tit-box h2.ts-tit6 { color: #333; text-shadow: 0px 5px #777, 0px -5px #000; text-decoration: overline;}
+        
+        .tit-box:nth-child(7) {background-color: navy;}
+        .tit-box h2.ts-tit7 {font-family: 'Staatliches', cursive; color: #f1c164; text-shadow: 5px 5px #2d63a7;}
+
+        .tit-box:nth-child(8) {background-color: navy;}
+        .tit-box h2.ts-tit8 {padding-top: 20px; font-family: 'Times New Roman', cursive; color: #f1c164; text-shadow: 5px 5px #2d63a7;
+            text-decoration: overline; text-decoration-style: wavy;}
+        
+        .tit-box h2.ts-tit9 {
+            
+            color: #2D4356;
+            text-shadow: 1px 1px 0px #2D4356, 2px 2px 0px #2D4356, 3px 3px 0px #2D4356,
+                        4px 4px 0px #435B66, 5px 5px 0px #435B66, 6px 6px 0px #435B66,
+                        8px 8px 0px #A76F6F, 9px 9px 0px #A76F6F, 10px 10px 0px #A76F6F,
+                        11px 11px 0px #EAB2A0, 12px 12px 0px #EAB2A0, 13px 13px 0px #EAB2A0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="canvas">
+        <article class="mouse">
+            <ul>
+                <li class="alias">모양1</li>
+                <li class="all-scroll">모양2</li> 
+                <li class="auto">모양3</li>
+                <li class="cell">모양4</li>
+                <li class="col-resize">모양5</li>
+                <li class="context-menu">모양6</li>
+                <li class="copy">모양7</li>
+                <li class="crosshair">모양8</li>
+                <li class="default">모양9</li>
+                <li class="e-resize">모양10</li>
+                <li class="ew-resize">모양11</li>
+                <li class="grab">모양12</li>
+                <li class="grabbing">모양13</li>
+                <li class="help">모양14</li>
+                <li class="move">모양15</li>
+                <li class="n-resize">모양16</li>
+                <li class="no-drop">모양17</li>
+                <li class="none">모양18</li>
+                <li class="not-allowed">모양19</li>
+                <li class="pointer">모양20</li>
+                <li class="progress">모양21</li>
+                <li class="row-resize">모양22</li>
+                <li class="s-resize">모양23</li>
+                <li class="text">모양24</li>
+                <li class="url">모양25</li>
+                <li class="w-resize">모양26</li>
+                <li class="wait">모양27</li>
+                <li class="zoom-in">모양28</li>
+                <li class="zoom-out">모양29</li>
+                <li class="url2">모양30</li>
+            </ul>
+        </article>
+        <br><hr><br>
+
+        <article class="list">
+            <ul>
+                <li class="disc">목록기호1</li>
+                <li class="armenian">목록기호2</li>
+                <li class="circle">목록기호3</li>
+                <li class="cjk-ideographic">목록기호4</li>
+                <li class="decimal">목록기호5</li>
+                <li class="georgian">목록기호6</li>
+                <li class="hebrew">목록기호7</li>
+                <li class="hiragana">목록기호8</li>
+                <li class="katakana">목록기호9</li>
+                <li class="lower-alpha">목록기호10</li>
+                <li class="lower-greek">목록기호11</li>
+                <li class="lower-latin">목록기호12</li>
+                <li class="lower-roman">목록기호13</li>
+                <li class="none">목록기호14</li>
+                <li class="square">목록기호15</li>
+                <li class="upper-alpha">목록기호16</li>
+                <li class="upper-greek">목록기호17</li>
+                <li class="upper-latin">목록기호18</li>
+                <li class="img"></li>
+            </ul>
+        </article>
+        <br><hr><br>
+
+        <article class="ts">
+            <div class="tit-box">
+                <h2 class="ts-tit1">Lorem Ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit2">Lorem Ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit3">Lorem Ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit4">Lorem Ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit5">Lorem Ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit6">Lorem Ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit7">Lorem Ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit8">Lorem Ipsum</h2>
+            </div>
+            <div class="tit-box">
+                <h2 class="ts-tit9">Lorem Ipsum</h2>
+            </div>
+        </article>
+        <br><hr><br>
+        
+    </div>
+
+    <div id="con">
+        <h1>기타 속성</h1>
+        <p>list-style : type(무조건 있어야 하고 나머지는 없어도 됨) position image</p>
+        <p>메뉴나 목록의 기호를 표시하는 속성</p>
+        <br>
+        <hr><br>
+
+        <h2>목록 기호</h2>
+        <p>
+            list-style-type : none | disc(내부가 채워진 원) | circle(내부가 채워지지 않은 원) | square(정사각형) |<br>
+            (li 정렬 순서) decimal(숫자) | armenian | georgian | hebrew | hiragana | katagana | lower-alpha | lower-greek(그리스어
+            소문자) | <br>
+            lower-latin(라틴어 소문자) | lower-roman(로마 소문자) | upper-alpha | upper-greek | upper-latin | upper-roman |
+            cjk-ideographic (한중일 공용 넘버링)
+        </p>
+        <p>li 요소에 표시되는 목록 기호로 부모 요소가 ol인 경우는 숫자가 순서대로 앞에 표기되고, ul인 경우는 disc가 앞에 표기된다.</p>
+        <br>
+        <hr><br>
+
+        <h2>목록 기호 위치</h2>
+        <p>list-style-position : inside(padding 영역에 표시) | outside(margin 영역에 표시)</p>
+        <br>
+        <hr><br>
+
+        <h2>목록 이미지</h2>
+        <p>list-style-image : none | url()</p>
+        <p>목록 기호에 들어갈 자리에 이미지가 표시되며, 파일 경로나 이름은 "", ''로 묶을 수 있고 생략 가능 <br>
+            다만, 중간에 띄어쓰기나 한글 및 특수문자로 이루어져 있는 경우는 반드시 따옴표로 묶어야 한다.</p>
+        <br>
+        <hr><br>
+
+        <h1>마우스 포인터</h1>
+        <p>
+            cursor : alias | all-scroll | auto | cell | col-size | context-menu | <br>
+            copy | crosshair | default | e-resize(동) | n-resize(북) | s-resize(남) | w-resize(서) |<br>
+            ew-resize | ne-resize | se-resize | ns-resize | nwse-resize | sw-resize | <br>
+            grab | grabbing | help | move | no-drop | not-allowed | pointer | progress | row-resize | text | url() <br>
+            zoom-in | zoom-out |
+        </p>
+        <p>해당 요소의 영역에 마우스 포인터가 위치되면, 그 마우스 포인터 모양을 지정할 수 있는 속성</p>
+        <br>
+        <hr><br>
+
+        <h1>그림자 속성</h1>
+        <p>shadow : text-shadow, box-shadow</p>
+        <p>텍스트나 박스의 외부 그림자 또는 내부 그림자를 말하며 크기 속성에 포함 안 된다.</p>
+        <br>
+        <hr><br>
+
+        <h2>텍스트 그림자</h2>
+        <p>text-shadow : x-length y-length blur color</p>
+        <p>
+            x를 양의 값으로 입력하면 그림자으 방향은 오른쪽에 발생되며, 음의 값으로 입력하면 왼쪽에 그림자가 발생된다. <br>
+            y를 양의 값으로 입력하면 그림자의 방향은 아래에 발생되며, 음의 값으로 입력하면 위쪽에 그림자가 발생된다. <br>
+            x, y, blur, color 의 양을 여러 차례에 걸쳐 지정하면, 입체 모양의 그림자가 표시
+        </p>
+        <br>
+        <hr><br>
+
+        <h2>박스 그림자</h2>
+        <p>box-shadow : x-length y-length blur color</p>
+        <p>box-shadow : x-length y-length spread-lengths color</p>
+        <p>
+            x를 양의 값으로 입력하면 그림자으 방향은 오른쪽에 발생되며, 음의 값으로 입력하면 왼쪽에 그림자가 발생된다. <br>
+            y를 양의 값으로 입력하면 그림자의 방향은 아래에 발생되며, 음의 값으로 입력하면 위쪽에 그림자가 발생된다. <br>
+            x, y, blur, color 의 양을 여러 차례에 걸쳐 지정하면, 입체 모양의 그림자가 표시
+        </p>
+        <p>box-shadow나 text-shadow의 그림자의 양은 px 또는 pt 단위로 기재한다.</p>
+        <br>
+        <hr><br>
+    </div>
+
+</body>
+
+</html>
