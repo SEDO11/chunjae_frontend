@@ -14,7 +14,5 @@ public class Example4 {
         q2.setTitle(Qna.DUMMY);
         System.out.println(q2.getTitle()+1);
 
-        q
-
     }
 }
