@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="IE=edge"> <!-- 익스프로어 일 경우 엣지를 사용하라고 안내-->
+    <meta http-equiv="author" content="홍길동"> <!-- 문서의 제작사 -->
+    <meta http-equiv="publisher" content="천재교육 콘텐츠 제작팀"> <!-- 문서의 저자 정의 -->
+    <meta http-equiv="copyright" content="copyright@chunjae.co.kr"> <!-- 저작권 명시 -->
+    <title>천재교육</title>
+
+    <!-- 검색엔진 최적화(SEO) -->
+    <meta name="subject" content="천재교육, 천재IT교육센터"> <!-- 페이지 주제 지정 http-equiv 로 지정해도 상관 무 -->
+    <meta name="keywords" content="천재교육, 천재 IT, 교육 교재, 교과서, 스마트 교육"> <!-- 검색 단어 지정 -->
+    <!-- 검색 결과에 표시되는 문자 지정-->
+    <meta name="description" content="천재교육은 교과서 제작, 교육 교재 제작, 초등, 중등, 고등 교육에 대한 교재와 교육을 실시하는 회사입니다.">
+    <meta name="robots" content="index, follow">
+
+    <!-- 오픈 그래프 -->
+    <!-- 페이지를 공유할 때 미리보기로 보여주는 코드 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="천재교육">
+    <meta property="og:description" content="앞선 생각으로 더 큰 미래의 교육을 준비하는 기업">
+    <meta property="og:image" content="../img/img1.jpg">
+    <meta property="og:url" content="../img/img1.jpg">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../img/logo.ico">
+    <!-- 애플 계열 모바일 -->
+    <link rel="apple-touch-icon-precomposed" href="../img/logo_64.png">
+    <!-- IE 계열 브라우저 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./images/logo_48.png">
+    <!-- 파이어폭스, 오페라, 또는 구형 크롬/사파리 -->
+    <link rel="icon" href="./images/logo_16.png" sizes="16x16">
+    <link rel="icon" href="./images/logo_32.png" sizes="32x32">
+    <link rel="icon" href="./images/logo_48.png" sizes="48x48">
+    <link rel="icon" href="./images/logo_64.png" sizes="64x64">
+
+    <!-- 스타일 초기화 -->
+    <link rel="stylesheet" href="./reset.css">
+    <!-- 웹 폰트 -->
+    <link rel="stylesheet" href="./font.css">
+
+    <style>
+        /* 스타일 사용자 정의 초기화 */
+        body, html {width: 100%; font-family: 'omyu_pretty';}
+        a {text-decoration: none; color: #333;}
+        img {border: 0;}
+        .wrap {clear: both; width: 100%;}
+        .wrap::after {content: ""; display: block; width: 100%; clear: both;}
+    </style>
+
+    <style>
+        /* 헤더 구역 스타일 */
+        .hd { clear: both; position: relative; width: 100%; height: 90px;}
+        .hd_wrap { clear: both; width: 100%;}
+        .hd_wrap:first-child { background-color: deepskyblue; border-bottom: 1px solid #333;}
+        .hd_wrap:nth-child(2) {background-color: white; width: 1200px; margin: 0 auto;}
+
+        .tnb {width: 1200px; margin: 0 auto;}
+        .tnb::after { content: ""; clear: both; display: block; width: 100%;}
+        .tnb .menu {float: right; height: 40px; margin: auto; line-height: 40px;}
+        .tnb .menu li { float: left; padding-left: 40px;} /* right로 줄 경우 순서 뒤집힘 */
+
+        .logo { display: block; width: auto; height: 50px; float: left;}
+        .logo img {display: block; width: auto; height: 100%;} /*img 의 크기를 지정 해줘야 a 태그 내에 들어가게 됨 */
+
+        .gnb {width: 900px; margin: 0 auto; float: right; height: 50px;}
+        .gnb .menu {clear: both; height: 50px; position: relative;}
+        .gnb .menu::after {content: ""; clear: both; width: 100%; display: block;}
+        .gnb .menu li {float: left; width: 20%; position: relative; height: 50px;} /*모든 요소가 칸에 맞게 들어감 */
+        .gnb .menu li .sub {visibility: hidden; opacity: 0; position: absolute; width: 180px;
+            height: 200px; top: 48px; left: 0; z-index: 999; transition: 0.3s;}
+        .gnb .menu li a.dp1 {display: block; width: 100%; line-height: 50px; border-bottom: 2px solid #fff;
+            text-align: center; background-color: #fff; color: #333;}
+        .gnb .menu li:hover a.dp1 { border-bottom: 2px solid deepskyblue; background-color: deepskyblue; color: #fff; font-size: 24px;}
+        .gnb .menu:hover li .sub {visibility: visible; height: 240px; opacity: 1;} /*마우스를 호버할 경우 메뉴가 보이도록 만듬 */
+        .gnb .menu li .sub li {padding-left: 0px; line-height: 50px; clear: both; width: 180px;} /* 메뉴를 세로 방향으로 정렬 되도록 만듬 */
+        .gnb .menu li .sub li a { display: block; width: 180px; text-align: center; line-height: 50px; white-space: nowrap;
+            text-overflow: ellipsis; overflow: hidden; box-sizing: border-box;}
+        .gnb .menu li .sub li:hover a {background-color: rgba(0, 152, 194, 0.822); color: white; font-size: 24px;}
+    </style>
+
+    <style>
+        /* 본문 영역 스타일 */  
+        .contents { clear:both; }
+        .contents::after { content:""; clear:both; display:block; width:100%; }
+        .vs { clear:both; width:100%; min-height:400px; background-color: deeppink; 
+        position:relative; }
+        .vs_tit { position:absolute; top:80px; left: 0; width: 100%; 
+        text-align: center; font-size:150px; color:navy; z-index:10; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="hd_wrap">
+                <nav class="tnb"> <!-- .hd_wrap:first-child  -->
+                    <ul class="menu">
+                        <li><a href="">상단1</a></li>
+                        <li><a href="">상단2</a></li>
+                        <li><a href="">상단3</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hd_wrap"> <!-- .hd_wrap:first-child  -->
+                <a href="" class="logo">
+                    <img src="../img/chunjae.png" alt="">
+                </a>
+                <nav class="gnb">
+                    <ul class="menu">
+                        <li class="item1">
+                            <a href="" class="dp1">메인1</a>
+                            <ul class="sub">
+                                <li><a href="">서브01</a></li>
+                                <li><a href="">서브02</a></li>
+                                <li><a href="">서브03 서브03 서브03 서브03 서브03</a></li>
+                                <li><a href="">서브04</a></li>
+                            </ul>
+                        </li>
+                        <li class="item2">
+                            <a href="" class="dp1">메인2</a>
+                            <ul class="sub">
+                                <li><a href="">서브01</a></li>
+                                <li><a href="">서브02</a></li>
+                                <li><a href="">서브03</a></li>
+                                <li><a href="">서브04</a></li>
+                            </ul>
+                        </li>
+                        <li class="item3">
+                            <a href="" class="dp1">메인3</a>
+                            <ul class="sub">
+                                <li><a href="">서브01</a></li>
+                                <li><a href="">서브02</a></li>
+                                <li><a href="">서브03</a></li>
+                                <li><a href="">서브04</a></li>
+                            </ul>
+                        </li>
+                        <li class="item4">
+                            <a href="" class="dp1">메인4</a>
+                            <ul class="sub">
+                                <li><a href="">서브01</a></li>
+                                <li><a href="">서브02</a></li>
+                                <li><a href="">서브03</a></li>
+                                <li><a href="">서브04</a></li>
+                            </ul>
+                        </li>
+                        <li class="item5">
+                            <a href="" class="dp1">메인5</a>
+                            <ul class="sub">
+                                <li><a href="">서브01</a></li>
+                                <li><a href="">서브02</a></li>
+                                <li><a href="">서브03</a></li>
+                                <li><a href="">서브04</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="contents">
+            <figure class="vs">
+                <h2 class="vs_tit">배너 제목</h2>
+            </figure>
+        </div>
+        <footer class="ft">
+            <div class="ft_wrap"></div>
+        </footer>
+    </div>
+</body>
+</html>
