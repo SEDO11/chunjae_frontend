@@ -1,4 +1,4 @@
-package test;
+package test3;
 
 public class Example4 {
     int a = 2;
