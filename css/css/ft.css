@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+/*푸터 구역*/
+.ft {
+    clear: both;
+    width: 100%;
+    box-shadow: 0px -10px 30px #333;
+}
+
+.ft::after {
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.ft_wrap {
+    clear: both;
+    width: 100%;
+    border: 1px solid #333;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.ft_link {
+    clear: both;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.fnb {
+    float: left;
+}
+
+.fnb::after {
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.fnb li {
+    float: left;
+}
+
+.fnb li:nth-child(2):after {
+    content: "|";
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.snb {
+    float: right;
+}
+
+.snb::after {
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.snb li {
+    float: left;
+    margin-left: 14px;
+}
+
+.fnb li {
+    float: left;
+}
+
+.snb li {
+    float: left;
+    margin-top: 8px;
+}
+
+.snb li a {
+    display: block;
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+    background-image: url("../img/ico_foot_sns.png");
+    border-radius: 50%;
+}
+
+/*text-indent: -9999px; 글씨를 안보이게 설정*/
+.snb a.item1 {
+    background-position: 0 0;
+}
+
+.snb a.item2 {
+    background-position: -34px 0;
+}
+
+.snb a.item3 {
+    background-position: -68px 0;
+}
+
+.snb a.item4 {
+    background-position: -102px 0;
+}
+
+.snb a.item5 {
+    background-position: -136px 0;
+}
+
+.snb li.locate {
+    background-image: none;
+    width: 200px;
+    margin-top: 0px;
+}
+
+.snb li.locate option {
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    min-height: 48px;
+}
+
+.ft_link li {
+    line-height: 48px;
+}
+
+#sel {
+    height: 34px;
+}
+
+.ft_wrap2 {
+    clear: both;
+    width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.copyright {
+    line-height: 34px;
+}
+
+.copyright span::after {
+    content: "|";
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.copyright span.end::after {
+    content: "";
+    padding-right: 0;
+}
+
+.cp {
+    color: #aaa;
+    line-height: 20px;
+}
+
+.totop {
+    display: block;
+    width: 60px;
+    height: 42px;
+    text-align: center;
+    line-height: 42px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white;
+    font-size: 30px;
+    position: fixed;
+    right: 60px;
+    bottom: 30px;
+    border-radius: 26px;
+}

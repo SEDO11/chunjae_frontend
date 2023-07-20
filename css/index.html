@@ -41,52 +41,14 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
     <!-- 스타일 초기화 -->
-    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./css/reset.css">
     <!-- 웹 폰트 -->
-    <link rel="stylesheet" href="./font.css">
+    <link rel="stylesheet" href="./css/font.css">
 
-    <style>
-        /* 스타일 사용자 정의 초기화 */
-        body, html {width: 100%; font-family: 'omyu_pretty'; overflow-x: hidden; }
-        a {text-decoration: none; color: #333;}
-        img {border: 0;}
-        .wrap {clear: both; width: 100%;}
-        .wrap::after {content: ""; display: block; width: 100%; clear: both;}
-    </style>
-
-    <style>
-        /* 헤더 구역 스타일 */
-        .hd { clear: both; position: relative; width: 100%; height: 90px;}
-        .hd_wrap { clear: both; width: 100%;}
-        .hd_wrap:first-child { background-color: deepskyblue; border-bottom: 1px solid #333;}
-        .hd_wrap:nth-child(2) {background-color: white; width: 1200px; margin: 0 auto;}
-
-        .tnb {width: 1200px; margin: 0 auto;}
-        .tnb::after { content: ""; clear: both; display: block; width: 100%;}
-        .tnb .menu {float: right; height: 40px; margin: auto; line-height: 40px;}
-        .tnb .menu li { float: left; padding-left: 40px;} /* right로 줄 경우 순서 뒤집힘 */
-
-        .logo { display: block; width: auto; height: 50px; float: left;}
-        .logo img {display: block; width: auto; height: 100%;} /*img 의 크기를 지정 해줘야 a 태그 내에 들어가게 됨 */
-
-        .gnb {width: 900px; margin: 0 auto; float: right; height: 50px;}
-        /*.gnb::before {content: ""; width: 100vw; height: 210px; display: block; background-color: rgba(255,255,255,0.7); 
-            position: absolute; left: 0; top: 90px; z-index: 15; } /*position:absolute를 지정해주지 않으면 메뉴바가 가려진다.*/
-        /*.gnb:hover { }*/
-        .gnb .menu {clear: both; height: 50px; position: relative;}
-        .gnb .menu::after {content: ""; clear: both; width: 100%; display: block;}
-        .gnb .menu li {float: left; width: 20%; position: relative; height: 50px;} /*모든 요소가 칸에 맞게 들어감 */
-        .gnb .menu li .sub {visibility: hidden; opacity: 0; position: absolute; width: 180px;
-            height: 200px; top: 48px; left: 0; z-index: 999; transition: 0.3s;}
-        .gnb .menu li a.dp1 {display: block; width: 100%; line-height: 50px; border-bottom: 2px solid #fff;
-            text-align: center; background-color: #fff; color: #333;}
-        .gnb .menu li:hover a.dp1 { border-bottom: 2px solid deepskyblue; background-color: deepskyblue; color: #fff; font-size: 24px;}
-        .gnb .menu:hover li .sub {visibility: visible; height: 240px; opacity: 1;} /*마우스를 호버할 경우 메뉴가 보이도록 만듬 */
-        .gnb .menu li .sub li {padding-left: 0px; line-height: 50px; clear: both; width: 180px;} /* 메뉴를 세로 방향으로 정렬 되도록 만듬 */
-        .gnb .menu li .sub li a { display: block; width: 180px; text-align: center; line-height: 50px; white-space: nowrap;
-            text-overflow: ellipsis; overflow: hidden; box-sizing: border-box;}
-        .gnb .menu li .sub li:hover a {background-color: rgba(0, 152, 194, 0.822); color: white; font-size: 24px;}
-    </style>
+    <!-- css 모듈화 -->
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/hd.css">
+    <link rel="stylesheet" href="./css/ft.css">
 
     <style>
         /* 본문 영역 스타일 */  
@@ -135,7 +97,8 @@
         .pic_lst {clear: both; width: 1200px; margin: 150px auto;}
         .pic_lst li {width: 280px; height: 400px; margin-left: 26px; float: left; background-repeat: no-repeat;
             background-position: center center; background-size: cover; filter: blur(1px) brightness(80%); box-shadow: 12px 12px 12px #999;}
-        .pic_lst li a { display: block; width: 256px; height: 376px; margin: 11px; border: 1px solid #fff;}
+        .pic_lst li a { display: block; width: 256px; height: 376px; margin: 11px;}
+        .pic_lst li a:hover {border: 1px solid #fff; transition: 0.3s;}
         .pic_lst li:first-child {margin-left: 0;} /* 안쪽에만 마진이 있으므로 테두리 부분의 마진 제거*/
         .pic_lst li.item1 { background-image: url(../img/img_social_main01.jpg);}
         .pic_lst li.item2 { background-image: url(../img/img_social_main02.jpg);}
@@ -144,7 +107,7 @@
         .pic_lst li:hover { margin-top: -20px; transition: 0.5s; filter: brightness(105%); } /*호버 후 움직여서 밝기*/
         .pic_com {padding-left: 20px; padding-top: 20px; font-size: 14px;}
         .pic_tit {padding-left: 20px; padding-top: 20px; font-size: 18px;}
-        .pic_arrow {display: block; width: 110px; height: 10px; border-bottom: 1px solid white; margin-top: 20px; 
+        .pic_arrow {display: block; width: 110px; height: 10px; border-bottom: 1px solid white; margin-left: -20px; margin-top: 20px; 
             transition: 0.4s; position: relative;}
         .pic_lst li:hover .pic_arrow {margin-left: 20px;}
         .pic_arrow::after {content: ""; width: 10px; height: 10px; position: absolute; right: 0; top: 0; border-bottom: 1px solid white; 
@@ -199,41 +162,6 @@
         .sl-btn-box .btn.next { top:100px; }
         .sl-btn-box .btn.prev { top:148px; }
     </style>
-
-    <style>
-        /*푸터 구역*/
-        .ft {clear: both; width: 100%; box-shadow: 0px -10px 30px #333;}
-        .ft::after {content: ""; display: block; width: 100%; clear: both;}
-        .ft_wrap {clear: both; width: 100%; border: 1px solid #333; padding-bottom: 20px; padding-top: 20px;}
-        .ft_link {clear: both; width: 1200px; margin: 0 auto;}
-        .fnb {float: left;}
-        .fnb::after {content: ""; display: block; width: 100%; clear: both;}
-        .fnb li {float: left;}
-        .fnb li:nth-child(2):after {content: "|"; padding-left: 30px; padding-right: 30px;}
-        .snb {float: right;}
-        .snb::after {content: ""; display: block; width: 100%; clear: both;}
-        .snb li { float: left; margin-left: 14px;}
-        .fnb li {float: left;}
-        .snb li {float: left; margin-top: 8px;}
-        .snb li a { display: block; width: 34px; height: 34px; overflow: hidden; text-indent: -9999px; 
-            background-repeat: no-repeat; background-image: url("../img/ico_foot_sns.png"); border-radius: 50%;} /*text-indent: -9999px; 글씨를 안보이게 설정*/
-        .snb a.item1 {background-position: 0 0;}
-        .snb a.item2 {background-position: -34px 0;}
-        .snb a.item3 {background-position: -68px 0;}
-        .snb a.item4 {background-position: -102px 0;}
-        .snb a.item5 {background-position: -136px 0;}
-        .snb li.locate {background-image: none; width: 200px; margin-top: 0px;}
-        .snb li.locate option {display: block; height: 48px; line-height: 48px; min-height: 48px;}
-        .ft_link li {line-height: 48px;}
-        #sel {height: 34px;}
-
-        .ft_wrap2 {clear: both; width: 1200px; margin: 0 auto; padding-bottom: 30px; padding-top: 30px;}
-        .copyright {line-height: 34px;}
-        .copyright span::after {content: "|"; padding-left: 20px; padding-right: 20px;}
-        .copyright span.end::after {content: ""; padding-right: 0;}
-
-        .cp {color: #aaa; line-height: 20px;}
-    </style>
 </head>
 <body>
     <div class="wrap">
@@ -241,61 +169,61 @@
             <div class="hd_wrap">
                 <nav class="tnb"> <!-- .hd_wrap:first-child  -->
                     <ul class="menu">
-                        <li><a href="">상단1</a></li>
-                        <li><a href="">상단2</a></li>
-                        <li><a href="">상단3</a></li>
+                        <li><a href="./html/login.html">로그인</a></li>
+                        <li><a href="./html/signup.html">회원가입</a></li>
+                        <li><a href="./html/map.html">오시는길</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="hd_wrap"> <!-- .hd_wrap:first-child  -->
-                <a href="" class="logo">
+                <a href="./index.html" class="logo">
                     <img src="../img/chunjae.png" alt="">
                 </a>
                 <nav class="gnb">
                     <ul class="menu">
                         <li class="item1">
-                            <a href="" class="dp1">메인1</a>
+                            <a href="" class="dp1">회사소개</a>
                             <ul class="sub">
-                                <li><a href="">서브01</a></li>
-                                <li><a href="">서브02</a></li>
-                                <li><a href="">서브03 서브03 서브03 서브03 서브03</a></li>
-                                <li><a href="">서브04</a></li>
+                                <li><a href="./html/company.html">회사개요</a></li>
+                                <li><a href="./html/company.html">인사말</a></li>
+                                <li><a href="./html/company.html">연혁</a></li>
+                                <li><a href="./html/company.html">경영이념</a></li>
                             </ul>
                         </li>
                         <li class="item2">
-                            <a href="" class="dp1">메인2</a>
+                            <a href="" class="dp1">사업영역</a>
                             <ul class="sub">
-                                <li><a href="">서브01</a></li>
-                                <li><a href="">서브02</a></li>
-                                <li><a href="">서브03</a></li>
-                                <li><a href="">서브04</a></li>
+                                <li><a href="./html/business.html">교과서</a></li>
+                                <li><a href="./html/business.html">참고서</a></li>
+                                <li><a href="./html/business.html">건설</a></li>
+                                <li><a href="./html/business.html">스마트러닝</a></li>
                             </ul>
                         </li>
                         <li class="item3">
-                            <a href="" class="dp1">메인3</a>
+                            <a href="" class="dp1">사회공헌</a>
                             <ul class="sub">
-                                <li><a href="">서브01</a></li>
-                                <li><a href="">서브02</a></li>
-                                <li><a href="">서브03</a></li>
-                                <li><a href="">서브04</a></li>
+                                <li><a href="./html/service.html">해외</a></li>
+                                <li><a href="./html/service.html">사교육</a></li>
+                                <li><a href="./html/service.html">공교육</a></li>
+                                <li><a href="./html/service.html">학회</a></li>
                             </ul>
                         </li>
                         <li class="item4">
-                            <a href="" class="dp1">메인4</a>
+                            <a href="" class="dp1">홍보</a>
                             <ul class="sub">
-                                <li><a href="">서브01</a></li>
-                                <li><a href="">서브02</a></li>
-                                <li><a href="">서브03</a></li>
-                                <li><a href="">서브04</a></li>
+                                <li><a href="./html/marketing.html">언론보도</a></li>
+                                <li><a href="./html/marketing.html">광고</a></li>
+                                <li><a href="./html/marketing.html">수상</a></li>
+                                <li><a href="./html/marketing.html">이야기</a></li>
                             </ul>
                         </li>
                         <li class="item5">
-                            <a href="" class="dp1">메인5</a>
+                            <a href="" class="dp1">브랜드</a>
                             <ul class="sub">
-                                <li><a href="">서브01</a></li>
-                                <li><a href="">서브02</a></li>
-                                <li><a href="">서브03</a></li>
-                                <li><a href="">서브04</a></li>
+                                <li><a href="./html/brand.html">브랜드소개</a></li>
+                                <li><a href="./html/brand.html">역사</a></li>
+                                <li><a href="./html/brand.html"></a></li>
+                                <li><a href="./html/brand.html"></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -550,5 +478,7 @@
             </div>
         </footer>
     </div>
+    <!-- 문서 위로 이동 -->
+    <a href="#" class="totop">위로</a>
 </body>
 </html>

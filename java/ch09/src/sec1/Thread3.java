@@ -1,5 +1,6 @@
 package sec1;
 
+// 싱글 쓰레드
 class SMTread2 extends Thread {
     
     @Override
