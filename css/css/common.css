@@ -5,6 +5,11 @@ body, html {
     width: 100%;
     font-family: 'omyu_pretty';
     overflow-x: hidden;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 a {

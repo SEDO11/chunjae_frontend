@@ -168,4 +168,5 @@
     right: 60px;
     bottom: 30px;
     border-radius: 26px;
+    z-index: 100;
 }
