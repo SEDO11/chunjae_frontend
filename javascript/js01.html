@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 기본 01 - 변수 선언과 사용</title>
+</head>
+
+<body>
+    <div id="result">
+        <ul class="lst">
+            <li class="item1"></li>
+            <li class="item2"></li>
+            <li class="item3"></li>
+            <li class="item4"></li>
+        </ul>
+        <hr>
+        <nav>
+            <a href="">메뉴1</a>
+            <a href="">메뉴2</a>
+            <a href="">메뉴3</a>
+        </nav>
+        <ul class="lst">
+            <li class="item1"></li>
+            <li class="item2"></li>
+            <li class="item3"></li>
+            <li class="item4"></li>
+        </ul>
+    </div>
+    <div id="res2"></div>
+    <button type="button" onclick="fnc3()" id="btn1">인라인 이벤트</button>
+    <button type="button" id="btn2">DOM 탐색 이벤트</button>
+    <script>
+        // 자바 처럼 타입 지시자(int, String, ...)를 사용하지 않는다.
+        // 값을 대입하면 type 이 자동으로 변한다.
+        var data1 = '김기태';   // var는 재 선언이 가능하다.
+        let data2 = '구예진';   // let은 재 선언이 불가능 하지만 값 변경은 가능
+        const date3 = '백준철'; // const는 재 선언과 값 변경이 불가능 | 상수
+
+        // 콘솔창에 출력
+        console.log(data1);
+        console.log(data2);
+        console.log(date3);
+
+        var data1 = "천재"; // data1 재 선언
+        data2 = "홍길동"; // data2 값 변경
+
+
+        // 함수 선언
+        function fnc1() { // 함수는 호출되어야만 실행 됨
+            document.write("출력");
+        }
+
+        var fnc2 = function() {
+            alert('알림');
+            //confirm('안녕');
+        }
+
+        // 객체 정의
+        var obj = {
+            name:"김기태",
+            age:29,
+            height:173.8,
+
+            // 메소드
+            method1:function(num1) {
+                document.getElementById("res2").innerHTML = "<h2>홍길동천재</h2>";
+            }
+        }
+
+        document.getElementById("res2").innerText = obj.name + obj.height + obj.age;
+
+        // 함수 호출
+        fnc2();
+        fnc1();
+
+        // 메소드 호출
+        obj.method1();
+
+        function fnc3() {
+            // elements 정보 불러옴
+            var result = document.getElementById("result"); // id 로 접근
+            var el = document.getElementsByClassName("lst"); // 클래스로 접근, 배열로 생성 | el[0], el[1]
+            var a = document.getElementsByTagName("a"); // tag 로 접근, 배열로 생성 | a[0], a[1], a[2]
+            var res2 = document.querySelector("#result"); // result와 같음
+            var item = document.querySelectorAll(".lst li"); // 배열로 생성 | item[0]~item[7] 
+            
+            // result.innerText = data2;
+            for(var i=0; i<item.length; i++) { // 아이템의 요소 수 만큼 반복
+                item[i].innerHTML = "<strong>"+date3+"</strong>";
+            }
+        }
+
+        // js 이벤트를 적용할 경우에는 이러한 방식을 사용하는 걸 추천
+        // 이렇게 해야 모바일 웹에도 적용이 된다.
+        var btn2 = document.getElementById("btn2");
+        btn2.addEventListener("click", function() {fnc3()});
+
+    </script>
+</body>
+
+</html>

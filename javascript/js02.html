@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 기본 02 - 출력의 방향</title>
+</head>
+<body>
+    <button type="button" id="btn1" onclick="fnc1()">문서에 출력</button>   <!-- write() -->
+    <button type="button" id="btn2" onclick="fnc2()">요소에 출력</button>   
+    <button type="button" id="btn3" onclick="fnc3()">콘솔에 출력</button>   <!-- console.log() -->
+    <button type="button" id="btn4" onclick="fnc4()">알림창 출력</button>   <!-- alert -->
+    <button type="button" id="btn5" onclick="fnc5()">확인창 출력</button>   <!-- confirm -->
+    <button type="button" id="btn6" onclick="fnc6()">입력창 출력</button>
+    <a href="javascript:;" id="btn7" onclick="fnc7()">링크 버튼1</a>                  <!-- href="javascript:;" 이렇게 처리하면 자바 스크립트 실행 -->                              
+    <a href="javascript:none;" title="링크 데이터" id="btn8" onclick="fnc8()">링크 버튼2</a> <!-- none 아니면 값을 안 주면 된다. -->
+    <hr>
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <div id="res3"></div>
+    <script>
+        var fnc1 = function() { document.write("<h2>문서에 출력</h2>"); } // 태그 포함 가능
+        var fnc2 = function() {document.getElementById("res1").innerHTML = "<h2>요소에 출력</h2>";}
+        var fnc3 = function() {console.log("콘솔에 출력")}
+        var fnc4 = function() {alert("알림창\n출력")}
+        var fnc5 = function() {
+            if(confirm("확인창 확인")) {
+                document.getElementById("res2").innerHTML = "<em>확인을 누르셨습니다.</em>";
+            } else {
+                document.getElementById("res2").innerHTML = "<ins>취소를 누르셨습니다.</ins>";
+            }
+        }
+        var fnc6 = function() {
+            var res3 = document.getElementById("res3");
+            var name = prompt("이름 : ");
+            var age = prompt("나이 : ");
+            var str = "<ul>";
+
+            str += "<li> 이름 : " + name + "</li>";
+            str += "<li> 나이 : " + age + "</li>";
+            str += "</ul>";
+
+            res3.innerHTML = str;
+            res3.style.color = "red"; // 스타일 바꾸기, DOM 컨트롤
+        }
+        var fnc7 = function() {alert("인라인 이벤트 7");}
+        var fnc8 = function() {window.open("js01.html");}
+    </script>
+</body>
+</html>
