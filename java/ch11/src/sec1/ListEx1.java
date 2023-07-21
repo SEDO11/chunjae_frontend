@@ -1,7 +1,6 @@
 package sec1;
 
 import java.util.ArrayList;
-import java.util.List;
 
 // ArrayList -> 각각의 값을 하나로 그룹화 해서 저장할 때 사용
 
