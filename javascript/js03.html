@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 기본 03 - 연산문</title>
+</head>
+<body>
+    <div id="display"></div>
+    <hr>
+    숫자 1 : <input type="number" size="5" min="1" max="500" id="num1" required autofocus><br>
+    숫자 2 : <input type="number" size="5" min="1" max="500" id="num2" required>
+    <hr>
+    <button id="btn1" onclick="cal(1)">더하기</button>
+    <button id="btn2" onclick="cal(2)">빼기</button>
+    <button id="btn3" onclick="cal(3)">곱하기</button>
+    <button id="btn4" onclick="cal(4)">나누기</button>
+    <script>
+        function cal(ck) {
+            var n1 = document.getElementById("num1").value;     // value를 이용해 해당 아이디의 input의 값 추출
+            var n2 = document.getElementById("num2").value;     // value를 이용해 해당 아이디의 input의 값 추출
+            var display = document.getElementById("display");   // 출력될 div 정보 추출
+
+            if(n1==='' || n1==='0') {
+                alert('공백이 포함되어 있거나 숫자가 0입니다.')
+                return false; // 여기서 멈춤
+            }
+
+            if(n2==='' || n2==='0') {
+                alert('공백이 포함되어 있거나 숫자가 0입니다.')
+                return false; // 여기서 멈춤
+            }
+
+            /*console.log(n1);
+            console.log(n2);*/
+
+            if(ck === 1 ) { // === 는 타입 까지 일치해야 한다.
+                var result = Number(n1) + Number(n2); // 추출된 값의 타입을 숫자형으로 변환해서 연산
+            } else if (ck === 2) {
+                var result = Number(n1) - Number(n2); // 추출된 값의 타입을 숫자형으로 변환해서 연산
+            } else if (ck === 3) {
+                var result = Number(n1) * Number(n2); // 추출된 값의 타입을 숫자형으로 변환해서 연산
+            } else if (ck === 4) {
+                var result = Number(n1) / Number(n2); // 추출된 값의 타입을 숫자형으로 변환해서 연산
+            }
+
+            display.innerText = result; // 출력
+
+            // boolean 타입 끼리 덧셈 연산을 할 경우 숫자형으로 나온다.
+            // 문자열을 / 연산을 하면 NaN이 나온다
+            // js는 숫자/0 을 하는 경우 무한대가 나온다.
+        }
+    </script>
+</body>
+</html>
