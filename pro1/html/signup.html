@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="IE=edge"> <!-- 익스프로어 일 경우 엣지를 사용하라고 안내-->
+    <meta http-equiv="author" content="홍길동"> <!-- 문서의 제작사 -->
+    <meta http-equiv="publisher" content="천재교육 콘텐츠 제작팀"> <!-- 문서의 저자 정의 -->
+    <meta http-equiv="copyright" content="copyright@chunjae.co.kr"> <!-- 저작권 명시 -->
+    <title>천재교육 로그인</title>
+
+    <!-- 검색엔진 최적화(SEO) -->
+    <meta name="subject" content="천재교육, 천재IT교육센터"> <!-- 페이지 주제 지정 http-equiv 로 지정해도 상관 무 -->
+    <meta name="keywords" content="천재교육, 천재 IT, 교육 교재, 교과서, 스마트 교육"> <!-- 검색 단어 지정 -->
+    <!-- 검색 결과에 표시되는 문자 지정-->
+    <meta name="description" content="천재교육은 교과서 제작, 교육 교재 제작, 초등, 중등, 고등 교육에 대한 교재와 교육을 실시하는 회사입니다.">
+    <meta name="robots" content="index, follow">
+
+    <!-- 오픈 그래프 -->
+    <!-- 페이지를 공유할 때 미리보기로 보여주는 코드 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="천재교육">
+    <meta property="og:description" content="앞선 생각으로 더 큰 미래의 교육을 준비하는 기업">
+    <meta property="og:image" content="../img/img1.jpg">
+    <meta property="og:url" content="../img/img1.jpg">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../img/logo.ico">
+    <!-- 애플 계열 모바일 -->
+    <link rel="apple-touch-icon-precomposed" href="../img/logo_64.png">
+    <!-- IE 계열 브라우저 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./images/logo_48.png">
+    <!-- 파이어폭스, 오페라, 또는 구형 크롬/사파리 -->
+    <link rel="icon" href="./images/logo_16.png" sizes="16x16">
+    <link rel="icon" href="./images/logo_32.png" sizes="32x32">
+    <link rel="icon" href="./images/logo_48.png" sizes="48x48">
+    <link rel="icon" href="./images/logo_64.png" sizes="64x64">
+
+    <!-- 플러그인 연결-->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <!-- 스타일 초기화 -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- 웹 폰트 -->
+    <link rel="stylesheet" href="../css/font.css">
+
+    <!-- css 모듈화 -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/hd.css">
+    <link rel="stylesheet" href="../css/ft.css">
+
+    <style>
+        /* 본문 영역 스타일 */  
+        .contents { clear:both; min-height: 100vh; background-image: url("../../img/login.jpg");
+            background-repeat: no-repeat; background-position: center -250px; }
+        .contents::after { content:""; clear:both; display:block; width:100%; }
+        .page {clear: both; width: 100vw; height: 100vh; position: relative;}
+        .page::after {content: ""; display: block; width: 100vw; clear: both;}
+        .page_wrap { clear: both; width: 1200px; height: auto; margin: 0 auto;}
+        .page_tit {font-size: 48px; text-align: center; padding-top: 1.75em; color: white;
+            padding-top: 2.4rem;}
+        
+        .breadcrumb {clear: both; width: 1200px; margin: 0 auto; text-align: right; color: white; 
+            padding-top: 10px; padding-bottom: 2px; font-size: 24px;}
+        .breadcrumb a { color: white;}
+
+        .frm {clear: both; width: 1200px; margin: 0 auto; padding-top: 80px;}
+
+        .tb1 {display: table; width: 500px; margin: 0 auto;}
+        .tb1 td {width: 500px; line-height: 48px; padding-top: 24px; padding-bottom: 24px;}
+
+        .indata {display: inline-block; width: 500px; height: 48px; line-height: 48px; text-indent: 14px;
+            font-size: 18px;}
+        
+        .inbtn {display: block; min-width: 140px; padding-left: 24px; padding-right: 24px; 
+            text-align: center; line-height: 48px; background-color: #333; color: white; font-size: 18px;
+            border-radius: 30px;}
+
+        .inbtn:first-child {float: left;}
+        .inbtn:last-child {float: right;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="hd_wrap">
+                <nav class="tnb"> <!-- .hd_wrap:first-child  -->
+                    <ul class="menu">
+                        <li><a href="./login.html">로그인</a></li>
+                        <li><a href="./signup.html">회원가입</a></li>
+                        <li><a href="./map.html">오시는길</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hd_wrap"> <!-- .hd_wrap:first-child  -->
+                <a href="../index.html" class="logo">
+                    <img src="../../img/chunjae.png" alt="">
+                </a>
+                <nav class="gnb">
+                    <ul class="menu">
+                        <li class="item1">
+                            <a href="" class="dp1">회사소개</a>
+                            <ul class="sub">
+                                <li><a href="./html/company.html">회사개요</a></li>
+                                <li><a href="./html/company.html">인사말</a></li>
+                                <li><a href="./html/company.html">연혁</a></li>
+                                <li><a href="./html/company.html">경영이념</a></li>
+                            </ul>
+                        </li>
+                        <li class="item2">
+                            <a href="" class="dp1">사업영역</a>
+                            <ul class="sub">
+                                <li><a href="./html/business.html">교과서</a></li>
+                                <li><a href="./html/business.html">참고서</a></li>
+                                <li><a href="./html/business.html">건설</a></li>
+                                <li><a href="./html/business.html">스마트러닝</a></li>
+                            </ul>
+                        </li>
+                        <li class="item3">
+                            <a href="" class="dp1">사회공헌</a>
+                            <ul class="sub">
+                                <li><a href="./html/service.html">해외</a></li>
+                                <li><a href="./html/service.html">사교육</a></li>
+                                <li><a href="./html/service.html">공교육</a></li>
+                                <li><a href="./html/service.html">학회</a></li>
+                            </ul>
+                        </li>
+                        <li class="item4">
+                            <a href="" class="dp1">홍보</a>
+                            <ul class="sub">
+                                <li><a href="./html/marketing.html">언론보도</a></li>
+                                <li><a href="./html/marketing.html">광고</a></li>
+                                <li><a href="./html/marketing.html">수상</a></li>
+                                <li><a href="./html/marketing.html">이야기</a></li>
+                            </ul>
+                        </li>
+                        <li class="item5">
+                            <a href="" class="dp1">브랜드</a>
+                            <ul class="sub">
+                                <li><a href="./html/brand.html">브랜드소개</a></li>
+                                <li><a href="./html/brand.html">역사</a></li>
+                                <li><a href="./html/brand.html"></a></li>
+                                <li><a href="./html/brand.html"></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="contents">
+            <div class="breadcrumb">
+                <p><a href="../index.html">HOME</a> &gt; <span>회원가입</span></p>
+            </div>
+            <section class="page" id="page1">
+                <h2 class="page_tit">회원가입</h2>
+                <form action="" id="login_frm" class="frm">
+                    <table class="tb1">
+                        <tbody>
+                            <tr>
+                                <td><input type="text" id="id" name="id" class="indata" placeholder="아이디" required autofocus></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="name" name="name" class="indata" placeholder="이름" required></td>
+                            </tr>
+                            <tr>
+                                <td><input type="password" id="pw" name="pw" class="indata" placeholder="비밀번호" required></td>
+                            </tr>
+                            <tr>
+                                <td><input type="password" id="pw2" name="pw2" class="indata" placeholder="비밀번호 확인" required></td>
+                            </tr>
+                            <tr>
+                                <td><input type="date" id="birth" name="birth" class="indata" placeholder="생일" required></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" value="로그인" class="inbtn">
+                                    <input type="reset" value="취소" class="inbtn">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </section>
+        </div>
+        <footer class="ft">
+            <nav class="ft_link">
+                <ul class="fnb">
+                    <li class="ft_logo"></li>
+                    <li><a href="">제휴문의</a></li>
+                    <li><a href="">이메일 무단 수집 거부</a></li>
+                </ul>
+                <ul class="snb">
+                    <li><a target="_blank" class="item1" href="https://www.facebook.com/ChunjaeEdu/">페이스북</a></li>
+                    <li><a target="_blank" class="item2" href="https://cafe.naver.com/tunemom">카페</a></li>
+                    <li><a target="_blank" class="item3" href="https://blog.naver.com/storychunjae">블로그</a></li>
+                    <li><a target="_blank" class="item4" href="https://www.youtube.com/channel/UCMHZZaDM1kJqJUkQ6jFQPeQ/featured">유튜브</a></li>
+                    <li><a target="_blank" class="item5" href="https://www.instagram.com/chunjae_edu/">인스타</a></li>
+                    <li class="locate">
+                        <select name="sel" id="sel" onchange="loc()"> <!-- onchange="" option의 값이 바뀌는 경우 -->
+                            <option value="">Family link</option>
+                            <option value="https://chunjaetext.co.kr/">천재 교과서</option>
+                            <option value="http://www.milkt.co.kr/Main/Main_new">밀크T</option>
+                            <option value="https://e-test.chunjae.co.kr/">온라인 성취도 평가</option>
+                            <option value="http://www.edumon.co.kr/intro/index.asp">에듀몬</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+            <script>
+                function loc () {
+                    let url = document.getElementById("sel").value;
+                    // location.href=url; // 현재 창에 출력
+                    if(url!="") {
+                        let win = window.open(url) // 새 창에 출력
+                    }
+                }
+            </script>
+            <div class="ft_wrap2">
+                <p class="copyright">
+                    <span>(주) 천재교육</span>
+                    <span>서울시 금천구 가산로 9길 54</span>
+                    <span>대표자 강희철</span>
+                    <span>사업자등록번호 119-81-19350</span>
+                    <span>통신판매신고번호 제18-439호</span>
+                    <span class="end">부가통신사업신고 016712</span>
+                </p>
+                <p class="copyright">
+                    <span>천재교육 1577-0902</span>
+                    <span>리틀천재 1577-0218</span>
+                    <span>월간우등생학습 1577-6226</span>
+                    <span>밀크T초등 1577-1533</span>
+                    <span>밀크T중학 1522-5533</span>
+                    <span class="end">밀크T고등 1522-5533</span>
+                </p>
+                <p class="cp">
+                    COPYRIGHT 1981-2023 CHUNJAE EDUCATION INC. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!-- 문서 위로 이동 -->
+    <a href="#" class="totop">위로</a>
+</body>
+</html>

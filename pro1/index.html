@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="IE=edge"> <!-- 익스프로어 일 경우 엣지를 사용하라고 안내-->
+    <meta http-equiv="author" content="홍길동"> <!-- 문서의 제작사 -->
+    <meta http-equiv="publisher" content="천재교육 콘텐츠 제작팀"> <!-- 문서의 저자 정의 -->
+    <meta http-equiv="copyright" content="copyright@chunjae.co.kr"> <!-- 저작권 명시 -->
+    <title>천재교육</title>
+
+    <!-- 검색엔진 최적화(SEO) -->
+    <meta name="subject" content="천재교육, 천재IT교육센터"> <!-- 페이지 주제 지정 http-equiv 로 지정해도 상관 무 -->
+    <meta name="keywords" content="천재교육, 천재 IT, 교육 교재, 교과서, 스마트 교육"> <!-- 검색 단어 지정 -->
+    <!-- 검색 결과에 표시되는 문자 지정-->
+    <meta name="description" content="천재교육은 교과서 제작, 교육 교재 제작, 초등, 중등, 고등 교육에 대한 교재와 교육을 실시하는 회사입니다.">
+    <meta name="robots" content="index, follow">
+
+    <!-- 오픈 그래프 -->
+    <!-- 페이지를 공유할 때 미리보기로 보여주는 코드 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="천재교육">
+    <meta property="og:description" content="앞선 생각으로 더 큰 미래의 교육을 준비하는 기업">
+    <meta property="og:image" content="../img/img1.jpg">
+    <meta property="og:url" content="../img/img1.jpg">
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../img/logo.ico">
+    <!-- 애플 계열 모바일 -->
+    <link rel="apple-touch-icon-precomposed" href="../img/logo_64.png">
+    <!-- IE 계열 브라우저 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./images/logo_48.png">
+    <!-- 파이어폭스, 오페라, 또는 구형 크롬/사파리 -->
+    <link rel="icon" href="./images/logo_16.png" sizes="16x16">
+    <link rel="icon" href="./images/logo_32.png" sizes="32x32">
+    <link rel="icon" href="./images/logo_48.png" sizes="48x48">
+    <link rel="icon" href="./images/logo_64.png" sizes="64x64">
+
+    <!-- 플러그인 연결-->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <!-- 스타일 초기화 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 웹 폰트 -->
+    <link rel="stylesheet" href="./css/font.css">
+
+    <!-- css 모듈화 -->
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/hd.css">
+    <link rel="stylesheet" href="./css/ft.css">
+
+    <style>
+        /* 본문 영역 스타일 */  
+        .contents { clear:both; }
+        .contents::after { content:""; clear:both; display:block; width:100%; }
+        .vs { clear:both; width:100%; min-height:400px; background-color: white; 
+        position:relative; overflow: hidden;}
+
+        .img_box { position:relative; width: 100%; height:600px; overflow:hidden; }
+        .img_box li { visibility:hidden; opacity:0;  transition-duration:0.7s;
+            transition-delay:0.1s;    width:100%; height:600px;  }
+        .img_box li .bg_box { width:100vw; height:600px; background-repeat: no-repeat; 
+        background-position:center center; background-size:cover; position:absolute;
+        left: 0; top: 0; z-index:5; }
+        .img_box li.active .bg_box { z-index:6; }
+        .img_box li.item1 .bg_box { background-image: url("../img/cj1.jpg"); }
+        .img_box li.item2 .bg_box { background-image: url("../img/cj2.jpg"); }
+        .img_box li .vs_tit { position:absolute; top:180px; left:100px; z-index:10;
+        font-weight: 300; font-size: 60px; line-height: 1.3; }
+        .img_box li .vs_tit strong { font-weight: 500; }
+        .img_box li.active { visibility: visible; opacity: 1; }
+
+        .vs_tit {font-size: 60px; color: white;}
+        .btn_box li .vs_btn {display: block; width: 12px; height: 12px; background-color: rgba(255, 255, 255, 0.8); 
+            border: 2px solid white; position: absolute; top: 100px; left: 100px; z-index: 14; cursor: pointer;
+            border-radius: 50%;}
+        .btn_box li.item2 .vs_btn {left: 132px;}
+        .btn_box li.active .vs_btn {background-color: white; border: 2px solid #333;}
+        .vs_ra {display: none;} 
+        
+        .play_btn {display: block; width: 12px; height: 12px; position: absolute; top: 98px;
+            left: 164px; z-index: 14; cursor: pointer; color: white; border: 0; background-color: transparent;
+            font-weight: 900;}
+        .play_btn:after { content:"||"; }
+        .play_btn.active:after { content:"▶"; }
+
+
+        .page {clear: both; width: 100vw; height: 100vh; position: relative;}
+        .page::after {content: ""; display: block; width: 100vw; clear: both;}
+        .page_wrap { clear: both; width: 1200px; height: auto; margin: 0 auto;}
+        .page_tit {font-size: 48px; text-align: center; padding-top: 50px; padding-top: 0.5em;}
+
+        #page1 {background-color: #f1f2f1; background-image: url("../img/bg_social_ptn01.png"); background-position: 15vw 75vh;
+            background-repeat: no-repeat; padding-top: 50px;}
+
+        .pic_lst {clear: both; width: 1200px; margin: 150px auto;}
+        .pic_lst li {width: 280px; height: 400px; margin-left: 26px; float: left; background-repeat: no-repeat;
+            background-position: center center; background-size: cover; filter: blur(1px) brightness(80%); box-shadow: 12px 12px 12px #999;}
+        .pic_lst li a { display: block; width: 256px; height: 376px; margin: 11px;}
+        .pic_lst li a:hover {border: 1px solid #fff; transition: 0.3s;}
+        .pic_lst li:first-child {margin-left: 0;} /* 안쪽에만 마진이 있으므로 테두리 부분의 마진 제거*/
+        .pic_lst li.item1 { background-image: url("../img/img_social_main01.jpg");}
+        .pic_lst li.item2 { background-image: url("../img/img_social_main02.jpg");}
+        .pic_lst li.item3 { background-image: url("../img/img_social_main03.jpg");}
+        .pic_lst li.item4 { background-image: url("../img/img_social_main04.jpg");}
+        .pic_lst li:hover { margin-top: -20px; transition: 0.5s; filter: brightness(105%); } /*호버 후 움직여서 밝기*/
+        .pic_com {padding-left: 20px; padding-top: 20px; font-size: 14px;}
+        .pic_tit {padding-left: 20px; padding-top: 20px; font-size: 18px;}
+        .pic_arrow {display: block; width: 110px; height: 10px; border-bottom: 1px solid white; margin-left: -20px; margin-top: 20px; 
+            transition: 0.4s; position: relative;}
+        .pic_lst li:hover .pic_arrow {margin-left: 20px;}
+        .pic_arrow::after {content: ""; width: 10px; height: 10px; position: absolute; right: 0; top: 0; border-bottom: 1px solid white; 
+            display: block; clear: both; transform-origin: 100% 100%; transform: rotate(45deg); display: none;} /* 화살표 생성 */
+        .pic_lst li:hover .pic_arrow::after {display: block;} /*처음엔 안보였다가 호버하면 화살표 생성 */
+
+        #page2 {background-color: white;}
+        #page2 .page_wrap {width: 100%;}
+
+        
+        .slide_box {clear: both; width:calc(100vw - 350px); height: 400px; margin-left: 350px;
+            -ms-overflow-style: none; scrollbar-width: none;} /*float:right 보다는 margin-left를 이용하자*/
+        .slide_box:-webkit-scrollbar {display: none;}
+
+        .page_com{text-align: center; padding-bottom: 30px; padding-top: 30px;}
+        .card_lst {width: 4000px;}
+
+        .card_lst > li {width: 320px; height: 400px;  float: left; margin-right: 50px; box-shadow: 5px 5px 30px #888; 
+            border-radius: 6px; overflow: hidden;}
+        .card_lst > li:first-child {margin-left: 30px;}
+        .card_lst li a {display: block; width: 320px; height: 220px;}
+        .card_lst li .thumb_box {width: 320px; height: 220px; background-repeat: no-repeat; 
+            background-position: center center; background-size: cover;}
+        .card_lst li.item2 .thumb_box {background-image: url("../img/t1.jpg");}
+        .card_lst li.item3 .thumb_box {background-image: url("../img/t2.jpg");}
+        .card_lst li.item4 .thumb_box {background-image: url("../img/t3.jpg");}
+        .card_lst li.item5 .thumb_box {background-image: url("../img/t4.jpg");}
+        .card_lst li.item6 .thumb_box {background-image: url("../img/t5.jpg");}
+        .card_lst li.item7 .thumb_box {background-image: url("../img/t6.jpg");}
+
+        .thumb_tit { padding-left: 0; height: 42px; box-sizing: border-box; font-size: 14px; color: #333; padding: 2rem; text-overflow: ellipsis; 
+            overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;}
+
+        .ico_box {height: 30px; clear: both; margin-top: 30px; border-top: 1px solid #eee; padding-top: 30px;}
+        .ico {display: block; width: 35px; height: 30px; background-image: url("../img/icon_all_resize.png"); 
+            background-repeat: no-repeat; float: left; margin-left: 14px;} /*전체 아이콘*/
+        .ico.item1 {background-position: -70px -60px;} /*네이버 블로그 아이콘*/
+        .ico.item2 {background-position: -140px -120px;} /*인스타 그램 아이콘*/
+        .thumb_date {float: right; margin-right: 14px; line-height: 2em;}
+
+        .cate_tit {padding-left: 32px; font-size: 36px; line-height: 1.6em; 
+            padding-top: 24px; padding-bottom: 24px;}
+        .cate_lst li { border-top: 1px solid #eee; margin-left: 14px; margin-right: 14px; 
+            padding-top: 32px; height: 90px;}
+        .cate_tit li a {display: block;}
+        .bd_content {width: auto; padding-right: 24px;}
+        .bd_date {padding-top: 18px;}
+
+        .sl-btn-box .btn {display: block; width: 48px; height: 48px; font-size: 32px; 
+            color: white; background-color: #333; text-align: center; line-height: 48px;
+        font-weight: 700px; cursor: pointer; position: absolute; margin-top: 200px;}
+        .sl-btn-box .btn.next { top:100px; }
+        .sl-btn-box .btn.prev { top:148px; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <div class="hd_wrap">
+                <nav class="tnb"> <!-- .hd_wrap:first-child  -->
+                    <ul class="menu">
+                        <li><a href="./html/login.html">로그인</a></li>
+                        <li><a href="./html/signup.html">회원가입</a></li>
+                        <li><a href="./html/map.html">오시는길</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hd_wrap"> <!-- .hd_wrap:first-child  -->
+                <a href="./index.html" class="logo">
+                    <img src="../img/chunjae.png" alt="">
+                </a>
+                <nav class="gnb">
+                    <ul class="menu">
+                        <li class="item1">
+                            <a href="./html/company.html" class="dp1">회사소개</a>
+                            <ul class="sub">
+                                <li><a href="./html/company.html">회사개요</a></li>
+                                <li><a href="./html/company.html">인사말</a></li>
+                                <li><a href="./html/company.html">연혁</a></li>
+                                <li><a href="./html/company.html">경영이념</a></li>
+                            </ul>
+                        </li>
+                        <li class="item2">
+                            <a href="" class="dp1">사업영역</a>
+                            <ul class="sub">
+                                <li><a href="./html/business.html">교과서</a></li>
+                                <li><a href="./html/business.html">참고서</a></li>
+                                <li><a href="./html/business.html">건설</a></li>
+                                <li><a href="./html/business.html">스마트러닝</a></li>
+                            </ul>
+                        </li>
+                        <li class="item3">
+                            <a href="" class="dp1">사회공헌</a>
+                            <ul class="sub">
+                                <li><a href="./html/service.html">해외</a></li>
+                                <li><a href="./html/service.html">사교육</a></li>
+                                <li><a href="./html/service.html">공교육</a></li>
+                                <li><a href="./html/service.html">학회</a></li>
+                            </ul>
+                        </li>
+                        <li class="item4">
+                            <a href="" class="dp1">홍보</a>
+                            <ul class="sub">
+                                <li><a href="./html/marketing.html">언론보도</a></li>
+                                <li><a href="./html/marketing.html">광고</a></li>
+                                <li><a href="./html/marketing.html">수상</a></li>
+                                <li><a href="./html/marketing.html">이야기</a></li>
+                            </ul>
+                        </li>
+                        <li class="item5">
+                            <a href="" class="dp1">브랜드</a>
+                            <ul class="sub">
+                                <li><a href="./html/brand.html">브랜드소개</a></li>
+                                <li><a href="./html/brand.html">역사</a></li>
+                                <li><a href="./html/brand.html"></a></li>
+                                <li><a href="./html/brand.html"></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="contents">
+            <figure class="vs">
+                <ul class="img_box">
+                    <li class="item1 active">
+                        <input type="radio" name="vs_ra" id="vs_ra1" class="vs_ra" checked>
+                        <div class="bg_box"></div>
+                        <h2 class="vs_tit">“나눔의 힘! 실천의 힘!”<br>
+                            <strong>작은 따뜻함으로 세상을 <br>바꿉니다</strong>
+                    </li>
+                    <li class="item2">
+                        <input type="radio" name="vs_ra" id="vs_ra2" class="vs_ra">
+                        <div class="bg_box"></div>
+                        <h2 class="vs_tit">교육에 대한 끊임없는 도전<br>
+                            <strong>행복한 내일을 함께 합니다</strong></h2>
+                    </li>
+                </ul>
+                <ul class="btn_box">
+                    <li class="item1 active"><label for="vs_btn1" class="vs_btn"></label></li>
+                    <li class="item2"><label for="vs_btn2" class="vs_btn"></label></li>
+                </ul>
+                <button type="button" class="play_btn"></button>
+            </figure>
+            <script>
+                $(function(){
+                    $(".btn_box li .vs_btn").click(function(){
+                        var par = $(this).parents("li").index();
+                        $(".img_box li").removeClass("active");
+                        $(".img_box li").eq(par).addClass("active");
+                        $(".btn_box li").removeClass("active");
+                        $(".btn_box li").eq(par).addClass("active");
+                    });
+                    var sw = 1;
+                    var int1 = setInterval(function(){
+                        if(sw==1){
+                            autoplay(1);
+                            sw = 0;
+                        } else {
+                            autoplay(0);
+                            sw = 1;
+                        }
+                    }, 1500);
+
+                    function autoplay(n){
+                        $(".img_box li").removeClass("active");
+                        $(".img_box li").eq(n).addClass("active");
+                        $(".btn_box li").removeClass("active");
+                        $(".btn_box li").eq(n).addClass("active");
+                    }
+    
+                    $(".play_btn").click(function(){
+                        if($(this).hasClass("active")){
+                            $(this).removeClass("active");
+                            sw = 1;
+                            int1 = setInterval(function(){
+                                if(sw==1){
+                                    autoplay(1);
+                                    sw = 0;
+                                } else {
+                                    autoplay(0);
+                                    sw = 1;
+                                }
+                            }, 3500);
+                        } else {
+                            $(this).addClass("active");
+                            sw = 0;
+                            clearInterval(int1);
+                        }
+                    });
+                });    
+                </script>
+
+            <section class="page" id="page1">
+                <div class="page_wrap">
+                    <h2 class="page_tit">페이지 제목1</h2>
+                    <!-- ul.pic_lst>li.item$*4>a>p.pic_com{설명}+h3.pic_tit{제목}+span.pic_arrow -->
+                    <ul class="pic_lst">
+                        <li class="item1">
+                            <a href="">
+                                <p class="pic_com">설명</p>
+                                <h3 class="pic_tit">제목</h3>
+                                <span class="pic_arrow"></span>
+                            </a>
+                        </li>
+                        <li class="item2">
+                            <a href="">
+                                <p class="pic_com">설명</p>
+                                <h3 class="pic_tit">제목</h3>
+                                <span class="pic_arrow"></span>
+                            </a>
+                        </li>
+                        <li class="item3">
+                            <a href="">
+                                <p class="pic_com">설명</p>
+                                <h3 class="pic_tit">제목</h3>
+                                <span class="pic_arrow"></span>
+                            </a>
+                        </li>
+                        <li class="item4">
+                            <a href="">
+                                <p class="pic_com">설명</p>
+                                <h3 class="pic_tit">제목</h3>
+                                <span class="pic_arrow"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="page" id="page2">
+                <div class="page_wrap">
+                    <h2 class="page_tit">페이지 제목2</h2>
+                    <p class="page_com">페이지 설명</p>
+                    <div class="sl-btn-box">
+                        <button type="button" class="btn next">&gt;</button>
+                        <button type="button" class="btn prev">&lt;</button>
+                    </div>
+                    <!-- div.slide_box>ul.card_lst>li.item$*7>a>div.thumb_box+p.thumb_tit{썸네일제목$}+(div.ico_box>span.ico_item+span{아이콘$}.thumb_date{2023-07-18}) -->
+                    <div class="slide_box">
+                        <ul class="card_lst">
+                            <li class="item1">
+                                <a href="">
+                                    <h3 class="cate_tit">썸네일제목2</h3>
+                                    <ul class="cate_lst">
+                                        <!--<li>운필력 키우는 한글 글쓰기, 유아학습지로 창의력과 표현력 기른다</li>
+                                        <li></li>-->
+                                    </ul>
+                                </a>
+                            </li>
+                            <li class="item2">
+                                <a href="">
+                                    <div class="thumb_box"></div>
+                                    <p class="thumb_tit">썸네일제목2</p>
+                                    <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
+                                </a>
+                            </li>
+                            <li class="item3">
+                                <a href="">
+                                    <div class="thumb_box"></div>
+                                    <p class="thumb_tit">썸네일제목3</p>
+                                    <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
+                                </a>
+                            </li>
+                            <li class="item4">
+                                <a href="">
+                                    <div class="thumb_box"></div>
+                                    <p class="thumb_tit">썸네일제목4</p>
+                                    <div class="ico_box"><span class="ico item2"></span><span class="thumb_date">2023-07-18</span></div>
+                                </a>
+                            </li>
+                            <li class="item5">
+                                <a href="">
+                                    <div class="thumb_box"></div>
+                                    <p class="thumb_tit">썸네일제목5</p>
+                                    <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
+                                </a>
+                            </li>
+                            <li class="item6">
+                                <a href="">
+                                    <div class="thumb_box"></div>
+                                    <p class="thumb_tit">썸네일제목6</p>
+                                    <div class="ico_box"><span class="ico item2"></span><span class="thumb_date">2023-07-18</span></div>
+                                </a>
+                            </li>
+                            <li class="item7">
+                                <a href="">
+                                    <div class="thumb_box"></div>
+                                    <p class="thumb_tit">썸네일제목7</p>
+                                    <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <script>
+                $(function(){
+                    $(".sl-btn-box .btn.next").click(function(){
+                        var ln = parseInt($(".card_lst").css("margin-left"));
+                        if(ln>-1110) {
+                            var mv = ln - 370;
+                            $(".card_lst").not(":animated").animate({"margin-left":mv+"px"});
+                        }
+                    });
+                    $(".sl-btn-box .btn.prev").click(function(){
+                        var ln = parseInt($(".card_lst").css("margin-left"));
+                        if(ln<0){
+                            var mv = ln + 370;
+                            $(".card_lst").not(":animated").animate({"margin-left":mv+"px"});
+                        }
+                    });
+                });    
+            </script>
+        </div>
+        <footer class="ft">
+            <nav class="ft_link">
+                <ul class="fnb">
+                    <li class="ft_logo"></li>
+                    <li><a href="">제휴문의</a></li>
+                    <li><a href="">이메일 무단 수집 거부</a></li>
+                </ul>
+                <ul class="snb">
+                    <li><a target="_blank" class="item1" href="https://www.facebook.com/ChunjaeEdu/">페이스북</a></li>
+                    <li><a target="_blank" class="item2" href="https://cafe.naver.com/tunemom">카페</a></li>
+                    <li><a target="_blank" class="item3" href="https://blog.naver.com/storychunjae">블로그</a></li>
+                    <li><a target="_blank" class="item4" href="https://www.youtube.com/channel/UCMHZZaDM1kJqJUkQ6jFQPeQ/featured">유튜브</a></li>
+                    <li><a target="_blank" class="item5" href="https://www.instagram.com/chunjae_edu/">인스타</a></li>
+                    <li class="locate">
+                        <select name="sel" id="sel" onchange="loc()"> <!-- onchange="" option의 값이 바뀌는 경우 -->
+                            <option value="">Family link</option>
+                            <option value="https://chunjaetext.co.kr/">천재 교과서</option>
+                            <option value="http://www.milkt.co.kr/Main/Main_new">밀크T</option>
+                            <option value="https://e-test.chunjae.co.kr/">온라인 성취도 평가</option>
+                            <option value="http://www.edumon.co.kr/intro/index.asp">에듀몬</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+            <script>
+                function loc () {
+                    let url = document.getElementById("sel").value;
+                    // location.href=url; // 현재 창에 출력
+                    if(url!="") {
+                        let win = window.open(url) // 새 창에 출력
+                    }
+                }
+            </script>
+            <div class="ft_wrap2">
+                <p class="copyright">
+                    <span>(주) 천재교육</span>
+                    <span>서울시 금천구 가산로 9길 54</span>
+                    <span>대표자 강희철</span>
+                    <span>사업자등록번호 119-81-19350</span>
+                    <span>통신판매신고번호 제18-439호</span>
+                    <span class="end">부가통신사업신고 016712</span>
+                </p>
+                <p class="copyright">
+                    <span>천재교육 1577-0902</span>
+                    <span>리틀천재 1577-0218</span>
+                    <span>월간우등생학습 1577-6226</span>
+                    <span>밀크T초등 1577-1533</span>
+                    <span>밀크T중학 1522-5533</span>
+                    <span class="end">밀크T고등 1522-5533</span>
+                </p>
+                <p class="cp">
+                    COPYRIGHT 1981-2023 CHUNJAE EDUCATION INC. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!-- 문서 위로 이동 -->
+    <a href="#" class="totop">위로</a>
+</body>
+</html>
