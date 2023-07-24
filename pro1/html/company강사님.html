@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- display none 스타일 -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +22,7 @@
     <meta property="og:description" content="앞선 생각으로 더 큰 미래의 교육을 준비하는 기업">
     <meta property="og:image" content="https://kktlove.github.io/web01/images/chunjae_logo.png">
     <meta property="og:url" content="https://kktlove.github.io/web01">
-
+    
     <!-- 트위터 -->
     <meta name="twitter:card" content="picture">
     <meta name="twitter:title" content="천재교육">
@@ -48,23 +45,24 @@
     <!-- 파비콘 설정 -->
     <!-- 16x16, 24x24, 32x32, 48x48, 64x64, 96x96, 114x114, 128x128, 256x256 등을 활용-->
     <!-- 표준 파비콘 -->
-    <link rel="shortcut icon" href="./images/logo.ico">
+    <link rel="shortcut icon" href="./images/logo.ico">    
     <!-- 애플 계열 모바일 -->
-    <link rel="apple-touch-icon-precomposed" href="../../img/logo_64.png">
+    <link rel="apple-touch-icon-precomposed" href="./images/logo_64.png">
     <!-- IE 계열 브라우저 -->
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="../../img/logo_48.png">
+    <meta name="msapplication-TileImage" content="./images/logo_48.png">
     <!-- 파이어폭스, 오페라, 또는 구형 크롬/사파리 -->
-    <link rel="icon" href="../../img/logo_16.png" sizes="16x16">
-    <link rel="icon" href="../../img/logo_32.png" sizes="32x32">
-    <link rel="icon" href="../../img/logo_48.png" sizes="48x48">
-    <link rel="icon" href="../../img/logo_64.png" sizes="64x64">
+    <link rel="icon" href="./images/logo_16.png" sizes="16x16">
+    <link rel="icon" href="./images/logo_32.png" sizes="32x32">
+    <link rel="icon" href="./images/logo_48.png" sizes="48x48">
+    <link rel="icon" href="./images/logo_64.png" sizes="64x64">
 
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
     <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="google.css">
+    <link rel="stylesheet" href="fonts.css">
 
     <!-- 필요한 플러그인 연결 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
@@ -73,141 +71,41 @@
     <link rel="stylesheet" href="../css/ft.css">
 
     <style>
-        /* 본문 영역 스타일 */
-        .contents {
-            clear: both;
-            min-height: 100vh;
-        }
+    /* 본문 영역 스타일 */  
+    .contents { clear:both; min-height:100vh; 
+    background-image: url("./images/bg_visual_overview.jpg");
+    background-repeat: no-repeat; background-position:center -250px; }
+    .contents::after { content:""; clear:both; display:block; width:100%; }
+ 
+    .page { clear:both; width: 100vw; min-height: 100vh; position:relative; }
+    .page::after { content:""; display:block; width: 100%; clear:both; }
+    
+    #com { margin-top: 90px; }
 
-        .contents::after {
-            content: "";
-            clear: both;
-            display: block;
-            width: 100%;
-        }
+    .page_wrap { clear:both; width: 1200px; height: auto; margin:0 auto; }
+    .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#333; 
+    padding-bottom: 2.4rem; }
 
-        .page {
-            clear: both;
-            width: 100vw;
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-        }
+    .breadcrumb { clear:both; 
+        width:1200px; margin: 0 auto; text-align: right; color:#fff; 
+        padding-top: 28px; padding-bottom: 28px; }
+    .breadcrumb a { color:#fff; }
 
-        .page::after {
-            content: "";
-            display: block;
-            width: 100%;
-            clear: both;
-        }
+    .tab_box { clear:both; width: 1200px; height: 42px; 
+         margin-top: 120px; position:fixed; top:100px; left: 50%; 
+        margin-left: -600px; z-index:99; }
+    .tab_box li { width: 25%; height: 42px; line-height: 42px; float:left; }
+    .tab_box li a { display:block; width: 100%; text-align: center; 
+        background-color:rgba(255,215,0,0.7); }
+    
+    </style>
 
-        .page_wrap {
-            clear: both;
-            width: 1200px;
-            height: auto;
-            margin: 0 auto;
-        }
-
-        .page_tit {
-            font-size: 48px;
-            text-align: center;
-            padding-top: 1em;
-            color: #333;
-            padding-bottom: 2.4rem;
-        }
-
-        .back_bread {
-            height: 100px;
-            background-image: url("../../img/login.jpg");
-            background-repeat: no-repeat;
-        }
-
-        .breadcrumb {
-            clear: both;
-            width: 1200px;
-            height: 100%;
-            margin: 0 auto;
-            text-align: right;
-            color: #fff;
-            line-height: 60px;
-        }
-
-        .breadcrumb a {
-            color: #fff;
-        }
-
-        .tab_box {
-            clear: both;
-            width: 1200px;
-            height: 42px;
-            margin: 0 auto;
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            margin-left: -600px;
-            z-index: 99;
-        }
-
-        .tab_box li {
-            width: 25%;
-            height: 42px;
-            line-height: 42px;
-            float: left;
-        }
-
-        .tab_box li:hover {
-            width: 25%;
-            height: 42px;
-            line-height: 42px;
-            float: left;
-        }
-
-        .tab_box li label {
-            display: block;
-            width: 100%;
-            text-align: center;
-            background-color: rgba(136, 255, 0, 0.7);
-        }
-
-        .tab_box li label:hover {
-            background-color: rgba(1, 95, 1, 0.9);
-            color: white;
-            font-size: 20px;
-        }
-
-        .com_content {
-            width: 600px;
-        }
-
-        .con_tit {
-            font-size: 48px;
-            line-height: 1.3;
-        }
-
-        .cont {
-            font-size: 24px;
-            margin-top: 50px;
-        }
-
-        .com_img {
-            width: 1000px;
-            position: absolute;
-            top: 300px;
-            left: 1000px;
-            float: right;
-        }
-
-        .ra1 {display: none;}
-        .ra1:not(:checked) + .page {display: none;} /*버튼이 체크 되있지 않으면*/
-        .ra1:checked + .page {display: block;}
-        .ra1:checked #map {display: block;}
-        /*.ra1:checked + #tab2 {height: 800px;} 버튼이 체크 되어 있으면*/
-
-        /*.maparea { }*/
+    <link rel="stylesheet" type="text/css" href="http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapidoc/1421136453605/service.min.css">
+    <style>
+    body { background:white; }
     </style>
 </head>
-
-<body>
+<body class="web guide" data-page_section="web" data-page_type="guide" data-title="Daum 지도 Web API 가이드">
     <div class="wrap">
         <header class="hd">
             <div class="hd_wrap">
@@ -220,20 +118,20 @@
                 </nav>
             </div>
             <div class="hd_wrap">
-                <a href="../index.html" class="logo">
-                    <img src="../../img/chunjae.png" alt="천재IT교육센터 로고타입">
+                <a href="index.html" class="logo">
+                    <img src="./images/chunjae1.png" alt="천재IT교육센터 로고타입">
                 </a>
                 <!-- nav.gnb>ul.menu>li.item$*5>a.dp1{메인$}+(ul.sub>li*4>a{서브$$}) -->
                 <nav class="gnb">
                     <ul class="menu">
                         <li class="item1">
                             <a href="company.html" class="dp1">회사소개</a>
-                            <!-- <ul class="sub">
+                            <ul class="sub">
                                 <li><a href="company.html#com">회사개요</a></li>
                                 <li><a href="company.html#greet">인사말</a></li>
                                 <li><a href="company.html#history">연혁</a></li>
-                                <li><a href="company.html#map1">오시는길</a></li>
-                            </ul> -->
+                                <li><a href="company.html#map">오시는길</a></li>
+                            </ul>
                         </li>
                         <li class="item2">
                             <a href="biz.html" class="dp1">사업영역</a>
@@ -274,62 +172,33 @@
             </div>
         </header>
         <div class="contents">
-            <div class="back_bread">
-                <div class="breadcrumb">
-                    <p><a href="">HOME</a> &gt; <a href="">회사소개</a> &gt; <span id="cur">회사개요</span></p>
-                </div>
+            <div class="breadcrumb">
+                <p><a href="">HOME</a> &gt; <a href="">회사소개</a> &gt; <span id="cur">회사개요</span></p>
             </div>
             <div class="tab_box">
                 <ul>
-                    <li><label for="com">회사개요</label></li>
-                    <li><label for="greet">인사말</label></li>
-                    <li><label for="history">회사연혁</label></li>
-                    <li><label for="map1">오시는길</label></li>
-                </ul>
-                <!-- <ul>
                     <li><a href="#com">회사개요</a></li>
                     <li><a href="#greet">인사말</a></li>
                     <li><a href="#history">회사연혁</a></li>
                     <li><a href="#map">오시는길</a></li>
-                </ul> -->
+                </ul>
             </div>
-
-            <input type="radio" name="ra1" class="ra1" id="com" checked/>
             <section class="page" id="com">
                 <div class="page_wrap">
                     <h2 class="page_tit">회사개요</h2>
-                    <div class="com_content">
-                        <h3 class="con_tit">대한민국 1위 교육·출판 전문 기업</h3>
-                        <h3 class="con_tit">교육의 미래를 선도합니다.</h3>
-                        <p class="cont">천재교육은 교과서와 학습 교재를 출간하는 교육·출판 전문 기업입니다. <br><br>
-
-                            제5차 교육과정부터 국정·검정·인정 교과용 도서를 개발, 발행하고
-                            연간 3,700여 종에 이르는 유아동·초·중·고등 학습 교재를 발간하고 있습니다. <br><br>
-
-                            또한 미래 인재 육성을 위한 학원 프랜차이즈 사업과
-                            4차 산업혁명 시대에 발맞춘 스마트러닝, 에듀테크 사업 등을 통해
-                            대한민국 교육 트렌드를 주도하고 있습니다.</p>
-                    </div>
-                    <img src="../../img/company1.jpg" alt="" class="com_img">
                 </div>
             </section>
-
-            <input type="radio" name="ra1" class="ra1" id="greet" />
             <section class="page" id="greet">
                 <div class="page_wrap">
                     <h2 class="page_tit">인사말</h2>
                 </div>
             </section>
-
-            <input type="radio" name="ra1" class="ra1" id="history" />
             <section class="page" id="history">
                 <div class="page_wrap">
                     <h2 class="page_tit">회사연혁</h2>
                 </div>
             </section>
-
-            <input type="radio" name="ra1" class="ra1" id="map1"/>
-            <section class="page" id="map1">
+            <section class="page" id="map">
                 <div class="page_wrap">
                     <h2 class="page_tit">오시는길</h2>
                     <div class="maparea">
@@ -366,13 +235,13 @@
                     </ul>
                 </nav>
                 <script>
-                    function loc() {
-                        var url = document.getElementById("sel").value;
-                        //location.href = url;  //현재 창에
-                        if (url != "") {
-                            var win = window.open(url); //새창에
-                        }
+                function loc(){
+                    var url = document.getElementById("sel").value;
+                    //location.href = url;  //현재 창에
+                    if(url!="") {
+                        var win = window.open(url); //새창에
                     }
+                }
                 </script>
             </div>
             <div class="ft_wrap2">
@@ -399,5 +268,4 @@
     <!-- 문서 위로 이동 -->
     <a href="#" class="totop">↑</a>
 </body>
-
 </html>
