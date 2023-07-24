@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 기본 07 - 조건문, 반복문</title>
+  </head>
+  <body>
+    <h2>과목별 점수</h2>
+    <ul class="lst" id="list1">
+        <li class="item">80</li>
+        <li class="item">60</li>
+        <li class="item">90</li>
+        <li class="item">95</li>
+        <li class="item">85</li>
+    </ul>
+    <hr />
+    <div id="tot"></div>
+    <div id="avg"></div>
+    <div id="pan"></div>
+    <div id="hak"></div>
+    <div id="remark"></div>
+    <div id="sang"></div>
+    <div class="btn-group">
+      <button type="button" onclick="compute()">계산</button>
+    </div>
+
+    <script>
+        // 총점(tot) : 다섯 과목 점수의 합계
+        // 평균(avg) : 총점 / 5
+        // 판정(pan) : 모든 점수가 80점 이상이고, 평균이 70점 이상이면, "합격", 아니면 "불합격"
+        // 학점(hak) : 평균이 90 이상이면 "A", 80이상이면 "B", 70 이상이면 "C", 70 미만이면 "F"
+        // 참고(remark) : A 고득점, B 우수, C 보통, F 재평가
+        // 과목우수상(sang) : 어느 한 과목이라도 100 이상이면 됨
+        function compute() {
+            var lst = document.getElementsByClassName("item"); // .item 주소 가져옴
+            var ck = true // 판정 체크
+            var sang = false // 우수상 체크
+
+            // 합계
+            var sum = 0;
+            for (var i=0; i<item.length; i++) {
+                var num = parseInt(lst[i].innerText); // 글자 추출후 변수에 저장
+                if(num < 80) { // 판정 확인
+                    ck = false;
+                }
+                if(num >= 100) { // 우수상 확인
+                    sang = true
+                }
+            sum += num;
+            }
+            document.getElementById("tot").innerText = "합계 : " + sum
+            
+            // 평균
+            var avg = (sum / item.length)
+            document.getElementById("avg").innerText = "평균 : " + avg
+
+            // 판정
+            var pan = ""
+            if(ck && avg>=70) {
+                pan = "합격"
+            } else {
+                pan = "불합격"
+            }
+            document.getElementById("pan").innerText = "판정 : " + pan
+
+            // 학점
+            var hak = ""
+            if(avg>=90) {
+                hak = "A"
+            } else if(avg>=80) {
+                hak = "B"
+            } else if(avg>=70) {
+                hak = "C"
+            } else {
+                hak = "F"
+            }
+            document.getElementById("hak").innerText = "학점 : " + hak
+
+            // 참고사항
+            var remark = ""
+            if(hak == "A") {
+                remark = "고득점"
+            } else if(hak == "B") {
+                remark = "우수"
+            } else if(hak == "C") {
+                remark = "보통"
+            } else {
+                remark = "재평가"
+            }
+            document.getElementById("hak").innerText = "참고 : " + remark
+
+            // 과목우수상
+            if(sang) {
+                sang = "과목우수"                
+            } else {
+                sang = "해당없음"
+            }
+            document.getElementById("sang").innerText = "과목우수상 : " + sang
+        }
+    </script>
+  </body>
+</html>

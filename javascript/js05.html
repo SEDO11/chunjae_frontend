@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 기본 05 - 객체 그리고 함수</title>
+</head>
+<body>
+    <div id="res"></div>
+    <div id="res2"></div>
+    <div id="res3"></div>
+    <script>
+        // 필드
+        var man1 = {no:1, name:"김기태", style:"미남", age:26} // dic
+        man1.name = "김기남";
+        console.log(man1.name);
+
+
+        // 생성자
+        function People(no, name, age, style) {
+            this.no = no;
+            this.name = name;
+            this.style = style;
+            this.age = age;
+
+            // 메소드
+            this.print = function() {
+                console.log(this.no, this.name, this.age, this.style)
+            }
+        }
+
+        // 객체 선언
+        var st1 = new People(1, "홍길동", 25, "귀족");
+        var st2 = new People(2, "일지매", 43, "노비");
+        var st3 = new People(3, "강감찬", 56, "왕");
+        
+        // 메소드 호출
+        st1.print()
+        st2.print()
+        st3.print()
+
+
+        // 속성 추가
+        st1.family = "한양강씨";
+        st1.toString = function() {
+            var res2 = document.getElementById("res2")
+            var str = ""
+            str = "<p>";
+            str += "<span>번호 : "+st1.no + "</span><br>";
+            str +=  "<span>이름 : "+st1.name + "</span><br>";
+            str +=  "<span>본관 : "+st1.family + "</span><br></p>";
+            res2.innerHTML = str;
+        }
+        st1.toString()
+
+
+        // 객체의 순회
+        var str = ""
+        for(var field in st1) {
+            str += "<p>" + field + "</p>"
+        }
+        res3 = document.getElementById("res3");
+        res3.innerHTML = str;
+
+        delete st1.family; // 필드 제거
+
+        console.log(st1)
+        for(var field in st1) {
+            console.log(field);
+        }
+        
+        st2.family = "해주오씨"
+        console.log(st2)
+        for(var field in st2) {
+            console.log(field);
+        }
+    </script>
+</body>
+</html>
