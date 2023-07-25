@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 기본 08 - 이벤트</title>
+    <style>
+        .box {cursor: pointer; float: left; display: inline; margin-right: 10px; padding: 10px;}
+        .box:hover {background-color: brown; color: white;}
+        #result::after {content: ""; clear: both; width: 100%; display: block;}
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div id="result">
+    <div id="box1" class="box" onclick="clk1()">박스1</div>
+    <div id="box2" class="box" ondblclick="clk2('홍길동')">박스2</div>
+    <div id="box3" class="box">박스3</div>
+    <div id="box4" class="box">박스4</div>
+    <div id="box5" class="box">박스5</div>
+    <div id="box6" class="box">박스6</div>
+    <div id="box7" class="box">박스7</div>
+    <div id="box8" class="box">박스8</div>
+    </div>
+    <hr>
+    <div id="res1" class="res"></div>
+
+    <script>
+        // 이벤트 : 사용자가 어떤 특정 행위를 했을 때의 사건
+        // 홍길동이 버튼3을 마우스로 클릭
+        // 버튼3 -> 이벤트 수용체(타겟)
+        // 클릭 -> 이벤트 핸들러
+        // 개발자는 버튼3을 마우스로 눌렀을 경우 해당 서비스를 진행하게 되는데
+        // 이 처럼 이벤트란, 이벤트 타겟, 이벤트 핸들러, 서비스를 모두 합쳐 말함
+        // 이벤트 적용 방법 : 
+        // 인라인 이벤트 : 해당하는 요소에 필요한 이벤트 핸들러를 속성에 집접 기술하는 것
+        // 스크립트 이벤트 : 스크립트 태그의 안쪽에 필요한 이벤트 핸들러를 해당 요소를 선택하여
+        // 필요한 이벤트를 적용하는 것
+        // 이벤트의 종류 : 마우스 이벤트, 키보드 이벤트, 폼 이벤트, 기타 이벤트
+        // 1. 마우스 이벤트 : click, dblclick, mouseover/mouseenter, mouseout/mouseleave,
+        // mousedown, mouseup, mousemove, contextmenu(우클릭 메뉴), scroll/wheel/mousewheel
+        // 2. 키보드 이벤트 : keypress, keydown, keyup  
+        // 3. 폼 관련 이벤트 : focus, blur, change, submit, reset, select(드래그)
+        // 4. 기타 이벤트 : load, abort(중지), unload(창이 사라짐), resize, scroll(스크롤 바 움직임),  
+        function clk1() {
+            alert('어서옵쇼')
+        }
+
+        function clk2(v) {
+            alert(v+"가 들어왔습니다.")
+        }
+
+        const box = document.getElementsByClassName('box')
+        for(let i=2; i<box.length; i++) { // 1번, 2번 버튼 제외
+            box[i].addEventListener("click", function(e) {
+                alert(e.target.innerText);
+            })
+        }
+    </script>
+
+    <form action="" id="join_form" onsubmit="return join(this)" method="post">
+        <fieldset>
+            <legend>가입정보</legend>
+            <table>
+                <tbody>
+                    <tr>
+                        <th><label for="field1">아이디</label></th>
+                        <td><input type="text" name="field1" id="field1" required autofocus></td>
+                    </tr>
+                    <tr>
+                        <th><label for="field2">비밀번호</label></th>
+                        <td><input type="password" name="field2" id="field2" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="field3">비밀번호 확인</label></th>
+                        <td><input type="password" name="field3" id="field3" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="field4">이름</label></th>
+                        <td><input type="text" name="field4" id="field4" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="field5">이메일</label></th>
+                        <td><input type="email" name="field4" id="field5" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="가입">
+                            <input type="reset" value="리셋">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+    <script>
+        // 폼 입력 값에 대한 유효성 검증
+        function join(frm) {
+            if(frm.field3.value !== frm.field2.value) {
+                alert('비밀번호가 일치하지 않습니다.')
+                return false
+            }
+        }
+    </script>
+</body>
+</html>

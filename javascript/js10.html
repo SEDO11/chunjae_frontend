@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 기본 10 - screen &amp; window</title>
+    <style>
+        .btn:hover {
+            color: white; 
+            background-color: brown;
+            cursor: pointer;
+        }
+        p {
+            font-size: 20px;
+        }
+        p:hover {
+            background-color: burlywood;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn" id="btn1">window 객체 속성 출력</div>
+    <div class="btn" id="btn4">screen 객체 속성 출력</div>
+    <div class="btn" id="btn2">객체 속성 인쇄</div>
+    <div class="btn" id="btn3">창 닫기</div>
+    <div id="res"></div>
+    <script>
+        var btn1 = document.getElementById('btn1')
+        var btn2 = document.getElementById('btn2')
+        var btn3 = document.getElementById('btn3')
+        var btn4 = document.getElementById('btn4')
+        var res = document.getElementById('res')
+
+        btn1.addEventListener("click", function() {
+            req1() // 출력
+        })
+
+        btn2.addEventListener("click", function() {
+            window.print() // 인쇄
+        })
+
+        btn3.addEventListener("click", function() {
+            window.close() // 창 닫기
+        })
+
+        btn4.addEventListener("click", function() {
+            req2() // 출력
+        })
+
+        function req1() {
+            var html = ""
+            for(var key in window) {
+                html += "<p>"+key+" : "+window[key]+"</p>";
+            }
+            res.innerHTML = html
+        }
+
+        function req2() {
+            var html = ""
+            for(var key in screen) {
+                html += "<p>"+key+" : "+screen[key]+"</p>";
+            }
+            res.innerHTML = html
+        }
+    </script>
+</body>
+</html>
