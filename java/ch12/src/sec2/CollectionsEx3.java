@@ -26,7 +26,6 @@ public class CollectionsEx3 {
         for(int j=0; j<dayOfWeek-1; j++) {
             System.out.print("\t");
         }
-
         for(int j=dayOfWeek-1; j<7; j++) {
             System.out.print(i+"\t");
             i++;
@@ -35,7 +34,7 @@ public class CollectionsEx3 {
         
         // 두번째 줄 부터 날짜 입력
         int cnt = 0;
-        for(int j=i; j <=end; j++) {
+        for(int j=i; j<=end; j++) {
             if(cnt == 6) {
                 System.out.print(j+"\t");
                 System.out.println();
