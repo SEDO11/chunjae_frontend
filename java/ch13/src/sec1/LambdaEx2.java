@@ -1,5 +1,6 @@
 package sec1;
 
+// consumer
 @FunctionalInterface
 interface MyLambda2 {
     void print(int x);

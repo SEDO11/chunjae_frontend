@@ -1,7 +1,6 @@
 package sec1;
 
-import java.util.Scanner;
-
+// Operator
 @FunctionalInterface
 interface MyLambda4 {
     String print(String name);

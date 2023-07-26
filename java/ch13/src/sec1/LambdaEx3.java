@@ -1,5 +1,6 @@
 package sec1;
 
+// Supplier
 @FunctionalInterface
 interface Lambda3 {
     String print();

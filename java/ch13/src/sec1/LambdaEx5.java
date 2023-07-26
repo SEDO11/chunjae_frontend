@@ -2,7 +2,7 @@ package sec1;
 
 import java.util.Scanner;
 
-// Operator
+// Function
 @FunctionalInterface
 interface MyLambda5 {
     int print(String a);
