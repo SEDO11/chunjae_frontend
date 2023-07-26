@@ -51,8 +51,8 @@ vmdown.addEventListener("click", function () {        volumeUpDown("down");    }
 full.addEventListener("click", function () {        fullScreen();    });//풀스크린
 var w=640;
 video.width=w;
-sizeup.addEventListener("click", function(){    video.width += 200;    }); //사이즈업
-sizedown.addEventListener("click", function(){  video.width -= 200;    }); //사이즈 다운
+sizeup.addEventListener("click", function(){    if(video.width < 640) video.width += 200;    }); //사이즈업
+sizedown.addEventListener("click", function(){  if(video.width > 40) video.width -= 200;    }); //사이즈 다운
 
 //처음부터 다시 재생
 function restartPlay() {  video.play(); video.currentTime = 0;  }

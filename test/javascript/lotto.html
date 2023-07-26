@@ -6,34 +6,73 @@
     <title>복권 추첨</title>
     <style>
         .container {
-            width: 1200px;
+            width: 600px;
             margin: 0 auto;
             text-align: center;
+            background-color: cornflowerblue;
+            padding-bottom: 20px;
+            border-radius: 20px;
         }
 
-        ul {list-style: none;}
+        ul {list-style: none; width: 420px; display: inline-block; padding: 0;}
         li {float: left;}
-        .value {width: 50px; height: 50px; background-color: chocolate;
+        .val {width: 50px; height: 50px; background-color: chocolate;
         text-align: center; line-height: 50px; margin: 10px; border-radius: 50%;
         color: white;}
         #con1::after { content: ""; width: 100%; clear: both; display: block;}
+
+        #btn {
+            height: 50px;
+            font-size: 15px;
+            background-color: crimson;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        #btn:hover {
+            background-color: brown;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div id="con1">
             <ul>
-                <li><div class="value">0</div></li>
-                <li><div class="value">0</div></li>
-                <li><div class="value">0</div></li>
-                <li><div class="value">0</div></li>
-                <li><div class="value">0</div></li>
-                <li><div class="value">0</div></li>
+                <li><div class="val">0</div></li>
+                <li><div class="val">0</div></li>
+                <li><div class="val">0</div></li>
+                <li><div class="val">0</div></li>
+                <li><div class="val">0</div></li>
+                <li><div class="val">0</div></li>
             </ul>
         </div>
         <div id="con2">
-            <button type="button">로또 추첨</button>
+            <button type="button" id="btn">로또 추첨</button>
         </div>
     </div>
+    <script>
+        var val = document.getElementsByClassName('val');
+        var btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            var set = new Set();
+            while (set.size < 6) {
+                var rd = Math.floor(Math.random() * 45) + 1; // 1~45 까지의 난수 발생
+                set.add(rd);
+            }
+
+            let arr = Array.from(set); // set to list
+            // 자바스크립트는 sort할때 문자열로 하므로, 
+            // arr.sort() -> 문자열 sort
+            // 숫자형으로 sort하고 싶으면 이렇게 하면 된다.
+            arr.sort((a, b) => a - b);
+
+            for (var i = 0; i < set.size; i++) {
+                val[i].innerText = arr[i];
+            }
+        });
+    </script>
 </body>
 </html>
