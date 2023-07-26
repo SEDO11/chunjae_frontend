@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 응용 04 - navigator</title>
+</head>
+<body>
+    <button id="btn1">기기 판별</button>
+    <button id="btn2">브라우저 정보</button>
+    <div id="dics"></div>
+    <div id="res"></div>
+    <script>
+        var dics = document.getElementById('dics')
+        var res = document.getElementById('res')
+        
+        var btn1 = document.getElementById('btn1')
+        btn1.addEventListener('click', function() {
+            nav()
+        })
+
+        var btn2 = document.getElementById('btn2')
+        btn2.addEventListener('click', function() {
+            info()
+        })
+
+        function nav() {
+            // 사용자가 모바일 기기로 들어오면 true
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) // ios, Android 기기 확인
+
+            if(isMobile) {
+                dics.innerHTML = "<h2>모바일</h2>" 
+            } else {
+                dics.innerHTML = "<h2>데스크탑</h2>" 
+            }
+        }
+
+        function info() {
+            var html = ""
+            for(var key in navigator) {
+                html += "<p>" + key + " : " + navigator[key]
+            }
+            res.innerHTML = html
+        }
+    </script>
+</body>
+</html>

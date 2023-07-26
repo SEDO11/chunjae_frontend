@@ -5,41 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 응용 01 - 계산기</title>
     <style>
-        #display { width: 200px; height: 30px; font-size: 20px;}
-        button { cursor: pointer; width: 50px; height: 50px; font-size: 20px;}
+        .cal_wrap {
+            padding: 20px;
+            width: 260px;
+            height: 360px;
+            margin: 0 auto;
+            background-color: #333;
+            border-radius: 20px;
+        }
+
+        #display { height: 30px; font-size: 20px; margin-bottom: 10px;}
+
+        tr{
+            text-align: center;
+        }
+
+        button { cursor: pointer; width: 50px; 
+            height: 50px; font-size: 20px; box-sizing: border-box;
+            border-style: none; background-color: chocolate;
+            border-radius: 50%; margin: 5px;}
+        
         button:hover {
-            background-color: chocolate;
+            background-color: rgb(133, 67, 20);
+        }
+
+        #ac {
+            width: 220px;
+            border-radius: 20px;
+            background-color: crimson;
+        }
+
+        #ac:hover {
+            background-color: brown;
+        }
+
+        .btn1 {
+            background-color: white;
+        }
+
+        .btn1:hover {
+            background-color: #777;
+            color: white;
         }
     </style>
+    <link rel="stylesheet" href="../font/font1.css">
 </head>
 <body>
     <div id="calculator">
         <div class="cal_wrap">
-            <input type="text" id="display" value="readonly">
             <table>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" id="display" readonly placeholder="계산기">
+                    </td>
+                </tr>
                 <tr>
                     <td><button class="btn" id="btn7" onclick="cal(7)">7</button></td>
                     <td><button class="btn" id="btn8" onclick="cal(8)">8</button></td>
                     <td><button class="btn" id="btn9" onclick="cal(9)">9</button></td>
-                    <td><button class="btn" id="div" onclick="cal('/')">/</button></td>
+                    <td><button class="btn1" id="div" onclick="cal('/')">÷</button></td>
                 </tr>
                 <tr>
                     <td><button class="btn" id="btn4" onclick="cal(4)">4</button></td>
                     <td><button class="btn" id="btn5" onclick="cal(5)">5</button></td>
                     <td><button class="btn" id="btn6" onclick="cal(6)">6</button></td>
-                    <td><button class="btn" id="mul" onclick="cal('*')">*</button></td>
+                    <td><button class="btn1" id="mul" onclick="cal('*')">x</button></td>
                 </tr>
                 <tr>
                     <td><button class="btn" id="btn1" onclick="cal(1)">1</button></td>
                     <td><button class="btn" id="btn2" onclick="cal(2)">2</button></td>
                     <td><button class="btn" id="btn3" onclick="cal(3)">3</button></td>
-                    <td><button class="btn" id="sub" onclick="cal('-')">-</button></td>
+                    <td><button class="btn1" id="sub" onclick="cal('-')">-</button></td>
                 </tr>
                 <tr>
                     <td><button class="btn" id="btn0" onclick="cal(0)">0</button></td>
                     <td><button class="btn" id="pt" onclick="cal('.')">.</button></td>
-                    <td><button class="btn" id="res" onclick="rt()">=</button></td>
-                    <td><button class="btn" id="sum" onclick="cal('+')">+</button></td>
+                    <td><button class="btn1" id="res" onclick="rt()">=</button></td>
+                    <td><button class="btn1" id="sum" onclick="cal('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><button class="btn1" id="ac" onclick="reset()">AC</button></td>
                 </tr>
             </table>
         </div>
@@ -57,6 +102,10 @@
         function rt() {
             // eval -> 문자열의 사칙연산 계산이 가능
             display.value = eval(display.value)
+        }
+
+        function reset() {
+            display.value = ''
         }
 
     </script>
