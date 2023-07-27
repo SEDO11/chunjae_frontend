@@ -1,0 +1,7 @@
+table {width: 500px; margin: 0 auto;}
+.title {font-size: 30px; text-align: center;}
+td{padding-top: 20px;}
+.label {width: 140px; text-align: right}
+.input {width: 300px;}
+.btn {text-align: center;}
+#btn {height: 50px; font-size: 18px; line-height: 50px;}

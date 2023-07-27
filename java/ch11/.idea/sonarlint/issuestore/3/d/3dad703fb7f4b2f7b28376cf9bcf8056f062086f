@@ -1,0 +1,29 @@
+
+J
+java:S3740"/Provide the parametrized type for this generic.(ƒ¿™ûÿÿÿÿ
+J
+java:S3740"/Provide the parametrized type for this generic.(ƒ¿™ûÿÿÿÿ
+J
+java:S3740"/Provide the parametrized type for this generic.(ª‚‡”ùÿÿÿÿ
+E
+java:S3740"/Provide the parametrized type for this generic.(Ş˜éÿ
+E
+java:S3740"/Provide the parametrized type for this generic.(Í à¬
+E
+java:S3740"/Provide the parametrized type for this generic.(Í à¬
+J
+java:S3740"/Provide the parametrized type for this generic.(ëËÓûÿÿÿÿ
+E
+java:S3740"/Provide the parametrized type for this generic.(–ï½
+y
+java:S1319"cThe type of "lst" should be an interface such as "List" rather than the implementation "ArrayList".(–ï½
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ÿ¬
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ëËÓûÿÿÿÿ
+—
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(–ï½
+S
+java:S1854"8Remove this useless assignment to local variable "lst1".(ª‚‡”ùÿÿÿÿ
+S
+java:S1854"8Remove this useless assignment to local variable "lst1".(ƒ¿™ûÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(ñìœ—ÿÿÿÿÿ

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Insert title here</title>
+  <link href="css/reset.css" rel="stylesheet">
+  <link href="css/default.css" rel="stylesheet">
+</head>
+<body>
+<!-- servlet이 아닌 jsp 호출을 이용 -->
+<form action="login.jsp" method="post">
+  <table>
+    <tbody>
+      <tr>
+        <td colspan=2 class="title"><b>로그인</b></td>
+      </tr>
+      <tr>
+        <td class="label">아이디&nbsp;</td>
+        <td>
+          <input type="text" name="id" placeholder="id" class="input" required autofocus>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">패스워드&nbsp;</td>
+        <!-- required는 필수로 입력되야 하는 값을 지칭한다. -->
+        <td><input type="password" name="pw" placeholder="password" class="input" required></td>
+      </tr>
+      <tr>
+        <td colspan=2 class="btn">
+          <input type="submit" value="로그인하기" id="btn"></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</body>
+</html>
