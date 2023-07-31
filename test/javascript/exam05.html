@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>창 제어</title>
+</head>
+<body>
+    <div id="btn1">
+        <a href="javascript05.html" download>다운로드</a>
+        </div>
+        <div id="btn2">객체 속성 인쇄</div>
+        <div id="btn3" onclick="javascript:window.close()">창 닫기</div>
+    <div id="res"></div>
+    <script>
+        var btn2 = document.getElementById('btn2')
+        btn2.addEventListener('click', function() {
+            window.print()
+        })
+    </script>
+</body>
+</html>
