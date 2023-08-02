@@ -1,0 +1,26 @@
+
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ÿ¬8ä‹ˆš1
+e
+java:S2259"CA "NullPointerException" could be thrown; "score" is nullable here.(€¢àÊıÿÿÿÿ8ƒÓŒš1
+e
+java:S2259#"CA "NullPointerException" could be thrown; "score" is nullable here.(‡—‹æıÿÿÿÿ8ƒÓŒš1
+e
+java:S2259"CA "NullPointerException" could be thrown; "score" is nullable here.(€¢àÊıÿÿÿÿ8ƒÓŒš1
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Çµí‘8¨Œˆš1
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ïíõšûÿÿÿÿ8«Œˆš1
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(è¦¤¢üÿÿÿÿ8«Œˆš1
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ïíõšûÿÿÿÿ8¬Œˆš1
+U	java:S106"9Replace this use of System.out or System.err by a logger.(İ×²›8¬Œˆš1
+>	java:S131""Add a default case to this switch.(¬Ù‡°8¬Œˆš1
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Õúóşÿÿÿÿ8¬Œˆš1
+U	java:S106"9Replace this use of System.out or System.err by a logger.(…›ù8­Œˆš1
+n
+java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(»ŸÇå8¤İš1
+U	java:S106"9Replace this use of System.out or System.err by a logger.(»ŸÇå8­Œˆš1
+n
+java:S3457+"Q%n should be used in place of \n to produce the platform-specific line separator.(ôÏÜŞ8ß«š1
+U	java:S106+"9Replace this use of System.out or System.err by a logger.(ôÏÜŞ8—ıŠš1
+s
+java:S3457,"Q%n should be used in place of \n to produce the platform-specific line separator.(šÍäœıÿÿÿÿ8ß«š1
+Z	java:S106,"9Replace this use of System.out or System.err by a logger.(šÍäœıÿÿÿÿ8—ıŠš1

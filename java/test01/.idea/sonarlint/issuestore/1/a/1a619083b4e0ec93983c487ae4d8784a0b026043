@@ -1,0 +1,13 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ø—¥ùùÿÿÿÿ8ìýðŽš1
+^
+java:S2094"BRemove this empty class, write its code or make it an "interface".(Ç»Ì8ìýðŽš1
+£
+java:S1186
+"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(»£õ°ýÿÿÿÿ8ó¿òŽš1
+ž
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‘›¯þ8ó¿òŽš1
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷ö´ìýÿÿÿÿ8ó¿òŽš1
+ž
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•™éö8ô¿òŽš1

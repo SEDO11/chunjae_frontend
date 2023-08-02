@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 중복 확인</title>
+</head>
+<body>
+    <input type="text" name="id" id="id" required>
+    <input type="button" value="중복확인" onclick="idcheck()">
+    <script>
+        var id = document.getElementById('id')
+        var par = opener.document.getElementById('id')
+        id.value = par.value
+        function idcheck() {
+            if(id.value == 'hong') {
+                alert('이미 있는 아이디 입니다.')
+            } else {
+                alert('사용 가능한 아이디입니다.')
+                par.value = id.value
+                window.close()
+            }
+        }
+    </script>
+</body>
+</html>

@@ -10,8 +10,6 @@ B
 src/Main.java,9\2\924f089edb4af5ee45c8a9d1129cd28e2b368138
 @
 src/Servlet.java,1\b\1bbc81b079bdff3afde86298f66c76fe225d9876
-C
-web/css/default.css,2\a\2a22d0b520ae89aaab64ef88ed2364955ffed5b6
 K
 src/com/edu/dto/Member.java,b\9\b9b24d87a30e90e8942fc27a6a6501b27879ef9d
 C
@@ -28,3 +26,7 @@ C
 web/loginpro.jsp,4\4\44ffb1ab212e5e07138a43281bf80724b6a57afc
 >
 web/test03.jsp,d\6\d617814124b6411272180310dea32192c71ea20d
+A
+web/css/reset.css,1\2\1217b04ebb7a12d74dd7c1c5c1619a2a1bce7440
+C
+web/css/default.css,2\a\2a22d0b520ae89aaab64ef88ed2364955ffed5b6

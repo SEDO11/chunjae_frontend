@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 확인</title>
+</head>
+<body>
+    <input type="text" name="id" id="id" required placeholder="아이디입력">
+    <input type="button" onclick="move()" value="입력">
+    <script>
+        var id = document.getElementById("id")
+        function move() {
+            if(id.value == "") {
+                alert('값이 비어 있습니다.')
+            } else {
+                window.open('chil.html', '_blank');
+            }
+        }
+    </script>
+</body>
+</html>

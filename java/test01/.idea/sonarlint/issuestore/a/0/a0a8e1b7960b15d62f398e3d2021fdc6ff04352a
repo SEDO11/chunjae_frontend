@@ -1,0 +1,7 @@
+
+K
+java:S3740	"/Provide the parametrized type for this generic.(Î—€:8²ÑÜ¨š1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Èªåÿÿÿÿÿ8³ÑÜ¨š1
+K
+java:S2140")Use "java.util.Random.nextInt()" instead.(•åîùÿÿÿÿ8¼ÑÜ¨š1
+U	java:S106"9Replace this use of System.out or System.err by a logger.(×Æáî8åµà¨š1
