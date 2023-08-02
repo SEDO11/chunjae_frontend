@@ -19,5 +19,6 @@
     <a href="test02.jsp">로그인 화면</a>
     <a href="test03.jsp">설문 조사 화면</a>
     <a href="test04.jsp?msg=한시간남았네">요청 정보 및 헤더 정보 화면</a>
+    <a href="test05.jsp">로그인 폼 - response</a>
 </body>
 </html>

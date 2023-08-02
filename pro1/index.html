@@ -40,8 +40,8 @@
     <!-- 플러그인 연결-->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
-    <!-- 스타일 초기화 -->
-    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
     <!-- 웹 폰트 -->
     <link rel="stylesheet" href="./css/font.css">
 
@@ -150,7 +150,7 @@
 
         .cate_tit {padding-left: 32px; font-size: 36px; line-height: 1.6em; 
             padding-top: 24px; padding-bottom: 24px;}
-        .cate_lst li { border-top: 1px solid #eee; margin-left: 14px; margin-right: 14px; 
+        .cate_lst li { border-top: 1px solid #333; margin-left: 14px; margin-right: 14px; 
             padding-top: 32px; height: 90px;}
         .cate_tit li a {display: block;}
         .bd_content {width: auto; padding-right: 24px;}
@@ -183,24 +183,25 @@
                     <ul class="menu">
                         <li class="item1">
                             <a href="./html/company.html" class="dp1">회사소개</a>
-                            <!-- <ul class="sub">
-                                <li><a href="./html/company.html">회사개요</a></li>
-                                <li><a href="./html/company.html">인사말</a></li>
-                                <li><a href="./html/company.html">연혁</a></li>
-                                <li><a href="./html/company.html"">경영이념</a></li>
-                            </ul> -->
-                        </li>
-                        <li class="item2">
-                            <a href="" class="dp1">사업영역</a>
                             <ul class="sub">
-                                <li><a href="./html/business.html">교과서</a></li>
-                                <li><a href="./html/business.html">참고서</a></li>
-                                <li><a href="./html/business.html">건설</a></li>
-                                <li><a href="./html/business.html">스마트러닝</a></li>
+                                <li><a href="./html/company.html#com">회사개요</a></li>
+                                <li><a href="./html/company.html#greet">인사말</a></li>
+                                <li><a href="./html/company.html#history">연혁</a></li>
+                                <li><a href="./html/company.html#map1"">경영이념</a></li>
+                            </ul>
+                        </li>
+                        <script src="./js/showpage.js"></script>
+                        <li class="item2">
+                            <a href="./html/learning.html" class="dp1">IT교육</a>
+                            <ul class="sub">
+                                <li><a href="./html/business.html">파이썬</a></li>
+                                <li><a href="./html/business.html">자바</a></li>
+                                <li><a href="./html/business.html">OpenCV</a></li>
+                                <li><a href="./html/business.html">안드로이드</a></li>
                             </ul>
                         </li>
                         <li class="item3">
-                            <a href="" class="dp1">사회공헌</a>
+                            <a href="" class="dp1">IT실습</a>
                             <ul class="sub">
                                 <li><a href="./html/service.html">해외</a></li>
                                 <li><a href="./html/service.html">사교육</a></li>
@@ -209,7 +210,7 @@
                             </ul>
                         </li>
                         <li class="item4">
-                            <a href="" class="dp1">홍보</a>
+                            <a href="" class="dp1">강사진</a>
                             <ul class="sub">
                                 <li><a href="./html/marketing.html">언론보도</a></li>
                                 <li><a href="./html/marketing.html">광고</a></li>
@@ -218,7 +219,7 @@
                             </ul>
                         </li>
                         <li class="item5">
-                            <a href="" class="dp1">브랜드</a>
+                            <a href="" class="dp1">학습자료실</a>
                             <ul class="sub">
                                 <li><a href="./html/brand.html">브랜드소개</a></li>
                                 <li><a href="./html/brand.html">역사</a></li>
@@ -253,54 +254,7 @@
                 </ul>
                 <button type="button" class="play_btn"></button>
             </figure>
-            <script>
-                $(function(){
-                    $(".btn_box li .vs_btn").click(function(){
-                        var par = $(this).parents("li").index();
-                        $(".img_box li").removeClass("active");
-                        $(".img_box li").eq(par).addClass("active");
-                        $(".btn_box li").removeClass("active");
-                        $(".btn_box li").eq(par).addClass("active");
-                    });
-                    var sw = 1;
-                    var int1 = setInterval(function(){
-                        if(sw==1){
-                            autoplay(1);
-                            sw = 0;
-                        } else {
-                            autoplay(0);
-                            sw = 1;
-                        }
-                    }, 1500);
-
-                    function autoplay(n){
-                        $(".img_box li").removeClass("active");
-                        $(".img_box li").eq(n).addClass("active");
-                        $(".btn_box li").removeClass("active");
-                        $(".btn_box li").eq(n).addClass("active");
-                    }
-    
-                    $(".play_btn").click(function(){
-                        if($(this).hasClass("active")){
-                            $(this).removeClass("active");
-                            sw = 1;
-                            int1 = setInterval(function(){
-                                if(sw==1){
-                                    autoplay(1);
-                                    sw = 0;
-                                } else {
-                                    autoplay(0);
-                                    sw = 1;
-                                }
-                            }, 3500);
-                        } else {
-                            $(this).addClass("active");
-                            sw = 0;
-                            clearInterval(int1);
-                        }
-                    });
-                });    
-                </script>
+            <script src="./js/rotation.js"></script>
 
             <section class="page" id="page1">
                 <div class="page_wrap">
@@ -350,13 +304,21 @@
                     <div class="slide_box">
                         <ul class="card_lst">
                             <li class="item1">
-                                <a href="">
-                                    <h3 class="cate_tit">썸네일제목2</h3>
-                                    <ul class="cate_lst">
-                                        <!--<li>운필력 키우는 한글 글쓰기, 유아학습지로 창의력과 표현력 기른다</li>
-                                        <li></li>-->
-                                    </ul>
-                                </a>
+                                <h3 class="cate_tit">언론보도</h3>
+                                <ul class="cate_lst">
+                                    <li>
+                                        <a href="">
+                                            <p class="bd_content">운필력 키우는 한글 글쓰기, 유아학습지로 창의력과 표현력을 기른다.</p>
+                                            <p class="bd_date">2023-07-17</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <p class="bd_content">천재교과서, 스마트해법-밀크T 온·오프라인 결합 상품 더블케어 천재패스 출시</p>
+                                            <p class="bd_date">2023-07-17</p>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="item2">
                                 <a href="">
@@ -404,24 +366,7 @@
                     </div>
                 </div>
             </section>
-            <script>
-                $(function(){
-                    $(".sl-btn-box .btn.next").click(function(){
-                        var ln = parseInt($(".card_lst").css("margin-left"));
-                        if(ln>-1110) {
-                            var mv = ln - 370;
-                            $(".card_lst").not(":animated").animate({"margin-left":mv+"px"});
-                        }
-                    });
-                    $(".sl-btn-box .btn.prev").click(function(){
-                        var ln = parseInt($(".card_lst").css("margin-left"));
-                        if(ln<0){
-                            var mv = ln + 370;
-                            $(".card_lst").not(":animated").animate({"margin-left":mv+"px"});
-                        }
-                    });
-                });    
-            </script>
+            <script src="./js/slidebox.js"></script>
         </div>
         <footer class="ft">
             <nav class="ft_link">

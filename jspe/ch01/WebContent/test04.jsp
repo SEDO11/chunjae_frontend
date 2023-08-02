@@ -49,6 +49,10 @@
     			%>
     		</tbody>
     	</table>
+		<br>
+		<hr>
+		<br>
+		<p>정보 <%=request.getParameter("id")%></p>
     </div>
 </body>
 </html>

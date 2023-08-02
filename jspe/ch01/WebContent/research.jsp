@@ -49,7 +49,8 @@
         <%
             }
         %>
-
     </div>
+    <a href="test03.jsp">설문 조사 화면</a>
+    <a href="test04.jsp?id=<%=id%>">요청 정보 및 헤더 정보 화면</a> <%-- test02에서 받아온 id를 get으로 던져줌 --%>
 </body>
 </html>

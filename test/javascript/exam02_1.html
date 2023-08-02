@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디확인</title>
+</head>
+<body>
+    <h2>아이디 검증</h2>
+    <form action="" id="frm2" name="frm2">
+        <input type="text" name="id" id="id" required>
+        <button type="button" onclick="idcheck()">아이디 중복 체크</button>
+    </form>
+    <script>
+        var id = document.getElementById('id')
+        id.value = opener.document.getElementById('id').value
+        
+        function idcheck() {
+            if(id.value == '12345') {
+                alert('중복된 아이디')
+                return
+            } else {
+                opener.document.getElementById('id').value = id.value
+                window.close()
+            }
+        }
+    </script>
+</body>
+</html>

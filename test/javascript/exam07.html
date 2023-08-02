@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript example - price compute</title>
+</head>
+
+<body>
+    <div id="contents">
+        <img src="price.png" width="150">
+        <ul>
+            <li>
+                <label for="originalPrice">원래 가격</label>
+                <input type="text" id="originalPrice">원
+            </li>
+            <li>
+                <label for="rate">할인율</label>
+                <input type="text" id="rate">%
+            </li>
+            <li>
+                <button onclick="showPrice()">할인 가격 계산하기</button>
+            </li>
+        </ul>
+        <div id="showResult"></div>
+    </div>
+    <script>
+        var price = document.getElementById("originalPrice")
+        var rate = document.getElementById("rate")
+        var result = document.getElementById("showResult")
+        var html = ""
+        function showPrice() {
+            var pr = parseInt(parseInt(price.value) * (parseInt(rate.value)/100))
+            html += price.value + "<br>"
+            html += pr + "<br>"
+            html += (parseInt(price.value) - parseInt(pr)) + "<br>"
+            result.innerHTML = html
+        }
+    </script>
+</body>
+
+</html>
