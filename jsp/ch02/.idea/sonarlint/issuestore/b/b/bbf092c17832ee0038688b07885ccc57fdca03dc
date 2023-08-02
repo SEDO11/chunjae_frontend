@@ -1,0 +1,13 @@
+
+`	java:S112A"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+X
+java:S2259!"BA "NullPointerException" could be thrown; "conn" is nullable here.(‚¹ó½
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¸ãœş
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¸åŞ®ùÿÿÿÿ
+N	java:S106%"9Replace this use of System.out or System.err by a logger.(ĞÖò¹
+N	java:S106("9Replace this use of System.out or System.err by a logger.(Î›Ù
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(ñ¶˜´ÿÿÿÿÿ
+S	java:S106,"9Replace this use of System.out or System.err by a logger.(û¸Ñ…ùÿÿÿÿ
+N	java:S106."9Replace this use of System.out or System.err by a logger.(±½ëÑ
+S	java:S106:"9Replace this use of System.out or System.err by a logger.(ƒİ¨ùÿÿÿÿ
+N	java:S106<"9Replace this use of System.out or System.err by a logger.(©‰¿±

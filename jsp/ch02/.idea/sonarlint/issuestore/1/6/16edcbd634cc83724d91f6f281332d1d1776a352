@@ -1,0 +1,32 @@
+
+g	java:S112-"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Çó¢¤›1
+g	java:S1120"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Çó¢¤›1
+g	java:S1127"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¥Û¥¤›1
+g	java:S112?"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ùñ¦¤›1
+g	java:S112G"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8»ˆ§¤›1
+_
+java:S11637"=Refactor this code to not throw exceptions in finally blocks.(Ò‚Òéüÿÿÿÿ8¥Û¥¤›1
+_
+java:S1163?"=Refactor this code to not throw exceptions in finally blocks.(Ò‚Òéüÿÿÿÿ8ùñ¦¤›1
+_
+java:S1163G"=Refactor this code to not throw exceptions in finally blocks.(Ò‚Òéüÿÿÿÿ8»ˆ§¤›1
+V
+java:S11437"4Remove this throw statement from this finally block.(Ò‚Òéüÿÿÿÿ8¥Û¥¤›1
+V
+java:S1143?"4Remove this throw statement from this finally block.(Ò‚Òéüÿÿÿÿ8ùñ¦¤›1
+V
+java:S1143G"4Remove this throw statement from this finally block.(Ò‚Òéüÿÿÿÿ8»ˆ§¤›1
+T
+java:S2589"7Remove this expression which always evaluates to "true"(¡ææú8„ô¢¤›1
+X	java:S125"<This block of commented-out lines of code should be removed.(œ¦ö8”ô¢¤›1
+R
+java:S6437"6Revoke and change this password, as it is compromised.(Ï’Ë<8”ô¢¤›1
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Ÿí¨›8”ô¢¤›1
+n
+java:S3457'"Q%n should be used in place of \n to produce the platform-specific line separator.(¸ôŒ•8àÒ¸¤›1
+U	java:S106'"9Replace this use of System.out or System.err by a logger.(¸ôŒ•8”ô¢¤›1
+Z	java:S106,"9Replace this use of System.out or System.err by a logger.(†ôışÿÿÿÿ8”ô¢¤›1
+Z	java:S106/"9Replace this use of System.out or System.err by a logger.(ô«®Ñùÿÿÿÿ8˜ô¢¤›1
+U	java:S1066"9Replace this use of System.out or System.err by a logger.(Í¤Ô¡8¡·«¤›1
+Z	java:S106>"9Replace this use of System.out or System.err by a logger.(”¾Ó«øÿÿÿÿ8×Õ¬¤›1
+Z	java:S106F"9Replace this use of System.out or System.err by a logger.(ˆ…Ñùÿÿÿÿ8×Õ¬¤›1

@@ -1,0 +1,36 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ž™Ä¦›1
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ŽÈÄ¦›1
+g	java:S112$"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ú±¤§›1
+g	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ƒÏ¤§›1
+g	java:S1126"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8º¥§›1
+g	java:S112="FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8º¥§›1
+g	java:S112D"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8êç¥§›1
+r	java:S116"QRename this field "DRIVER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­†³”ýÿÿÿÿ8Ž™Ä¦›1
+o	java:S116"NRename this field "DNS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜Û©Çùÿÿÿÿ8Ž™Ä¦›1
+k	java:S116"ORename this field "PORT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ¯°”8Ž™Ä¦›1
+p	java:S116	"ORename this field "NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É•ûòùÿÿÿÿ8Ž™Ä¦›1
+p	java:S116
+"ORename this field "USER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ÝÛ•þÿÿÿÿ8Ž™Ä¦›1
+k	java:S116"ORename this field "PASS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™Üé‘8Ž™Ä¦›1
+o	java:S116"NRename this field "URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(žÎÑ‘øÿÿÿÿ8Ž™Ä¦›1
+C
+java:S1170"!Make this final field static too.(­†³”ýÿÿÿÿ8Ž™Ä¦›1
+C
+java:S1170"!Make this final field static too.(˜Û©Çùÿÿÿÿ8Ž™Ä¦›1
+>
+java:S1170"!Make this final field static too.(ñ¯°”8Ž™Ä¦›1
+C
+java:S1170	"!Make this final field static too.(É•ûòùÿÿÿÿ8Ž™Ä¦›1
+C
+java:S1170
+"!Make this final field static too.(¯ÝÛ•þÿÿÿÿ8Ž™Ä¦›1
+>
+java:S1170"!Make this final field static too.(™Üé‘8Ž™Ä¦›1
+C
+java:S1170"!Make this final field static too.(žÎÑ‘øÿÿÿÿ8Ž™Ä¦›1
+X	java:S125"<This block of commented-out lines of code should be removed.(œ¦ö8Ž™Ä¦›1
+a
+java:S2147"DCombine this catch with the one at line 22, which has the same body.(É®£8žÈÄ¦›1
+X
+java:S6437"6Revoke and change this password, as it is compromised.(¥µÌÇøÿÿÿÿ8”™Ä¦›1

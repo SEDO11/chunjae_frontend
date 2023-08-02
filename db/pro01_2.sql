@@ -116,3 +116,98 @@ SELECT * FROM revpro;
 CREATE TABLE hotpro AS (SELECT * FROM product INTERSECT SELECT * FROM product2);
 
 SELECT * FROM hotpro;
+
+-- 트랜잭션
+USE shop;
+
+DROP TABLE inven;
+
+-- 재고 테이블
+CREATE TABLE inven(
+	ino INT PRIMARY KEY AUTO_INCREMENT,
+	pid VARCHAR(20), 
+	qty INT);
+
+-- 판매 테이블
+CREATE TABLE sale(
+	sno INT PRIMARY KEY AUTO_INCREMENT,
+	pid VARCHAR(20),
+	qty INT);
+
+SHOW TABLES;
+
+-- 입고
+INSERT INTO inven(pid, qty) VALUES("a001", 12);
+INSERT INTO inven(pid, qty) VALUES("b001", 25);
+INSERT INTO inven(pid, qty) VALUES("c001", 18);
+
+INSERT INTO inven(pid, qty) VALUES("a001", 11);
+INSERT INTO inven(pid, qty) VALUES("b001", 19);
+INSERT INTO inven(pid, qty) VALUES("c001", 14);
+
+SELECT * FROM inven;
+
+-- 재고 확인 뷰
+DROP VIEW pro1_view;
+CREATE VIEW pro1_view AS (SELECT pid, SUM(qty) AS'재고 합계' FROM inven GROUP BY pid);
+
+SELECT * FROM pro1_view;
+
+INSERT INTO inven(pid, qty) VALUES("a001", 24);
+
+SELECT * FROM pro1_view;
+
+
+START TRANSACTION; -- 트랜잭션 시작
+
+SAVEPOINT a; -- save
+
+-- 판매
+INSERT INTO sale(pid, qty) VALUES("a001", 5);
+
+UPDATE inven SET qty=qty-5 
+	WHERE pid="a001" 
+	AND ino=(SELECT MIN(ino) FROM inven 
+					WHERE pid="a001" 
+					GROUP BY pid);
+
+SELECT * FROM inven;
+
+COMMIT;
+
+ROLLBACK;
+
+ROLLBACK a;
+
+CREATE TABLE student(
+	sno INT PRIMARY KEY AUTO_INCREMENT,
+	sname VARCHAR(100),
+	kor INT,
+	eng INT,
+	mat INT);
+
+-- 5명의 학생 성적 데이터를 추가
+INSERT INTO student(sname, kor, eng, mat) VALUES("김기태", 80, 70, 60);
+INSERT INTO student(sname, kor, eng, mat) VALUES("강감찬", 75, 85, 95);
+INSERT INTO student(sname, kor, eng, mat) VALUES("이순신", 55, 45, 35);
+INSERT INTO student(sname, kor, eng, mat) VALUES("홍길동", 65, 60, 67);
+INSERT INTO student(sname, kor, eng, mat) VALUES("일지매", 78, 76, 73);
+
+SELECT * FROM student;
+
+SELECT sname, (kor+eng+mat) AS '총점', ((kor+eng+mat)/3) '평균' FROM student;
+
+-- ROUND 실수를 정수로
+SELECT sname, (kor+eng+mat) AS '총점', ROUND((kor+eng+mat)/3) '평균', 
+	if(((kor+eng+mat)/3)>=80,'합격','불합격') AS "pan" FROM student;
+
+-- case 문
+SELECT sname, (kor+eng+mat) AS '총점', ROUND((kor+eng+mat)/3) '평균', 
+	if(((kor+eng+mat)/3)>=80,'합격','불합격') AS "pan",
+	case
+		when ROUND((kor+eng+mat)/3) >= 90 then "A"
+		when ROUND((kor+eng+mat)/3) >= 80 then "B"
+		when ROUND((kor+eng+mat)/3) >= 70 then "C"
+		when ROUND((kor+eng+mat)/3) >= 60 then "D"
+		ELSE "F"
+	end AS "hak" FROM student;
