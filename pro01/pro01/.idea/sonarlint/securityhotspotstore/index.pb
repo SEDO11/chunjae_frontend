@@ -5,8 +5,6 @@
 web/css/font.css,7\2\7211c2a5adf270eaee8dc3dc360099c75342cd40
 E
 web/member/mypage.jsp,b\c\bc55933154d1df80ce1158c71e47b4ae78610c89
-D
-web/member/login.jsp,c\d\cddfa57185e828d441f3909f460c84bcf200efc0
 E
 web/member/signup.jsp,2\3\2361887245a855e8c9689e89376a71c424c16094
 B
@@ -27,3 +25,5 @@ D
 web/footer.jsp,d\1\d1d9225a0ea5584c9c07cd43b079735135b290f3
 <
 web/head.jsp,4\a\4a87f90bffcdb4e9d2b938add5b82f2f1ade81b4
+D
+web/member/login.jsp,c\d\cddfa57185e828d441f3909f460c84bcf200efc0
