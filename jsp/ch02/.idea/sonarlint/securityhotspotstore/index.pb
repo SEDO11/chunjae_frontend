@@ -6,8 +6,6 @@ D
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-C
-web/WEB-INF/web.xml,c\d\cdcc12da5c4054f6995aab32914d7e0243194c05
 G
 src/test/DBConTest.java,1\6\16edcbd634cc83724d91f6f281332d1d1776a352
 F
@@ -29,6 +27,10 @@ F
 C
 src/dto/Member.java,5\e\5ec60b7d85cc3b5b243977fd6e497f026e224434
 =
+web/test2.jsp,3\7\37f9c9b0bad46d881dfcb61449146e08cc31a500
+=
+web/test1.jsp,d\4\d4f78b7e1decc3d13d657003d578716b99676f3a
+=
 web/index.jsp,9\f\9f198ed450f32e45b10ec3c2b1406e609b4a96cd
 =
 web/test4.jsp,8\4\84ebe91504a4092f7c3aec5e979cc00d218376c5
@@ -43,8 +45,14 @@ C
 >
 web/target.jsp,f\f\ff1cfe8ca75c993a50a2ba896c8488fe644494a2
 =
-web/test2.jsp,3\7\37f9c9b0bad46d881dfcb61449146e08cc31a500
-=
 web/test6.jsp,3\b\3b92e234b5343ee34771bc0515632d3135db9e27
-=
-web/test1.jsp,d\4\d4f78b7e1decc3d13d657003d578716b99676f3a
+G
+web/formatErrorPage.jsp,2\9\2904ed07e909c90116f5a395b9b69391bdf17d96
+D
+web/sqlErrorPage.jsp,f\c\fcf331281ae989baad6120e04037e9de8afea27f
+I
+web/notFoundErrorPage.jsp,9\d\9dfa0e3cac37fbfd3d598d398fd0700199161dec
+A
+web/errorPage.jsp,5\a\5a36e0847b1d8dac3c48ef4333ff6542b19b20d0
+C
+web/WEB-INF/web.xml,c\d\cdcc12da5c4054f6995aab32914d7e0243194c05

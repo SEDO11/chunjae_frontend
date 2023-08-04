@@ -2,20 +2,22 @@
 <%
     String path2 = request.getContextPath();
     String sid = (String) session.getAttribute("id");
+    String sname = (String) session.getAttribute("name");
 %>
 <div class="hd_wrap">
     <nav class="tnb"> <!-- .hd_wrap:first-child  -->
         <ul class="menu">
             <% if(sid!=null) { %>
             <li><a href=<%=path2%>"/member/mypage.jsp">마이페이지</a></li>
-            <li><a href=<%=path2%>"/member/signup.jsp">로그아웃</a></li>
+            <li><a href=<%=path2%>"/member/logout.jsp">로그아웃</a></li>
             <li><a href=<%=path2%>"/member/map.jsp">오시는길</a></li>
                 <% if(sid.equals("admin")) {%>
                 <li><a href=<%=path2%>"/member/index.jsp">관리자페이지</a></li>
                 <% } %>
+            <li><%=sname%></li>
             <% } else {%>
             <li><a href=<%=path2%>"/member/login.jsp">로그인</a></li>
-            <li><a href=<%=path2%>"/member/signup.jsp">회원가입</a></li>
+            <li><a href=<%=path2%>"/member/join.jsp">회원가입</a></li>
             <li><a href=<%=path2%>"/member/map.jsp">오시는길</a></li>
             <% } %>
         </ul>

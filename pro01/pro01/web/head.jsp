@@ -39,3 +39,11 @@
 <link rel="icon" href=<%=path1%>"/img/logo_32.png" sizes="32x32">
 <link rel="icon" href=<%=path1%>"/img/logo_48.png" sizes="48x48">
 <link rel="icon" href=<%=path1%>"/img/logo_64.png" sizes="64x64">
+
+<!-- 불법 복제 방지, 필수 -->
+<script>
+    document.oncontextmenu = function () {return false;}
+    document.ondragstart = function () {return false;} // 드래그 방지
+    document.onselectstart = function () {return false;}
+    // document.onkeydown = function () {return false;} // 키보드 입력 방지
+</script>

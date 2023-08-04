@@ -3,4 +3,48 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <!-- display name, 프로젝트 이름, 꼭 제시 -->
+    <display-name>
+
+    </display-name>
+
+    <!-- welcome-file-list, 메인페이지 옵션, index 말고 특정 파일을 메인페이지로 만들경우 -->
+    <welcome-file-list>
+        <!-- 메인 페이지 선택, 위로 갈수록 우선순위가 높음 -->
+        <!-- 여기있는 파일이 아무것도 없으면 에러가 뜸-->
+        <welcome-file>hl1.html</welcome-file>
+        <welcome-file>hl2.html</welcome-file>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- 에러 페이지 생성-->
+    <!-- java exception or 에러코드로 사용가능-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/notFoundErrorPage.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.NumberFormatException</exception-type>
+        <location>/formatErrorPage.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.sql.SQLException</exception-type>
+        <location>/sqlErrorPage.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/errorPage.jsp</location>
+    </error-page>
+
+    <!-- 여기에 들어있는 모든 파일을 읽어오겠다. , 이름은 default로 지정 -->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.js</url-pattern>
+        <url-pattern>*.css</url-pattern>
+        <url-pattern>*.jpg</url-pattern>
+        <url-pattern>*.png</url-pattern>
+        <url-pattern>*.gif</url-pattern>
+        <url-pattern>*.webp</url-pattern>
+    </servlet-mapping>
 </web-app>

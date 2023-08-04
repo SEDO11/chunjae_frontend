@@ -1,4 +1,4 @@
-package chunjae.db;
+package com.chunjae.db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
