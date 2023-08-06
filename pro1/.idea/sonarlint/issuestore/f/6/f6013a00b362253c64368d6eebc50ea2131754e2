@@ -1,0 +1,10 @@
+
+IWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(ÉÏ‡•
+_	Web:S5255ª"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(¿ííúÿÿÿÿ
+Z	Web:S5255¶"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(³»ê›
+f	Web:S5255õ"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(ÇÍã·øÿÿÿÿ8ëùÕ›1
+Gjavascript:S125"Remove this commented out code.(¥¾›ûÿÿÿÿÿ8‘îùÕ›1
+]javascript:S1481‘"4Remove the declaration of the unused 'win' variable.(¹ŞºÜıÿÿÿÿ8‘îùÕ›1
+Zjavascript:S1854‘"1Remove this useless assignment to variable "win".(¹ŞºÜıÿÿÿÿ8‘îùÕ›1
+8	css:S4656r"Unexpected duplicate "display"(ìÏ¥úÿÿÿÿ
+N	css:S4657"3Unexpected shorthand "padding" after "padding-left"(õÊĞ¥ÿÿÿÿÿ

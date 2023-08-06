@@ -120,7 +120,7 @@
         
         .slide_box {clear: both; width:calc(100vw - 350px); height: 400px; margin-left: 350px;
             -ms-overflow-style: none; scrollbar-width: none;} /*float:right 보다는 margin-left를 이용하자*/
-        .slide_box:-webkit-scrollbar {display: none;}
+        .slide_box::-webkit-scrollbar {display: none;}
 
         .page_com{text-align: center; padding-bottom: 30px; padding-top: 30px;}
         .card_lst {width: 4000px;}
@@ -158,7 +158,7 @@
 
         .sl-btn-box .btn {display: block; width: 48px; height: 48px; font-size: 32px; 
             color: white; background-color: #333; text-align: center; line-height: 48px;
-        font-weight: 700px; cursor: pointer; position: absolute; margin-top: 200px;}
+        font-weight: 700; cursor: pointer; position: absolute; margin-top: 200px;}
         .sl-btn-box .btn.next { top:100px; }
         .sl-btn-box .btn.prev { top:148px; }
     </style>
@@ -187,26 +187,26 @@
                                 <li><a href="./html/company.html#com">회사개요</a></li>
                                 <li><a href="./html/company.html#greet">인사말</a></li>
                                 <li><a href="./html/company.html#history">연혁</a></li>
-                                <li><a href="./html/company.html#map1"">경영이념</a></li>
+                                <li><a href="./html/company.html#map1">경영이념</a></li>
                             </ul>
                         </li>
                         <script src="./js/showpage.js"></script>
                         <li class="item2">
                             <a href="./html/learning.html" class="dp1">IT교육</a>
                             <ul class="sub">
-                                <li><a href="./html/business.html">파이썬</a></li>
-                                <li><a href="./html/business.html">자바</a></li>
-                                <li><a href="./html/business.html">OpenCV</a></li>
-                                <li><a href="./html/business.html">안드로이드</a></li>
+                                <li><a href="./html/learning.html">파이썬</a></li>
+                                <li><a href="./html/learning.html">자바</a></li>
+                                <li><a href="./html/learning.html">OpenCV</a></li>
+                                <li><a href="./html/learning.html">안드로이드</a></li>
                             </ul>
                         </li>
                         <li class="item3">
-                            <a href="" class="dp1">IT실습</a>
+                            <a href="./html/certification.html" class="dp1">자격증</a>
                             <ul class="sub">
-                                <li><a href="./html/service.html">해외</a></li>
-                                <li><a href="./html/service.html">사교육</a></li>
-                                <li><a href="./html/service.html">공교육</a></li>
-                                <li><a href="./html/service.html">학회</a></li>
+                                <li><a href="./html/certification.html#com">정보처리기사</a></li>
+                                <li><a href="./html/certification.html#greet">정보처리산업기사</a></li>
+                                <li><a href="./html/certification.html#history">빅데이터분석기사</a></li>
+                                <!-- <li><a href="./html/service.html">학회</a></li> -->
                             </ul>
                         </li>
                         <li class="item4">
@@ -369,42 +369,44 @@
             <script src="./js/slidebox.js"></script>
         </div>
         <footer class="ft">
-            <nav class="ft_link">
-                <ul class="fnb">
-                    <li class="ft_logo"></li>
-                    <li><a href="">제휴문의</a></li>
-                    <li><a href="">이메일 무단 수집 거부</a></li>
-                </ul>
-                <ul class="snb">
-                    <li><a target="_blank" class="item1" href="https://www.facebook.com/ChunjaeEdu/">페이스북</a></li>
-                    <li><a target="_blank" class="item2" href="https://cafe.naver.com/tunemom">카페</a></li>
-                    <li><a target="_blank" class="item3" href="https://blog.naver.com/storychunjae">블로그</a></li>
-                    <li><a target="_blank" class="item4" href="https://www.youtube.com/channel/UCMHZZaDM1kJqJUkQ6jFQPeQ/featured">유튜브</a></li>
-                    <li><a target="_blank" class="item5" href="https://www.instagram.com/chunjae_edu/">인스타</a></li>
-                    <li class="locate">
-                        <select name="sel" id="sel" onchange="loc()"> <!-- onchange="" option의 값이 바뀌는 경우 -->
-                            <option value="">Family link</option>
-                            <option value="https://chunjaetext.co.kr/">천재 교과서</option>
-                            <option value="http://www.milkt.co.kr/Main/Main_new">밀크T</option>
-                            <option value="https://e-test.chunjae.co.kr/">온라인 성취도 평가</option>
-                            <option value="http://www.edumon.co.kr/intro/index.asp">에듀몬</option>
-                        </select>
-                    </li>
-                </ul>
-            </nav>
-            <script>
-                function loc () {
-                    let url = document.getElementById("sel").value;
-                    // location.href=url; // 현재 창에 출력
-                    if(url!="") {
-                        let win = window.open(url) // 새 창에 출력
+            <div class="ft_wrap">
+                <nav class="ft_link">
+                    <ul class="fnb">
+                        <li class="ft_logo"></li>
+                        <li><a href="">제휴 문의</a></li>
+                        <li><a href="">이메일 무단 수집 거부</a></li>
+                    </ul>
+                    <ul class="snb">
+                        <li class="item1"><a href="">소셜1</a></li>
+                        <li class="item2"><a href="">소셜2</a></li>
+                        <li class="item3"><a href="">소셜3</a></li>
+                        <li class="item4"><a href="">소셜4</a></li>
+                        <li class="item5"><a href="">소셜5</a></li>
+                        <li class="locate">
+                            <select name="sel" id="sel" onchange="loc()">
+                                <option value="">FAMILY LINK</option>
+                                <option value="https://chunjaetext.co.kr/">천재교과서</option>
+                                <option value="http://www.milkt.co.kr/Main/Main_new">밀크T</option>
+                                <option value="http://www.prinpia.co.kr/">프린피아</option>
+                                <option value="http://www.edumon.co.kr/intro/index.asp">에듀몬</option>
+                            </select>
+                        </li>
+                    </ul>
+                </nav>
+                <script>
+                    function loc(){
+                        var url = document.getElementById("sel").value;
+                        //location.href = url;  //현재 창에
+                        if(url!="") {
+                            var win = window.open(url); //새창에
+                        }
                     }
-                }
-            </script>
+                </script>
+            </div>
             <div class="ft_wrap2">
                 <p class="copyright">
-                    <span>(주) 천재교육</span>
-                    <span>서울시 금천구 가산로 9길 54</span>
+                    <span>(주)천재교육</span>
+                    <span>서울시 금천구 가산로9길 54</span>
                     <span>대표자 강희철</span>
                     <span>사업자등록번호 119-81-19350</span>
                     <span>통신판매신고번호 제18-439호</span>
@@ -418,13 +420,11 @@
                     <span>밀크T중학 1522-5533</span>
                     <span class="end">밀크T고등 1522-5533</span>
                 </p>
-                <p class="cp">
-                    COPYRIGHT 1981-2023 CHUNJAE EDUCATION INC. ALL RIGHTS RESERVED.
-                </p>
+                <p class="cp">COPYRIGHT 1981-2023 CHUNJAE EDUCATION INC. ALL RIGHTS RESERVED.</p>
             </div>
         </footer>
-    </div>
     <!-- 문서 위로 이동 -->
     <a href="#" class="totop">위로</a>
+    </div>
 </body>
 </html>
