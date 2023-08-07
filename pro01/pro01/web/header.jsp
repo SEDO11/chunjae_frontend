@@ -59,9 +59,9 @@
                 </ul>
             </li>
             <li class="item4">
-                <a href="" class="dp1">강사진</a>
+                <a href="" class="dp1">게시판</a>
                 <ul class="sub">
-                    <li><a href="./html/marketing.html">언론보도</a></li>
+                    <li><a href="./board/boardList.jsp">공지사항</a></li>
                     <li><a href="./html/marketing.html">광고</a></li>
                     <li><a href="./html/marketing.html">수상</a></li>
                     <li><a href="./html/marketing.html">이야기</a></li>

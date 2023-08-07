@@ -1,0 +1,12 @@
+
+IWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(»†™Ù
+IWeb:AvoidCommentedOutCodeCheck#"Remove this commented out code.(ô­öĞ
+NWeb:AvoidCommentedOutCodeCheck)"Remove this commented out code.(ŞÊ—îøÿÿÿÿ
+OWeb:AvoidCommentedOutCodeCheck‚"Remove this commented out code.(´«Õıÿÿÿÿ
+JWeb:AvoidCommentedOutCodeCheck¤"Remove this commented out code.(Ğ¦ÍÙ
+_	Web:S5255Û"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(×»ğüÿÿÿÿ
+Z	Web:S5255è"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(³»ê›
+_	Web:S5255å"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(ÇÍã·øÿÿÿÿ
+@javascript:S125ÿ"Remove this commented out code.(¥¾›ûÿÿÿÿÿ
+Vjavascript:S1481"4Remove the declaration of the unused 'win' variable.(¹ŞºÜıÿÿÿÿ
+Sjavascript:S1854"1Remove this useless assignment to variable "win".(¹ŞºÜıÿÿÿÿ
