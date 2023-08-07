@@ -1,11 +1,27 @@
 
 =
 src/Main.java,9\2\924f089edb4af5ee45c8a9d1129cd28e2b368138
+<<<<<<< HEAD
+>
+web/target.jsp,f\f\ff1cfe8ca75c993a50a2ba896c8488fe644494a2
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+C
+web/WEB-INF/web.xml,c\d\cdcc12da5c4054f6995aab32914d7e0243194c05
+=
+web/test3.jsp,b\f\bffb390eca5c3fea394cae80c570abbde440dbc0
+=
+web/test2.jsp,3\7\37f9c9b0bad46d881dfcb61449146e08cc31a500
+=
+web/test1.jsp,d\4\d4f78b7e1decc3d13d657003d578716b99676f3a
+=======
 D
 src/dto/Student.java,7\5\75e25d946cc3a48a373473a29b9221cc72ee0c9a
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+>>>>>>> 789bcfadbd31ea19251100304e84c35ea6435550
 G
 src/test/DBConTest.java,1\6\16edcbd634cc83724d91f6f281332d1d1776a352
 F
@@ -18,10 +34,20 @@ F
 src/test/DaoTest5.java,c\8\c8ecebe781ac8351f35ff54c9b4e8380e0f29867
 H
 web/META-INF/context.xml,0\b\0b5ed5dfc48d40f738ad3c8e8ec06325e849a9f7
+F
+src/test/DaoTest1.java,6\b\6b31a289bf712b251f5890b5bce2c384ef742f10
+C
+src/dto/Member.java,5\e\5ec60b7d85cc3b5b243977fd6e497f026e224434
+D
+src/dto/Student.java,7\5\75e25d946cc3a48a373473a29b9221cc72ee0c9a
 @
 src/dao/DBC.java,e\2\e2779866e97010f9bfac2adc502b6e96e2d98b77
 G
 src/dao/MariaDBCon.java,3\1\31d327b16a05b660a1dcace3806c712816b20bcf
+<<<<<<< HEAD
+=
+web/index.jsp,9\f\9f198ed450f32e45b10ec3c2b1406e609b4a96cd
+=======
 F
 src/test/DaoTest1.java,6\b\6b31a289bf712b251f5890b5bce2c384ef742f10
 C
@@ -56,3 +82,4 @@ A
 web/errorPage.jsp,5\a\5a36e0847b1d8dac3c48ef4333ff6542b19b20d0
 C
 web/WEB-INF/web.xml,c\d\cdcc12da5c4054f6995aab32914d7e0243194c05
+>>>>>>> 789bcfadbd31ea19251100304e84c35ea6435550
