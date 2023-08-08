@@ -3,8 +3,8 @@
 <%@ page import="java.util.*" %>
 <%@ page import="com.chunjae.db.*" %>
 <%@ page import="com.chunjae.dto.*" %>
+<%@include file="/encoding.jsp"%>
 <%
-    request.setCharacterEncoding("utf8");
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
     String name = request.getParameter("name");

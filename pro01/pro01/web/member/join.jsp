@@ -50,9 +50,13 @@
             text-indent:14px; font-size:18px; }
         .inbtn { display:block;  border-radius:100px;
             min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; }
+            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; cursor: pointer;}
         .inbtn:first-child { float:left; }
         .inbtn:last-child { float:right; }
+
+        .inbtn:hover {
+            background-color: #666666;
+        }
     </style>
 
     <link rel="stylesheet" href="../css/ft.css">

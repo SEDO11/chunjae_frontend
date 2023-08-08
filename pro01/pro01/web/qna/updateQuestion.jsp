@@ -2,6 +2,8 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="com.chunjae.db.*" %>
 <%@ page import="com.chunjae.dto.*" %>
+<%@ page import="com.chunjae.vo.Qna" %>
+<%@ include file="/encoding.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,52 +51,40 @@
         .tb1 td {line-height: 32px; padding-top:16px; padding-bottom:16px;
             border-bottom: 1px solid #333; border-top: 1px solid #333; box-sizing: border-box; text-align: center;}
 
-        .tb1 .item2 {height: 500px;}
-
+        .btn_group {width: 100px;}
         .inbtn { display:block;  border-radius:100px;
             min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; }
-        .item5 {width: 600px;}
-        .inbtn:first-child { float: left; }
-        .inbtn:last-child { float: right; }
+            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; cursor: pointer; }
+        .inbtn:first-child { float:left; }
+        .inbtn:last-child { float:right; }
     </style>
 </head>
 
 <%
-    request.setCharacterEncoding("utf8");
-    response.setCharacterEncoding("utf8");
-
-    Board bd = new Board();
-    int bno = Integer.parseInt(request.getParameter("bno"));
+    Qna q = new Qna();
+    int qno = Integer.parseInt(request.getParameter("qno"));
 
     DBC con = new MariaDBCon();
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
 
-    try{
-        // 조회수 갱신 코드
-        conn = con.connect();
-        String sql = "update board set cnt=cnt+1 where bno=?";
-        pstmt = conn.prepareStatement(sql);
-        pstmt.setInt(1, bno);
-        int cnt = pstmt.executeUpdate();
-        if(cnt > 0) {
-            System.out.println("조회수 갱신 완료");
-        } else {
-            System.out.println("조회수 갱신 실패");
-        }
+    conn = con.connect();
+    if(conn != null) {
+        System.out.println("DB 연결 성공");
+    } else {
+        System.out.println("DB 연결 실패");
+    }
 
-        String sql2 = "select * from board where bno=?";
-        pstmt = conn.prepareStatement(sql2);
-        pstmt.setInt(1, bno);
+    try{
+        String sql = "select * from qna where qno=? and lev=0";
+        pstmt = conn.prepareStatement(sql);
+        pstmt.setInt(1, qno);
         rs = pstmt.executeQuery();
         if(rs.next()) {
-            bd.setTitle(rs.getString("title"));
-            bd.setAuthor(rs.getString("author"));
-            bd.setContent(rs.getString("content"));
-            bd.setResdate(rs.getString("resdate"));
-            bd.setCnt(rs.getInt("cnt"));
+            q.setTitle(rs.getString("title"));
+            q.setAuthor(rs.getString("author"));
+            q.setContent(rs.getString("content"));
         }
     } catch (SQLException e) {
         System.out.println("sql 연결 실패");
@@ -113,40 +103,44 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="">HOME</a> &gt; <a href="">게시글 목록</a> &gt; <span>게시글 상세</span></p>
+            <p>
+                <a href="/">HOME</a> &gt; <a href="/qna/qnaList.jsp">QNA</a> &gt; <a href="/qna/qnaList.jsp">QNA 상세</a>
+                &gt; <a href="/qna/qnaList.jsp">질문 수정</a>
+            </p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
                 <h2 class="page_tit">게시글 상세</h2>
-                <table class="tb1">
-                    <thead>
-                    <tr >
-                        <th class="item1">제목</th>
-                        <th class="item3">작성자</th>
-                        <th class="item4">조회수</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="item1" ><%=bd.getTitle()%></td>
-                        <td class="item3"><%=bd.getAuthor()%></td>
-                        <td class="item4"><%=bd.getCnt()%></td>
-                    </tr>
-                    <tr>
-                        <td class="item2" colspan="3" ><%=bd.getContent()%></td>
-                    </tr>
-                    <tr>
-                        <td class="item5" colspan="3">
-                            <% if (sid != null && (sid.equals("admin") || sid.equals(bd.getAuthor()))) { %>
-                            <a href="/board/updateBoard.jsp?bno=<%=bno%>" class="inbtn"> 글 수정</a>
-                            <a href="/board/deleteBoardpro.jsp?bno=<%=bno%>" class="inbtn"> 글 삭제</a>
-                            <% } else {%>
-                            <p>관리자 혹은 글작성자만 수정이 가능합니다.</p>
-                            <% } %>
-                        </td>
-                    </tr>
-                    </tbody>
+
+                    <form action="updateQuestionpro.jsp" id="login_frm" class="frm">
+                        <table class="tb1">
+                            <tbody>
+                                <tr>
+                                    <th class="item3">제목</th>
+                                    <td><input type="text" name="title" id="title" class="indata" value="<%=q.getTitle()%>" autofocus required></td>
+                                    <input type="hidden" name="qno" value="<%=qno%>" readonly>
+                                </tr>
+                                <tr>
+                                    <th colspan="2" class="item4">내용</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><textarea name="content" id="content" class="" cols="80" rows="15" maxlength="100" required><%=q.getContent()%></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <input type="submit" value="수정" class="inbtn">
+                                        <input type="reset" value="취소" class="inbtn">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
                 </table>
+                <div class="btn_group">
+                    <br>
+                    <hr>
+                    <br>
+                </div>
             </div>
         </section>
     </div>

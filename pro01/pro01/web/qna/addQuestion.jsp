@@ -1,12 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@include file="/encoding.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인 페이지</title>
-    <%@ include file="../head.jsp" %>
-
+    <title>질문 작성</title>
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
@@ -38,13 +37,17 @@
             width:1200px; margin: 0 auto; text-align: right; color:#fff;
             padding-top: 28px; padding-bottom: 28px; }
         .breadcrumb a { color:#fff; }
-        .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
 
-        .tb1 { width:500px; margin:0 auto; }
-        .tb1 td { width:500px; line-height: 48px; padding-top:24px; padding-bottom:24px; }
+        .tb1 { width:600px; margin:0 auto; font-size: 24px;}
+        .tb1 th { width: 200px; line-height: 32px; padding-top:16px; padding-bottom:16px;
+            border-bottom: 1px solid #333; border-top: 1px solid #333; box-sizing: border-box; text-align: center;}
+        .tb1 td { width: 400px; line-height: 32px; padding-top:16px; padding-bottom:16px;
+            border-bottom: 1px solid #333; border-top: 1px solid #333; box-sizing: border-box; text-align: center;}
 
-        .indata { display:inline-block; width: 500px; height: 48px; line-height: 48px;
-                                              text-indent:14px; font-size:18px; }
+        .tb1 td:last-child { line-height: 48px; padding-top:24px; padding-bottom:24px; }
+
+        .indata { display:inline-block; width: 400px; height: 32px; line-height: 32px;
+            text-indent:14px; font-size:14px; }
         .inbtn { display:block;  border-radius:100px;
             min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
             line-height: 48px; background-color: #333; color:#fff; font-size: 18px; cursor: pointer; }
@@ -54,8 +57,8 @@
         .inbtn:hover {
             background-color: #666666;
         }
-    </style>
 
+    </style>
 </head>
 <body>
 <div class="wrap">
@@ -64,24 +67,27 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="">HOME</a> &gt; <span>로그인</span></p>
+            <p><a href="/">HOME</a> &gt; <a href="/qna/qnaList.jsp">QNA</a> &gt; <a href="/qna/getQna.jsp">QNA 상세</a>
+                &gt; <a href="/qna/addQuestion.jsp">QNA 질문 작성</a></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">로그인</h2>
-                <form action="loginpro.jsp" id="login_frm" class="frm">
+                <h2 class="page_tit">질문 작성</h2>
+                <form action="addQuestionpro.jsp" id="login_frm" class="frm">
                     <table class="tb1">
                         <tbody>
                         <tr>
-                            <td><input type="text" name="id" id="id" class="indata" placeholder="아이디 입력" autofocus required></td>
+                            <th><label for="title">질문 제목</label></th>
+                            <td><input type="text" name="title" id="title" class="indata" placeholder="제목 입력" autofocus required></td>
                         </tr>
                         <tr>
-                            <td><input type="password" name="pw" id="pw" class="indata" placeholder="패스워드 입력" required></td>
+                            <th><label for="content">질문 내용</label></th>
+                            <td><textarea name="content" id="content" cols="50" rows="15" placeholder="내용 입력" required></textarea></td>
                         </tr>
                         <tr>
-                            <td>
-                                <input type="submit" value="로그인" class="inbtn">
-                                <input type="reset" value="취소" class="inbtn">
+                            <td colspan="2">
+                                <input type="submit" value="글쓰기" class="inbtn">
+                                <input type="reset" value="내용 리셋" class="inbtn">
                             </td>
                         </tr>
                         </tbody>

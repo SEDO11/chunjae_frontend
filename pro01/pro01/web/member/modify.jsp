@@ -136,6 +136,7 @@
             color: #fff;
             font-size: 18px;
             margin-top: 20px;
+            cursor: pointer;
         }
 
         .inbtn:first-child {
@@ -144,6 +145,10 @@
 
         .inbtn:last-child {
             float: right;
+        }
+
+        .inbtn:hover {
+            background-color: #666666;
         }
     </style>
 </head>
