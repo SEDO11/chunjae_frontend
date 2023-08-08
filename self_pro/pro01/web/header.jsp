@@ -67,9 +67,9 @@
             <li class="item5">
                 <a href="" class="dp1">학습자료실</a>
                 <ul class="sub">
-                    <li><a class="move" href="/upload/file_upload.html">브랜드소개</a></li>
-                    <li><a class="move" href="./html/brand.html">역사</a></li>
-                    <li><a class="move" href="./html/brand.html"></a></li>
+                    <li><a class="move" href="/upload/file_upload.html">cos 업로드</a></li>
+                    <li><a class="move" href="/upload/file_upload2.html">apach 업로드</a></li>
+                    <li><a class="move" href="/qna/qnaList.jsp">업로드 확인</a></li>
                     <li><a class="move" href="./html/brand.html"></a></li>
                 </ul>
             </li>

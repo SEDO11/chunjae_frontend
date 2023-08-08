@@ -1,0 +1,31 @@
+<html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+<form action="file_upload2.jsp" enctype="multipart/form-data" method="post">
+    <table>
+        <tr><td colspan="2">글작성</td></tr>
+        <tr>
+            <th>아이디 &nbsp;</th>
+            <td><input type="text" name="id" id="id" value="아이디" placeholder="id" required></td>
+        </tr>
+        <tr>
+            <th>작성글 &nbsp;</th>
+            <td><textarea name="content" id="content" rows="5" cols="20" required></textarea></td>
+        </tr>
+        <tr>
+            <th>이미지 &nbsp;</th>
+            <td><input type="file" name="image" accept=".pdf, .hwp, .doc, .docx, .jpg, .png"></td>
+        </tr>
+        <tr>
+            <th>파일업로드</th>
+            <td colspan="2"><input type="submit" value="업로드"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

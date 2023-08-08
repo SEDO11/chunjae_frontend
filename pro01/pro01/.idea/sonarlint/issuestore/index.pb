@@ -13,8 +13,6 @@ D
 web/css/slidebox.css,f\9\f910157565da53c865b67f7d122f610b965c37e2
 >
 web/footer.jsp,d\1\d1d9225a0ea5584c9c07cd43b079735135b290f3
-K
-src/com/chunjae/db/DBC.java,0\2\02852cd6403094cfe88c4bddf8970f8d5b8d6cae
 >
 web/css/ft.css,3\0\303592a85e781b94dd029f7b435118ab423591cf
 I
@@ -27,8 +25,6 @@ L
 web/board/updateBoardpro.jsp,2\4\242625025a56cfac757af58547462f3ac0823ae9
 >
 web/js/load.js,f\0\f038d0b1ec1c19303e6d34d145ef19c50b9f6c3f
-R
-"src/com/chunjae/db/MariaDBCon.java,7\8\783cacd8a1096e1232b0bccb8add09ef21aed99d
 N
 src/com/chunjae/dto/Board.java,f\c\fc60570f9b76206476074afc3ca578b0cd29158f
 O
@@ -97,3 +93,7 @@ M
 web/qna/deleteQuestionpro.jsp,b\1\b1ad239a4f5641b5fd26d4004e900f48f64439f5
 M
 web/qna/updateQuestionpro.jsp,5\e\5ec3838fec9f2f8c19a574eecd850a4c654bfacd
+R
+"src/com/chunjae/db/MariaDBCon.java,7\8\783cacd8a1096e1232b0bccb8add09ef21aed99d
+K
+src/com/chunjae/db/DBC.java,0\2\02852cd6403094cfe88c4bddf8970f8d5b8d6cae

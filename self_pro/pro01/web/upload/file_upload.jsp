@@ -1,9 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>cos</title>
 </head>
 <body>
 <%
@@ -15,6 +15,7 @@
 
     String fileRealName = multi.getFilesystemName("file");
     String fileName = multi.getOriginalFileName("file");
+
 %>
 </body>
 </html>
