@@ -13,14 +13,8 @@ D
 web/css/slidebox.css,f\9\f910157565da53c865b67f7d122f610b965c37e2
 >
 web/footer.jsp,d\1\d1d9225a0ea5584c9c07cd43b079735135b290f3
-O
-src/com/chunjae/dto/Member.java,2\b\2b48b9bdad6ad80b74f38cc1b66b4a6964b5496f
-R
-"src/com/chunjae/db/MariaDBCon.java,7\8\783cacd8a1096e1232b0bccb8add09ef21aed99d
 K
 src/com/chunjae/db/DBC.java,0\2\02852cd6403094cfe88c4bddf8970f8d5b8d6cae
-<
-web/head.jsp,4\a\4a87f90bffcdb4e9d2b938add5b82f2f1ade81b4
 =
 web/index.jsp,9\f\9f198ed450f32e45b10ec3c2b1406e609b4a96cd
 E
@@ -35,8 +29,6 @@ C
 web/member/term.jsp,3\6\3619eaa96c134fb9e5401a3bb7a28c0a6d967300
 E
 web/member/mypage.jsp,b\c\bc55933154d1df80ce1158c71e47b4ae78610c89
-N
-src/com/chunjae/dto/Board.java,f\c\fc60570f9b76206476074afc3ca578b0cd29158f
 >
 web/css/ft.css,3\0\303592a85e781b94dd029f7b435118ab423591cf
 G
@@ -55,8 +47,6 @@ R
 "web/diagram/기능흐름도.drawio,2\e\2e2c725bfa817caeb1cd22e673a30700e449d19e
 L
 web/board/deleteBoardpro.jsp,7\b\7b76b08d455a856044e745dbdbb0953981fb07aa
->
-web/header.jsp,f\f\ff77691b3d429e53a4449f401a4cd692f37474d9
 G
 web/board/boardList.jsp,2\a\2ac18a427f434a0841ff447d977ca9e9581f923d
 F
@@ -71,3 +61,15 @@ I
 web/board/addBoardpro.jsp,d\7\d7c5e52761cc07595e7a1993c79f85d326f6a654
 L
 web/board/updateBoardpro.jsp,2\4\242625025a56cfac757af58547462f3ac0823ae9
+>
+web/js/load.js,f\0\f038d0b1ec1c19303e6d34d145ef19c50b9f6c3f
+R
+"src/com/chunjae/db/MariaDBCon.java,7\8\783cacd8a1096e1232b0bccb8add09ef21aed99d
+>
+web/header.jsp,f\f\ff77691b3d429e53a4449f401a4cd692f37474d9
+N
+src/com/chunjae/dto/Board.java,f\c\fc60570f9b76206476074afc3ca578b0cd29158f
+O
+src/com/chunjae/dto/Member.java,2\b\2b48b9bdad6ad80b74f38cc1b66b4a6964b5496f
+<
+web/head.jsp,4\a\4a87f90bffcdb4e9d2b938add5b82f2f1ade81b4
