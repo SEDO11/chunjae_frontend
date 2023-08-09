@@ -1,17 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="com.chunjae.db.*" %>
-<%@ page import="com.chunjae.dto.*" %>
+<%@ page import="com.chunjae.vo.*" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="com.chunjae.dto.Board" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항</title>
+    <title>QNA</title>
     <%@ include file="../head.jsp" %>
 
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
@@ -57,15 +58,21 @@
         .tb1 td {line-height: 32px; padding-top:16px; padding-bottom:16px;
             border-bottom: 1px solid #333; border-top: 1px solid #333; box-sizing: border-box; text-align: center;}
 
-        .tb1 .item1 { width: 5%;}
-        .tb1 .item1 {width: 65%;}
-        .tb1 .item1 {width: 10%;}
-        .tb1 .item1 {width: 20%;}
+        .tb1 .item1 { width: 10%;}
+        .tb1 .item2 {width: 60%;}
+        .tb1 .item3 {width: 10%;}
+        .tb1 .item4 {width: 20%;}
 
         .inbtn { display:block;  border-radius:100px;
             min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; }
-        .inbtn:first-child { float:right; }
+            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; float:right;
+            cursor: pointer;}
+
+        .inbtn:hover {
+            background-color: #666666;
+        }
+
+        .btn_group { margin-top: 20px;}
     </style>
 </head>
 
@@ -78,7 +85,6 @@
 
     Connection conn = null;
     PreparedStatement pstmt = null;
-    Statement stmt = null;
     ResultSet rs = null;
 
     DBC con = new MariaDBCon();
@@ -89,18 +95,16 @@
 
     // 해당 회원의 정보를 db에서 가져옴
     try {
-        String sql = "select * from board group by bno desc";
+        String sql = "select * from board where lev=0 order by par desc";
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
         while(rs.next()){
-            Board bd = new Board();
-            bd.setBno(rs.getInt("bno"));
-            bd.setTitle(rs.getString("title"));
-            bd.setContent(rs.getString("content"));
-            bd.setAuthor(rs.getString("author"));
-            bd.setResdate(rs.getString("resdate"));
-            bd.setCnt(rs.getInt("cnt"));
-            boardList.add(bd);
+            Board board = new Board();
+            board.setPar(rs.getInt("par"));
+            board.setTitle(rs.getString("title"));
+            board.setAuthor(rs.getString("author"));
+            board.setResdate(rs.getString("resdate"));
+            boardList.add(board);
         }
     } catch(SQLException e) {
         System.out.println("SQL 구문이 처리되지 못했습니다.");
@@ -115,11 +119,11 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="">HOME</a> &gt; <span>공지사항</span></p>
+            <p><a href="/">HOME</a> &gt; <a href="/board/baordList.jsp">자유게시판</a></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">공지사항</h2>
+                <h2 class="page_tit">자유게시판</h2>
                 <table class="tb1" id="myTable">
                     <thead>
                         <tr>
@@ -131,21 +135,16 @@
                     </thead>
                     <tbody>
                     <%
-                        SimpleDateFormat ymd = new SimpleDateFormat("yyyy-MM-dd");
-                        for(Board bd:boardList) {
-                        Date d = ymd.parse(bd.getResdate());  //날짜데이터로 변경
+                        int tot = boardList.size();
+                        SimpleDateFormat ymd = new SimpleDateFormat("yy-MM-dd");
+                        for(Board arr:boardList) {
+                        Date d = ymd.parse(arr.getResdate());  //날짜데이터로 변경
                         String date = ymd.format(d);    //형식을 포함한 문자열로 변경
                     %>
                     <tr>
-                        <td class="item1"><%=bd.getBno()%></td>
-                        <td class="item2">
-                        <% if(sid!=null) { %>
-                        <a href="/board/getBoard.jsp?bno=<%=bd.getBno() %>"><%=bd.getTitle() %></a>
-                        <% } else { %>
-                        <span><%=bd.getTitle() %></span>
-                        <% } %>
-                        </td>
-                        <td class="item3"><%=bd.getAuthor()%></td>
+                        <td class="item1"><%=tot-- %></td>
+                        <td class="item2"><a href="/board/getBoard.jsp?bno=<%=arr.getPar() %>"><%=arr.getTitle() %></a></td>
+                        <td class="item3"><%=arr.getAuthor()%></td>
                         <td class="item4"><%=date %></td>
                     </tr>
                     <%
@@ -161,10 +160,10 @@
                     } );
                 </script>
                 <div class="btn_group">
-                    <% if (sid != null && sid.equals("admin")) { %>
-                    <a href="/board/addBoard.jsp" class="inbtn"> 글 작성 </a>
+                    <% if (sid != null) { %>
+                    <a href="addBoard.jsp" class="inbtn"> 글 작성 </a>
                     <% } else {%>
-                    <p>관리지만 공지사항의 글을 쓸 수 있습니다.</p>
+                    <p>글을 쓰려면 로그인 하세요</p>
                     <% } %>
                 </div>
             </div>

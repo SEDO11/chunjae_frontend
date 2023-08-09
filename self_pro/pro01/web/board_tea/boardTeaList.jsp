@@ -1,11 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="com.chunjae.db.*" %>
-<%@ page import="com.chunjae.vo.*" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="com.chunjae.dto.Board" %>
+<%@ include file="/encoding.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,13 +75,20 @@
         .btn_group { margin-top: 20px;}
     </style>
 </head>
+<%
+    if(sid != null && (sjob.equals("2") || sid.equals("admin"))) {
 
+    } else {
+        out.println("<script>alert('해당 페이지는 선생님만 접근 가능합니다.')</script>");
+        out.println("<script>location.href='/index.jsp'</script>");
+    }
+%>
 <%
     request.setCharacterEncoding("utf8");
     response.setContentType("text/html;charset=UTF-8");
     response.setCharacterEncoding("utf8");
 
-    List<Qna> qnaList = new ArrayList<>();
+    List<Board> boardList = new ArrayList<>();
 
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -94,16 +102,16 @@
 
     // 해당 회원의 정보를 db에서 가져옴
     try {
-        String sql = "select * from qnalist where lev=0 order by par desc";
+        String sql = "select * from board_tea where lev=0 order by par desc";
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
         while(rs.next()){
-            Qna q = new Qna();
-            q.setPar(rs.getInt("par"));
-            q.setTitle(rs.getString("title"));
-            q.setAuthor(rs.getString("author"));
-            q.setResdate(rs.getString("resdate"));
-            qnaList.add(q);
+            Board board = new Board();
+            board.setPar(rs.getInt("par"));
+            board.setTitle(rs.getString("title"));
+            board.setAuthor(rs.getString("author"));
+            board.setResdate(rs.getString("resdate"));
+            boardList.add(board);
         }
     } catch(SQLException e) {
         System.out.println("SQL 구문이 처리되지 못했습니다.");
@@ -118,11 +126,11 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="/qna/qnaList.jsp">QNA</a></p>
+            <p><a href="/">HOME</a> &gt; <a href="/board_tea/baordTeaList.jsp">학생게시판</a></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">QNA</h2>
+                <h2 class="page_tit">학생게시판</h2>
                 <table class="tb1" id="myTable">
                     <thead>
                         <tr>
@@ -134,15 +142,15 @@
                     </thead>
                     <tbody>
                     <%
-                        int tot = qnaList.size();
+                        int tot = boardList.size();
                         SimpleDateFormat ymd = new SimpleDateFormat("yy-MM-dd");
-                        for(Qna arr:qnaList) {
+                        for(Board arr:boardList) {
                         Date d = ymd.parse(arr.getResdate());  //날짜데이터로 변경
                         String date = ymd.format(d);    //형식을 포함한 문자열로 변경
                     %>
                     <tr>
                         <td class="item1"><%=tot-- %></td>
-                        <td class="item2"><a href="/qna/getQna.jsp?qno=<%=arr.getPar() %>"><%=arr.getTitle() %></a></td>
+                        <td class="item2"><a href="/board_tea/getBoardTea.jsp?bno=<%=arr.getPar() %>"><%=arr.getTitle() %></a></td>
                         <td class="item3"><%=arr.getAuthor()%></td>
                         <td class="item4"><%=date %></td>
                     </tr>
@@ -160,9 +168,9 @@
                 </script>
                 <div class="btn_group">
                     <% if (sid != null) { %>
-                    <a href="/qna/addQuestion.jsp" class="inbtn"> 글 작성 </a>
+                    <a href="addBoardTea.jsp" class="inbtn"> 글 작성 </a>
                     <% } else {%>
-                    <p>회원만 qna의 글을 쓸 수 있습니다.</p>
+                    <p>글을 쓰려면 로그인 하세요</p>
                     <% } %>
                 </div>
             </div>

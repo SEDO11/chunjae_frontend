@@ -9,6 +9,10 @@
 -- point : 포인트, 기본값
 -- DROP TABLE member;
 
+CREATE DATABASE edu;
+
+USE edu;
+
 CREATE TABLE member(
 	id VARCHAR(16) NOT NULL,
 	pw VARCHAR(330) NOT NULL,
@@ -68,20 +72,6 @@ CREATE TABLE board(
 	cnt INT DEFAULT 0);
 
 -- 더미글 추가
-INSERT INTO board(title, content, author) VALUES('더미글', '
-여기는 더미글 1 입니다.', 'hong');
-INSERT INTO board(title, content, author) VALUES('더미글', '
-여기는 더미글 2 입니다.', 'kang');
-INSERT INTO board(title, content, author) VALUES('더미글', '
-여기는 더미글 3 입니다.', 'kang');
-INSERT INTO board(title, content, author) VALUES('더미글', '
-여기는 더미글 4 입니다.', 'hong');
-INSERT INTO board(title, content, author) VALUES('더미글', '
-여기는 더미글 5 입니다.', 'kang');
-INSERT INTO board(title, content, author) VALUES('더미글', '
-여기는 더미글 6 입니다.', 'hong');
-INSERT INTO board(title, content, author) VALUES('더미글', '
-여기는 더미글 7 입니다.', 'admin');
 
 SELECT * FROM board;
 

@@ -27,6 +27,7 @@
         if(rs.next()){
             session.setAttribute("id", id);
             session.setAttribute("name", rs.getString("name"));
+            session.setAttribute("job", rs.getString("job"));
             response.sendRedirect("/");
         } else {
             response.sendRedirect("/member/login.jsp");

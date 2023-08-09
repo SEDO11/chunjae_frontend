@@ -17,7 +17,7 @@
     // par 를 넣기전에 질문 게시글을 db에 저장
     try {
         conn = con.connect();
-        String sql = "INSERT INTO board(title, content, author, par) VALUES(?, ?, ?, ?) ";
+        String sql = "INSERT INTO board_stu(title, content, author, par) VALUES(?, ?, ?, ?) ";
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, title);
         pstmt.setString(2, content);
@@ -40,14 +40,14 @@
     // 질문 게시글에 저장을 한 후 bno를 뽑아서 par에 저장
     try {
         conn = con.connect();
-        String sql = "update board set par=bno where par=0 and lev=0";
+        String sql = "update board_stu set par=bno where par=0 and lev=0";
         pstmt = conn.prepareStatement(sql);
         int cnt = pstmt.executeUpdate();
         if(cnt > 0) {
             System.out.println("게시글 update 완료");
 //            response.sendRedirect("qnaList.jsp");
             out.println("<script>alert('게시글 추가 성공')</script>");
-            out.println("<script>location.href='boardTeaList.jsp'</script>");
+            out.println("<script>location.href='boardStuList.jsp'</script>");
         } else {
             System.out.println("게시글 update 실패");
             out.println("<script>alert('게시글 추가 실패')</script>");

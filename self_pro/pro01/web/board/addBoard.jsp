@@ -1,10 +1,13 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+ <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@include file="/encoding.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>글 작성</title>
+    <title>게시글 작성</title>
+    <%@ include file="../head.jsp" %>
+
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
 
@@ -49,9 +52,14 @@
             text-indent:14px; font-size:14px; }
         .inbtn { display:block;  border-radius:100px;
             min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; }
+            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; cursor: pointer; }
         .inbtn:first-child { float:left; }
         .inbtn:last-child { float:right; }
+
+        .inbtn:hover {
+            background-color: #666666;
+        }
+
     </style>
 </head>
 <body>
@@ -61,21 +69,21 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="">HOME</a> &gt; <a href="">게시글 목록</a> &gt; <span>글작성</span></p>
+            <p><a href="/">HOME</a> &gt; <a href="/board/boardList.jsp">자유게시판</a>
+                &gt; <a href="/board/addBoard.jsp">게시글 작성</a></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">글작성</h2>
+                <h2 class="page_tit">게시글 작성</h2>
                 <form action="addBoardpro.jsp" id="login_frm" class="frm">
                     <table class="tb1">
                         <tbody>
                         <tr>
-                            <th><label for="title">글 제목</label></th>
+                            <th><label for="title">게시글 제목</label></th>
                             <td><input type="text" name="title" id="title" class="indata" placeholder="제목 입력" autofocus required></td>
-                            <input type="hidden" name="author" value="<%=sid%>" readonly>
                         </tr>
                         <tr>
-                            <th><label for="content">글 내용</label></th>
+                            <th><label for="content">게시글 내용</label></th>
                             <td><textarea name="content" id="content" cols="50" rows="15" placeholder="내용 입력" required></textarea></td>
                         </tr>
                         <tr>

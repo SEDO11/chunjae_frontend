@@ -17,7 +17,7 @@
 
     try {
         conn = con.connect();
-        String sql = "update board set title=?, content=? where bno=? and lev=0";
+        String sql = "update board_tea set title=?, content=? where bno=? and lev=0";
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, title);
         pstmt.setString(2, content);

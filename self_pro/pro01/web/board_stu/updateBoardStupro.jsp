@@ -17,7 +17,7 @@
 
     try {
         conn = con.connect();
-        String sql = "update board set title=?, content=? where bno=? and lev=0";
+        String sql = "update board_stu set title=?, content=? where bno=? and lev=0";
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, title);
         pstmt.setString(2, content);
@@ -26,13 +26,13 @@
         if(cnt > 0) {
             System.out.println("게시글 수정 완료");
             out.println("<script>alert('게시글 수정 성공')</script>");
-            out.println("<script>location.href='boardTeaList.jsp'</script>");
+            out.println("<script>location.href='boardStuList.jsp'</script>");
 //            response.sendRedirect("boardTeaList.jsp");
         } else {
             System.out.println("게시글 수정 실패");
 //            response.sendRedirect("updateQuestion.jsp?bno="+bno);
             out.println("<script>alert('게시글 수정 실패')</script>");
-            out.println("<script>location.href='boardTeaList.jsp'</script>"); //location
+            out.println("<script>location.href='boardStuList.jsp'</script>"); //location
         }
     } catch (SQLException e) {
         System.out.println("질문 수정: sql 에러");

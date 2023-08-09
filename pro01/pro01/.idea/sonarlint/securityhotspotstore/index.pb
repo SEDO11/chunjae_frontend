@@ -53,23 +53,15 @@ K
 src/com/chunjae/db/DBC.java,0\2\02852cd6403094cfe88c4bddf8970f8d5b8d6cae
 R
 "src/com/chunjae/db/MariaDBCon.java,7\8\783cacd8a1096e1232b0bccb8add09ef21aed99d
-J
-web/qna/addQuestionpro.jsp,7\c\7ce3a7b1f587d0d2b50c1d7460165de11717b7d3
-E
-web/qna/addAnspro.jsp,6\f\6f56551154905bb36f0f18a1f8b13f2967050556
-H
-web/qna/deleteQnapro.jsp,1\0\10b541748f8f30e9c39e63be88bb932a104fc33f
 D
 web/member/login.jsp,c\d\cddfa57185e828d441f3909f460c84bcf200efc0
-J
-web/qna/updateQuestion.jsp,7\d\7d03a96c1b6461093f70c7e3f1d090a7b6aeb59e
-M
-web/qna/updateQuestionpro.jsp,5\e\5ec3838fec9f2f8c19a574eecd850a4c654bfacd
 G
-web/qna/addQuestion.jsp,e\2\e2a216f9158f3cc42c13d8565100a79de705adaa
-B
-web/qna/addAns.jsp,e\1\e1a9810b1ef720ab07190d367c2447765507821f
-C
-web/qna/qnaList.jsp,5\8\58d1f29887eac3103fe50001cbc39d3dedecb172
-G
+<<<<<<< HEAD
 web/member/loginpro.jsp,8\e\8e3070cda67eeb949a64407d592e9f41ef23f848
+=======
+web/member/loginpro.jsp,8\e\8e3070cda67eeb949a64407d592e9f41ef23f848
+F
+web/member/idcheck.jsp,4\2\4289b169a2e3d7981af007951a425840d6e63959
+C
+web/member/join.jsp,a\4\a4d706dcfd7ab74948ee4c3d4507aa85dbe3abf1
+>>>>>>> 67f59d87d1e83436553dcc70f8d4919de9dcdab4

@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자유 게시판 상세</title>
+    <title>학생 게시판 상세</title>
     <%@ include file="../head.jsp" %>
 
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
@@ -104,7 +104,7 @@
     try{
         // 조회수 갱신 코드
         conn = con.connect();
-        String sql = "update board set cnt=cnt+1 where par=? and lev=0";
+        String sql = "update board_tea set cnt=cnt+1 where par=? and lev=0";
         System.out.println(bno);
         pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, bno);
@@ -116,7 +116,7 @@
         }
 
         // 해당 qno(par) 번호를 갖는 게시물 내용, 댓글 불러오기
-        String sql2 = "select * from board where par=? order by lev";
+        String sql2 = "select * from board_tea where par=? order by lev";
         pstmt = conn.prepareStatement(sql2);
         pstmt.setInt(1, bno);
         rs = pstmt.executeQuery();
@@ -148,7 +148,7 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="/board/boardList.jsp">자유게시판</a> &gt; <a href="/board/getBoard.jsp?bno=<%=bno%>">게시글</a></p>
+            <p><a href="/">HOME</a> &gt; <a href="/board_tea/boardTeaList.jsp">학생게시판</a> &gt; <a href="/board_tea/getBoardTea.jsp?bno=<%=bno%>">게시글</a></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
@@ -173,7 +173,7 @@
                         <td class="item1">
                             <p><%= (arr.getLev() == 0 ? "[게시글] " : "[댓글] ")%></p>
                             <% if(sid!=null && (sid.equals(arr.getAuthor()) || sid.equals("admin")) && arr.getLev() != 0) { %>
-                            <a href="/board/deleteBoardpro.jsp?bno=<%=arr.getBno()%>&lev=1" class="inbtn2"> 삭제 </a>
+                            <a href="/board_tea/deleteBoardTeapro.jsp?bno=<%=arr.getBno()%>&lev=1" class="inbtn2"> 삭제 </a>
                             <% } %>
                         </td>
                         <td class="item2"><%=arr.getContent() %></td>
@@ -202,17 +202,17 @@
                         String id2 = boardList.get(0).getAuthor();
                         if (sid != null &&( sid.equals("admin") || !sid.equals(""))) {
                     %>
-                    <a href="/board/addAns.jsp?bno=<%=bno%>" class="inbtn"> 댓글 작성 </a>
+                    <a href="/board_tea/addTeaAns.jsp?bno=<%=bno%>" class="inbtn"> 댓글 작성 </a>
                     <% } else {%>
                     <p class="exp">회원만 댓글을 작성 할 수 있습니다.</p>
                     <% }
                         if (sid != null && sid.equals(id2)) { %>
-                    <a href="/board/updateBoard.jsp?bno=<%=bno%>" class="inbtn"> 내용 수정 </a>
+                    <a href="/board_tea/updateBoardTea.jsp?bno=<%=bno%>" class="inbtn"> 내용 수정 </a>
                     <% } else {%>
                     <p class="exp">해당 글을 작성한 회원만 내용을 수정할 수 있습니다.</p>
                     <% }
                         if (sid != null &&( sid.equals("admin") || sid.equals(id2))) { %>
-                    <a href="/board/deleteBoardpro.jsp?bno=<%=bno%>&lev=0" class="inbtn" id="delete_btn"> 내용 삭제 </a>
+                    <a href="/board_tea/deleteBoardTeapro.jsp?bno=<%=bno%>&lev=0" class="inbtn" id="delete_btn"> 내용 삭제 </a>
                     <% } else {%>
                     <p class="exp">해당 글을 작성한 회원만 내용을 삭제할 수 있습니다.</p>
                     <% } %>

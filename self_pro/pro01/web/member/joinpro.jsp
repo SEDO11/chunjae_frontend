@@ -1,15 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="java.util.*" %>
 <%@ page import="com.chunjae.db.*" %>
-<%@ page import="com.chunjae.dto.*" %>
+<%@ include file="/encoding.jsp"%>
 <%
-    request.setCharacterEncoding("utf8");
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
     String name = request.getParameter("name");
     String tel = request.getParameter("tel");
     String email = request.getParameter("email");
+    int job = Integer.parseInt(request.getParameter("job"));
 
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -22,13 +21,14 @@
     }
 
     try {
-        String sql = "insert into member(id, pw, name, tel, email) values (?, ?, ?, ?, ?)";
+        String sql = "insert into member(id, pw, name, tel, email, job) values (?, ?, ?, ?, ?, ?)";
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, id);
         pstmt.setString(2, pw);
         pstmt.setString(3, name);
         pstmt.setString(4, tel);
         pstmt.setString(5, email);
+        pstmt.setInt(6, job);
         cnt = pstmt.executeUpdate();
         if(cnt > 0){ // 회원가입 성공했을 경우 로그인 페이지로 이동
             response.sendRedirect("/member/login.jsp");

@@ -16,9 +16,9 @@
 
     try {
         conn = con.connect();
-        String sql = "delete from board where bno=?";
+        String sql = "delete from board_stu where bno=?";
         if(lev == 0) {
-            sql = "delete from board where par=?";
+            sql = "delete from board_stu where par=?";
         }
         pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, bno);
@@ -26,10 +26,10 @@
         if(cnt > 0) {
             System.out.println("글 삭제 완료");
             out.println("<script>alert('삭제 성공')</script>");
-            out.println("<script>location.href='boardTeaList.jsp'</script>");
+            out.println("<script>location.href='boardStuList.jsp'</script>");
         } else {
             System.out.println("글 삭제 실패");
-            response.sendRedirect("getBoardTea.jsp?bno="+bno);
+            response.sendRedirect("getBoardStu.jsp?bno="+bno);
         }
     } catch (SQLException e) {
         System.out.println("글 삭제: sql 에러");

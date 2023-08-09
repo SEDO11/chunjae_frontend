@@ -16,9 +16,9 @@
 
     try {
         conn = con.connect();
-        String sql = "delete from board where bno=?";
+        String sql = "delete from board_tea where bno=?";
         if(lev == 0) {
-            sql = "delete from board where par=?";
+            sql = "delete from board_tea where par=?";
         }
         pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, bno);

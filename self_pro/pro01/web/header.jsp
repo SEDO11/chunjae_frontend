@@ -1,8 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
     String path2 = request.getContextPath();
-    String sid = (String) session.getAttribute("id");
-    String sname = (String) session.getAttribute("name");
 %>
 <div class="hd_wrap">
     <nav class="tnb"> <!-- .hd_wrap:first-child  -->
@@ -17,7 +15,7 @@
             <li><%=sname%></li>
             <% } else {%>
             <li><a href=<%=path2%>"/member/login.jsp">로그인</a></li>
-            <li><a href=<%=path2%>"/member/join.jsp">회원가입</a></li>
+            <li><a href=<%=path2%>"/member/term.jsp">회원가입</a></li>
             <li><a href=<%=path2%>"/member/map.jsp">오시는길</a></li>
             <% } %>
         </ul>
@@ -59,18 +57,18 @@
             <li class="item4">
                 <a href="" class="dp1">게시판</a>
                 <ul class="sub">
-                    <li><a class="move" href="./board/boardList.jsp">공지사항</a></li>
-                    <li><a class="move" href="./board/boardQnA.jsp">Q & A</a></li>
-                    <li><a class="move" href="./board/boardIT.jsp">IT 정보</a></li>
+                    <li><a class="move" href="/board/boardList.jsp">자유 게시판</a></li>
+                    <li><a class="move" href="/board_stu/boardStuList.jsp">학생 게시판</a></li>
+                    <li><a class="move" href="/board_tea/boardTeaList.jsp">선생님 게시판</a></li>
                 </ul>
             </li>
             <li class="item5">
-                <a href="" class="dp1">학습자료실</a>
+                <a href="" class="dp1">QnA</a>
                 <ul class="sub">
                     <li><a class="move" href="/upload/file_upload.html">cos 업로드</a></li>
                     <li><a class="move" href="/upload/file_upload2.html">apach 업로드</a></li>
                     <li><a class="move" href="/qna/qnaList.jsp">업로드 확인</a></li>
-                    <li><a class="move" href="./html/brand.html"></a></li>
+                    <li><a class="move" href="/html/brand.html"></a></li>
                 </ul>
             </li>
         </ul>

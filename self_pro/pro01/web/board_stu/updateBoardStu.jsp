@@ -76,7 +76,7 @@
     }
 
     try{
-        String sql = "select * from board where bno=? and lev=0";
+        String sql = "select * from board_stu where bno=? and lev=0";
         pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, bno);
         rs = pstmt.executeQuery();
@@ -103,15 +103,15 @@
     <div class="contents" id="contents">
         <div class="breadcrumb">
             <p>
-                <a href="/">HOME</a> &gt; <a href="/board/boardList.jsp">board</a> &gt; <a href="/board/boardList.jsp">board 상세</a>
-                &gt; <a href="/board/boardList.jsp">질문 수정</a>
+                <a href="/">HOME</a> &gt; <a href="/board_stu/boardStuList.jsp">board</a> &gt; <a href="/board_stu/getBoardStu.jsp">board 상세</a>
+                &gt; <a href="/board_stu/updateBoardStu.jsp">질문 수정</a>
             </p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
                 <h2 class="page_tit">게시글 상세</h2>
 
-                    <form action="updateBoardpro.jsp" id="login_frm" class="frm">
+                    <form action="updateBoardStupro.jsp" id="login_frm" class="frm">
                         <table class="tb1">
                             <tbody>
                                 <tr>
