@@ -6,7 +6,6 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="com.chunjae.util.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,7 +80,36 @@
     response.setContentType("text/html;charset=UTF-8");
     response.setCharacterEncoding("utf8");
 
-    List<FeedObj> feeds = (new FeedDAO()).getList();
+    List<Qna> qnaList = new ArrayList<>();
+
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+
+    DBC con = new MariaDBCon();
+    conn = con.connect();
+    if(conn != null){
+        System.out.println("DB 연결 성공");
+    }
+
+    // 해당 회원의 정보를 db에서 가져옴
+    try {
+        String sql = "select * from qnalist where lev=0 order by par desc";
+        pstmt = conn.prepareStatement(sql);
+        rs = pstmt.executeQuery();
+        while(rs.next()){
+            Qna q = new Qna();
+            q.setPar(rs.getInt("par"));
+            q.setTitle(rs.getString("title"));
+            q.setAuthor(rs.getString("author"));
+            q.setResdate(rs.getString("resdate"));
+            qnaList.add(q);
+        }
+    } catch(SQLException e) {
+        System.out.println("SQL 구문이 처리되지 못했습니다.");
+    } finally {
+        con.close(rs, pstmt, conn);
+    }
 %>
 <body>
 <div class="wrap">
@@ -106,20 +134,17 @@
                     </thead>
                     <tbody>
                     <%
-                        int tot = feeds.size();
+                        int tot = qnaList.size();
                         SimpleDateFormat ymd = new SimpleDateFormat("yy-MM-dd");
-                        for(FeedObj arr:feeds) {
-                        Date d = ymd.parse(arr.getTs());  //날짜데이터로 변경
+                        for(Qna arr:qnaList) {
+                        Date d = ymd.parse(arr.getResdate());  //날짜데이터로 변경
                         String date = ymd.format(d);    //형식을 포함한 문자열로 변경
                     %>
                     <tr>
                         <td class="item1"><%=tot-- %></td>
-                        <td class="item2"><a href="/"><%=arr.getContent() %></a></td>
-                        <td class="item3"><%=arr.getId()%></td>
+                        <td class="item2"><a href="/qna/getQna.jsp?qno=<%=arr.getPar() %>"><%=arr.getTitle() %></a></td>
+                        <td class="item3"><%=arr.getAuthor()%></td>
                         <td class="item4"><%=date %></td>
-                    </tr>
-                    <tr>
-                        <td colspan="4"><img src="<%=arr.getImages()%>" alt=""></td>
                     </tr>
                     <%
                         }
