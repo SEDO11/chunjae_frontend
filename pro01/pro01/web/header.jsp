@@ -31,31 +31,29 @@
     <nav class="gnb">
         <ul class="menu">
             <li class="item1">
-                <a href=<%=path2%>"/html/company.html" class="dp1">회사소개</a>
+                <a href=<%=path2%>"/menu/company.jsp" class="dp1">회사소개</a>
                 <ul class="sub">
-                    <li><a href="./html/company.html#com">회사개요</a></li>
-                    <li><a href="./html/company.html#greet">인사말</a></li>
-                    <li><a href="./html/company.html#history">연혁</a></li>
-                    <li><a href="./html/company.html#map1">경영이념</a></li>
+                    <li><a class="move" href="/menu/company.jsp#com">회사개요</a></li>
+                    <li><a class="move" href="/menu/company.jsp#greet">인사말</a></li>
+                    <li><a class="move" href="/menu/company.jsp#history">연혁</a></li>
+                    <li><a class="move" href="/menu/company.jsp#map1">경영이념</a></li>
                 </ul>
             </li>
-            <script src="./js/showpage.js"></script>
             <li class="item2">
-                <a href="./html/learning.html" class="dp1">IT교육</a>
+                <a href="/menu/learning.jsp" class="dp1">IT교육</a>
                 <ul class="sub">
-                    <li><a href="./html/business.html">파이썬</a></li>
-                    <li><a href="./html/business.html">자바</a></li>
-                    <li><a href="./html/business.html">OpenCV</a></li>
-                    <li><a href="./html/business.html">안드로이드</a></li>
+                    <li><a class="move" href="/menu/learning.jsp#python">파이썬</a></li>
+                    <li><a class="move" href="/menu/learning.jsp#java">자바</a></li>
+                    <li><a class="move" href="/menu/learning.jsp#opencv">OpenCV</a></li>
+                    <li><a class="move" href="/menu/learning.jsp#android">안드로이드</a></li>
                 </ul>
             </li>
             <li class="item3">
-                <a href="" class="dp1">IT실습</a>
+                <a href="/menu/certification.jsp" class="dp1">자격증</a>
                 <ul class="sub">
-                    <li><a href="./html/service.html">해외</a></li>
-                    <li><a href="./html/service.html">사교육</a></li>
-                    <li><a href="./html/service.html">공교육</a></li>
-                    <li><a href="./html/service.html">학회</a></li>
+                    <li><a class="move" href="/menu/certification.jsp#ipe" onclick="handleLinkClick('ipe')">정보처리기사</a></li>
+                    <li><a class="move" href="/menu/certification.jsp#ipie" onclick="handleLinkClick('ipie')">정보처리산업기사</a></li>
+                    <li><a class="move" href="/menu/certification.jsp#bda" onclick="handleLinkClick('bda')">빅데이터분석기사</a></li>
                 </ul>
             </li>
             <li class="item4">

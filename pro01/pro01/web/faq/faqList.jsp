@@ -83,9 +83,13 @@
 
         .ans {display: none;}
 
-        .faqlist {font-size: 20px;}
+        .faqlist {font-size: 20px; }
 
         .que {cursor: pointer;}
+
+        .pagination { font-size: 18px; text-align: center; }
+
+        .paging {margin-right: 10px; margin-bottom: 10px;}
     </style>
 </head>
 
@@ -94,7 +98,11 @@
     response.setContentType("text/html;charset=UTF-8");
     response.setCharacterEncoding("utf8");
 
-    List<Faq> faqList = new ArrayList<>();
+    int itemsPerPage = 10; // 한 페이지에 보여줄 아이템 수
+    int currentPage = (request.getParameter("page") != null) ? Integer.parseInt(request.getParameter("page")) : 1;
+
+    // faqList 전체 데이터와 총 개수를 가정하고 나눠주는 로직
+    List<Faq> faqList = new ArrayList<>(); // faqList는 예시를 위한 가상의 데이터라 가정합니다.
 
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -136,20 +144,28 @@
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">FAQ</h2>
+                <h2 class="page_tit">FAQ<%=" p-"+currentPage%></h2>
                 <ul class="faqlist">
-                    <%-- faq 출력 --%>
+                    <%-- 페이징 처리된 faq 출력 --%>
                     <%
-                        for(Faq f:faqList) {
+                        int totalItems = faqList.size();
+                        int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage);
+
+                        int startItem = (currentPage - 1) * itemsPerPage;
+                        int endItem = Math.min(startItem + itemsPerPage, totalItems);
+
+                        for (int i = startItem; i < endItem; i++) {
+                            Faq f = faqList.get(i);
+                            System.out.println(faqList.get(i));
                     %>
                     <li>
-                        <div class="que"><%=f.getQuestion()%></div>
+                        <div class="que"><%= f.getQuestion() %></div>
                         <br>
-                        <div class="ans"><%=f.getAnswer()%></div>
+                        <div class="ans"><%= f.getAnswer() %></div>
                         <div class="btn_group2">
                             <% if (sid != null && sid.equals("admin")) { %>
-                            <a href="/faq/updatefaq.jsp?fno=<%=f.getFno()%>" class="inbtn2"> 글 수정</a>
-                            <a href="/faq/deletefaqpro.jsp?fno=<%=f.getFno()%>" class="inbtn2" id="delete_btn"> 글 삭제</a>
+                            <a href="/faq/updatefaq.jsp?fno=<%= f.getFno() %>&page=<%= currentPage %>" class="inbtn2"> 글 수정</a>
+                            <a href="/faq/deletefaqpro.jsp?fno=<%= f.getFno() %>&page=<%= currentPage %>" class="inbtn2" id="delete_btn"> 글 삭제</a>
                             <% } %>
                         </div>
                     </li>
@@ -158,6 +174,21 @@
                         }
                     %>
                 </ul>
+                <%-- 페이지 네비게이션 --%>
+                <div class="pagination">
+                    <% if (currentPage > 1) { %>
+                    <a class="paging" href="?page=<%= currentPage - 1 %>">Previous</a>
+                    <% } %>
+
+                    <% for (int i = 1; i <= totalPages; i++) { %>
+                    <a class="paging" href="?page=<%= i %>"><%= i %></a>
+                    <% } %>
+
+                    <% if (currentPage < totalPages) { %>
+                    <a class="paging" href="?page=<%= currentPage + 1 %>">Next</a>
+                    <% } %>
+                </div>
+
                 <%-- 제이쿼리를 이용하여 FAQ 게시판 만들기,
                     .faglist 내의 li 태그를 누를 경우 해당 질문이 보이게 된다. --%>
                 <script>
@@ -168,6 +199,7 @@
                         });
                     });
                 </script>
+
                 <div class="btn_group">
                     <% if (sid != null && sid.equals("admin")) { %>
                     <a href="/faq/addFaq.jsp" class="inbtn"> faq 작성 </a>

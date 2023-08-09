@@ -110,6 +110,15 @@
                             <td><input type="email" name="email" id="email" class="indata" required></td>
                         </tr>
                         <tr>
+                            <th>직업</th>
+                            <td>
+                                <input type="radio" name="job" value="1" id="stu">
+                                <label for="stu">학생</label><br>
+                                <input type="radio" name="job" value="2" id="tea">
+                                <label for="tea">선생님</label><br>
+                            </td>
+                        </tr>
+                        <tr>
                             <td colspan="2" class="colspan">
                                 <input type="submit" value="회원 가입" class="inbtn">
                                 <a href="/member/login.jsp" class="inbtn">로그인 페이지로</a>
