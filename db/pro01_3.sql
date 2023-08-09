@@ -47,3 +47,15 @@ INSERT INTO qna(title, content, author, lev, par) VALUES('답글 제목5', '답�
 CREATE VIEW qnalist AS(SELECT q.qno AS qno, q.title AS title, q.content AS content, q.author AS author, 
 q.resdate AS resdate,q.cnt AS cnt, q.lev AS lev, q.par AS par, m.name AS name
 FROM qna q, member m WHERE q.author=m.id order BY q.par DESC, q.lev ASC, q.qno ASC);
+
+-- 자주 뭍는 질문  테이블 생성
+CREATE TABLE faq(
+	fno INT PRIMARY KEY AUTO_INCREMENT, -- qna 글 번호
+	question VARCHAR(200) NOT NULL, -- 질문
+	answer VARCHAR(1000), -- 답변
+	cnt INT DEFAULT 0 -- 조회수
+);
+
+INSERT INTO fnq(question, answer) VALUES("자주 묻는 질문", "자주 묻는 질문 답변");
+
+INSERT INTO fnq(question, answer) VALUES("자주 묻는 질문2", "용기가 봄날의 꽃 소금이라 피다. 끓는 없으면 길을 눈에 이 보이는 청춘의 심장은 있는가? 있는 같지 인도하겠다는 두손을 날카로우나 것이다. 옷을 밝은 그들에게 대중을 구하지 그들의 힘있다. 방지하는 놀이 보내는 따뜻한 같이 위하여서. 실로 설산에서 우는 행복스럽고 하였으며, 얼마나 사막이다. 곧 그들의 우리는 거친 보는 황금시대다. 피는 위하여, 옷을 인도하겠다는 구하지 그들에게 평화스러운 황금시대다. 관현악이며, 피는 그들의 있는가? 천지는 얼음이 보는 바로 과실이 두기 황금시대다.");

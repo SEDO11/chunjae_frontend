@@ -69,22 +69,21 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="/qna/qnaList.jsp">QNA</a> &gt; <a href="/qna/getQna.jsp">QNA 상세</a>
-                &gt; <a href="/qna/addQuestion.jsp">QNA 질문 작성</a></p>
+            <p><a href="/">HOME</a> &gt; <a href="/faq/faqList.jsp">FNQ</a> &gt; <a href="/faq/addFnq.jsp">FNQ 작성</a></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">질문 작성</h2>
-                <form action="addQuestionpro.jsp" id="login_frm" class="frm">
+                <h2 class="page_tit">자주 묻는 질문 작성</h2>
+                <form action="addFaqpro.jsp" id="login_frm" class="frm">
                     <table class="tb1">
                         <tbody>
                         <tr>
-                            <th><label for="title">질문 제목</label></th>
-                            <td><input type="text" name="title" id="title" class="indata" placeholder="제목 입력" autofocus required></td>
+                            <th><label for="question">질문 제목</label></th>
+                            <td><input type="text" name="question" id="question" class="indata" placeholder="제목 입력" autofocus required></td>
                         </tr>
                         <tr>
-                            <th><label for="content">질문 내용</label></th>
-                            <td><textarea name="content" id="content" cols="50" rows="15" placeholder="내용 입력" required></textarea></td>
+                            <th><label for="answer">질문 내용</label></th>
+                            <td><textarea name="answer" id="answer" cols="50" rows="15" placeholder="내용 입력" required></textarea></td>
                         </tr>
                         <tr>
                             <td colspan="2">

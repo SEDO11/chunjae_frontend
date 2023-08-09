@@ -10,7 +10,6 @@
 <meta http-equiv="author" content="홍길동"> <!-- 문서의 제작사 -->
 <meta http-equiv="publisher" content="천재교육 콘텐츠 제작팀"> <!-- 문서의 저자 정의 -->
 <meta http-equiv="copyright" content="copyright@chunjae.co.kr"> <!-- 저작권 명시 -->
-<title>천재교육</title>
 
 <!-- 검색엔진 최적화(SEO) -->
 <meta name="subject" content="천재교육, 천재IT교육센터"> <!-- 페이지 주제 지정 http-equiv 로 지정해도 상관 무 -->
@@ -42,8 +41,8 @@
 
 <!-- 불법 복제 방지, 필수 -->
 <script>
-    document.oncontextmenu = function () {return false;}
-    document.ondragstart = function () {return false;} // 드래그 방지
-    document.onselectstart = function () {return false;}
+    // document.oncontextmenu = function () {return false;}
+    // document.ondragstart = function () {return false;} // 드래그 방지
+    // document.onselectstart = function () {return false;}
     // document.onkeydown = function () {return false;} // 키보드 입력 방지
 </script>
