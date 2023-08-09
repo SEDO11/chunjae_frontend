@@ -34,7 +34,7 @@
         } else {
             System.out.println("답변 생성 실패");
 //            response.sendRedirect("addAns.jsp");
-            out.println("<script>alert('답변 실패 성공')</script>");
+            out.println("<script>alert('답변 추가 실패')</script>");
             out.println("<script>location.href='addAns.jsp?qno="+ qno +"'</script>");
         }
     } catch (SQLException e) {
