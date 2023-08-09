@@ -77,7 +77,6 @@
             text-align: right;
             color: #fff;
             padding-top: 28px;
-            padding-bottom: 28px;
         }
 
         .breadcrumb a {

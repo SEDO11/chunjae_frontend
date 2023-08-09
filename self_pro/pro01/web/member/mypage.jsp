@@ -39,7 +39,7 @@
 
         .breadcrumb { clear:both;
             width:1200px; margin: 0 auto; text-align: right; color:#fff;
-            padding-top: 28px; padding-bottom: 28px; }
+            padding-top: 28px;}
         .breadcrumb a { color:#fff; }
         .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
 
@@ -87,6 +87,7 @@
             mem.setTel(rs.getString("tel"));
             mem.setEmail(rs.getString("email"));
             mem.setPoint(rs.getInt("point"));
+            mem.setJob(rs.getInt("job"));
         } else {
             response.sendRedirect("/member/login.jsp");
         }
@@ -123,6 +124,10 @@
                                 }
                             %>
                         </td>
+                    </tr>
+                    <tr>
+                        <th>직업</th>
+                        <td class="data"><%=(mem.getJob() == 0 ? "관리자" : mem.getJob() == 1 ? "학생" : "선생님" )%></td>
                     </tr>
                     <tr>
                         <th>이름</th>

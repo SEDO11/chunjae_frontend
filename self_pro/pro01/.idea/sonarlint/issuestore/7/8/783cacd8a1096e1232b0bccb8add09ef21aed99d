@@ -11,7 +11,7 @@ java:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
 k	java:S116"QRename this field "DRIVER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­†³”ıÿÿÿÿ
 h	java:S116"NRename this field "DNS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜µÅŸøÿÿÿÿ
 d	java:S116"ORename this field "PORT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İøƒ
-i	java:S116"ORename this field "NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À¿œÖşÿÿÿÿ
+d	java:S116"ORename this field "NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷ß
 d	java:S116	"ORename this field "USER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íÆûß
 i	java:S116
 "ORename this field "PASS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼ÿ’Şùÿÿÿÿ
@@ -22,8 +22,8 @@ java:S1170"!Make this final field static too.(­†³”ıÿÿÿÿ
 java:S1170"!Make this final field static too.(˜µÅŸøÿÿÿÿ
 7
 java:S1170"!Make this final field static too.(İøƒ
-<
-java:S1170"!Make this final field static too.(À¿œÖşÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(÷ß
 7
 java:S1170	"!Make this final field static too.(íÆûß
 <

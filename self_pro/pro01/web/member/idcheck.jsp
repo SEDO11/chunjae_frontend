@@ -24,6 +24,14 @@
             f.id.focus();
             return;
         }
+
+        // 특수문자 제한
+        var regex = /^[a-zA-Z0-9]*$/; // 영문 대소문자와 숫자만 허용하는 정규표현식
+        if (!regex.test(id)) {
+            alert("아이디는 영문 대소문자와 숫자만 사용할 수 있습니다.");
+            f.id.focus();
+            return false;
+        }
     }
     </script>
 </div>

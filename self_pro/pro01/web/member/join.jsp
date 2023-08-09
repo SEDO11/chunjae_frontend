@@ -34,7 +34,7 @@
 
         .breadcrumb { clear:both;
             width:1200px; margin: 0 auto; text-align: right; color:#fff;
-            padding-top: 28px; padding-bottom: 28px; }
+            padding-top: 28px;}
         .breadcrumb a { color:#fff; }
         .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
 
@@ -69,10 +69,18 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <h2 class="page_tit">회원 가입</h2>
-                <hr>
                 <form name="frm1" action="joinpro.jsp" method="post" onsubmit="return inform(this)">
                     <table class="tb1">
                         <tbody>
+                        <tr>
+                            <th>직업</th>
+                            <td>
+                                <input type="radio" name="job" value="1" id="stu" checked>
+                                <label for="stu">학생</label><br>
+                                <input type="radio" name="job" value="2" id="tea">
+                                <label for="tea">선생님</label><br>
+                            </td>
+                        </tr>
                         <tr>
                             <th>아이디</th>
                             <td>
@@ -135,7 +143,7 @@
                     var child;
                     var id = document.getElementById("id");
                     if(id.value!="") {
-                        child = window.open("idcheck.jsp?id="+id.value, "child", "width=400, height=300");
+                        child = window.open("idcheck.jsp?id="+id.value, "child", "width=600, height=400");
                         return false;
                     } else {
                         alert("아이디 입력란에 아이디를 입력하고, 진행하시기 바랍니다.");
