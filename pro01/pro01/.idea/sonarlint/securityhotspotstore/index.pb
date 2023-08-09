@@ -36,8 +36,6 @@ C
 F
 web/member/joinpro.jsp,c\7\c7f13c3f3dae4df8429e2a3f49fada911b1a8280
 G
-web/member/loginpro.jsp,8\e\8e3070cda67eeb949a64407d592e9f41ef23f848
-G
 web/board/boardList.jsp,2\a\2ac18a427f434a0841ff447d977ca9e9581f923d
 =
 web/index.jsp,9\f\9f198ed450f32e45b10ec3c2b1406e609b4a96cd
@@ -59,8 +57,6 @@ H
 web/member/modifypro.jsp,4\6\46681eb9c898a97c8e3ea5c0b263b8aaf8874392
 E
 web/member/logout.jsp,a\c\ac7ca98b3d6c79e9da343702f219508ab78af468
-D
-web/member/login.jsp,c\d\cddfa57185e828d441f3909f460c84bcf200efc0
 E
 web/member/modify.jsp,9\a\9ac731a43f33c685c294d53fff76b42d37944023
 E

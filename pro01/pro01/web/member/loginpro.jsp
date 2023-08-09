@@ -28,7 +28,10 @@
             session.setAttribute("name", rs.getString("name"));
             response.sendRedirect("/");
         } else {
-            response.sendRedirect("/member/login.jsp");
+            out.println("<script>alert('아이디 혹은 비밀번호가 없거나 일치하지 않습니다.')</script>");
+            out.println("<script>location.href='/member/login.jsp'</script>");
+
+//            response.sendRedirect("/member/login.jsp");
         }
     } catch(SQLException e) {
         System.out.println("SQL 구문이 처리되지 못했습니다.");

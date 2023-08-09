@@ -94,7 +94,7 @@
 
     // 해당 회원의 정보를 db에서 가져옴
     try {
-        String sql = "select * from qna where lev=0 order by par desc";
+        String sql = "select * from qnalist where lev=0 order by par desc";
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
         while(rs.next()){

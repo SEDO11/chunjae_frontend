@@ -59,14 +59,22 @@
         .tb1 td {line-height: 32px; padding-top:16px; padding-bottom:16px;
             border-bottom: 1px solid #333; border-top: 1px solid #333; box-sizing: border-box; text-align: center;}
 
-        .tb1 .item1 { width: 15%;}
+        .tb1 .item1 { width: 20%;}
         .tb1 .item2 {width: 55%;}
         .tb1 .item3 {width: 10%;}
-        .tb1 .item4 {width: 20%;}
+        .tb1 .item4 {width: 15%;}
 
         .inbtn { display:block;  border-radius:100px;
             min-width:140px; margin-right: 10px; margin-left: 10px; padding-left: 24px; padding-right: 24px; text-align: center;
             line-height: 48px; background-color: #333; color:#fff; font-size: 18px; float: right; cursor: pointer; }
+
+        #delete_btn {
+            background-color: red; color:#fff;
+        }
+
+        #delete_btn:hover {
+            background-color: brown;
+        }
 
         .inbtn:hover {
             background-color: #666666;
@@ -77,8 +85,9 @@
 
         .inbtn2:hover { background-color: brown;}
 
-        .btn_group {margin-top: 20px;}
+        .btn_group {margin-top: 50px;}
 
+        p {display: inline-block;}
     </style>
 </head>
 
@@ -106,7 +115,7 @@
         }
 
         // 해당 qno(par) 번호를 갖는 게시물 내용, 댓글 불러오기
-        String sql2 = "select * from qna where par=?";
+        String sql2 = "select * from qnalist where par=?";
         pstmt = conn.prepareStatement(sql2);
         pstmt.setInt(1, qno);
         rs = pstmt.executeQuery();
@@ -161,11 +170,12 @@
                     %>
                     <tr>
                         <td class="item1">
+                            <p><%= (arr.getLev() == 0 ? "[질문] " : "[답변] ")%></p>
                             <% if(sid!=null && (sid.equals(arr.getAuthor()) || sid.equals("admin")) && arr.getLev() != 0) { %>
                             <a href="/qna/deleteQnapro.jsp?qno=<%=arr.getQno()%>&lev=1" class="inbtn2"> 삭제 </a>
                             <% } %>
                         </td>
-                        <td class="item2"><%= (arr.getLev() == 0 ? "[질문] " : "[답변] ") + arr.getContent()%></td>
+                        <td class="item2"><%=arr.getContent() %></td>
                         <td class="item3"><%=arr.getAuthor()%></td>
                         <td class="item4"><%=date %></td>
                     </tr>
@@ -188,21 +198,22 @@
                 </script>
                 <div class="btn_group">
                     <%
+                        String id2 = qnaList.get(0).getAuthor();
                         if (sid != null &&( sid.equals("admin") || !sid.equals(""))) {
                     %>
                     <a href="/qna/addAns.jsp?qno=<%=qno%>" class="inbtn"> 댓글 작성 </a>
                     <% } else {%>
-                    <p>회원만 댓글을 작성 할 수 있습니다.</p>
+                    <p class="exp">회원만 댓글을 작성 할 수 있습니다.</p>
                     <% }
-                        String id2 = qnaList.get(0).getAuthor();
-                        if (sid != null &&( sid.equals("admin") || sid.equals(id2))) { %>
-                    <a href="/qna/deleteQnapro.jsp?qno=<%=qno%>&lev=0" class="inbtn"> 내용 삭제 </a>
-                    <% } else {%>
-                    <p>해당 글을 작성한 회원만 내용을 삭제할 수 있습니다.</p>
-                    <% } if (sid != null && sid.equals(id2)) { %>
+                        if (sid != null && sid.equals(id2)) { %>
                     <a href="/qna/updateQuestion.jsp?qno=<%=qno%>" class="inbtn"> 내용 수정 </a>
                     <% } else {%>
-                    <p>해당 글을 작성한 회원만 내용을 수정할 수 있습니다.</p>
+                    <p class="exp">해당 글을 작성한 회원만 내용을 수정할 수 있습니다.</p>
+                    <% }
+                        if (sid != null &&( sid.equals("admin") || sid.equals(id2))) { %>
+                    <a href="/qna/deleteQnapro.jsp?qno=<%=qno%>&lev=0" class="inbtn" id="delete_btn"> 내용 삭제 </a>
+                    <% } else {%>
+                    <p class="exp">해당 글을 작성한 회원만 내용을 삭제할 수 있습니다.</p>
                     <% } %>
                 </div>
             </div>
