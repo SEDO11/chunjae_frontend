@@ -25,10 +25,14 @@
         int cnt = pstmt.executeUpdate();
         if(cnt > 0) {
             System.out.println("질문 수정 완료");
-            response.sendRedirect("qnaList.jsp");
+            out.println("<script>alert('질문 수정 성공')</script>");
+            out.println("<script>location.href='qnaList.jsp'</script>");
+//            response.sendRedirect("qnaList.jsp");
         } else {
             System.out.println("질문 수정 실패");
-            response.sendRedirect("updateQuestion.jsp");
+//            response.sendRedirect("updateQuestion.jsp?qno="+qno);
+            out.println("<script>alert('수정 실패')</script>");
+            out.println("<script>location.href='qnaList.jsp'</script>"); //location
         }
     } catch (SQLException e) {
         System.out.println("질문 수정: sql 에러");

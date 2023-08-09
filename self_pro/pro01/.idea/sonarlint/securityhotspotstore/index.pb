@@ -7,10 +7,6 @@ J
 web/upload/file_upload.jsp,2\6\261e047a7c38a41e586ea4f7d64fdca010f3d4d9
 L
 web/upload/file_upload2.html,5\4\543b9890002df65935aa6071348678b00c18a6f1
-K
-src/com/chunjae/db/DBC.java,0\2\02852cd6403094cfe88c4bddf8970f8d5b8d6cae
-R
-"src/com/chunjae/db/MariaDBCon.java,7\8\783cacd8a1096e1232b0bccb8add09ef21aed99d
 Q
 !src/com/chunjae/util/FeedObj.java,4\1\41c5bd367d5245853946016e9079d2992be79f68
 K
@@ -27,3 +23,10 @@ R
 "src/com/chunjae/util/FileUtil.java,7\e\7e21cac6128da32486d5e0e3d7259179033e8a33
 K
 web/upload/file_upload2.jsp,1\f\1f87541dacedf3124dd5aeae9bb8709ac020bb5a
+K
+src/com/chunjae/db/DBC.java,0\2\02852cd6403094cfe88c4bddf8970f8d5b8d6cae
+R
+"src/com/chunjae/db/MariaDBCon.java,7\8\783cacd8a1096e1232b0bccb8add09ef21aed99d
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

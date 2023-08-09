@@ -42,3 +42,8 @@ INSERT INTO qna(title, content, author, lev, par) VALUES('답글 제목3', '본�
 INSERT INTO qna(title, content, author, lev, par) VALUES('답글 제목4', '답글 내용4', 'kang', 1, 4) 
 
 INSERT INTO qna(title, content, author, lev, par) VALUES('답글 제목5', '답글 내용5', 'lee', 2, 4) 
+
+-- qnalist view 만들기
+CREATE VIEW qnalist AS(SELECT q.qno AS qno, q.title AS title, q.content AS content, q.author AS author, 
+q.resdate AS resdate,q.cnt AS cnt, q.lev AS lev, q.par AS par, m.name AS name
+FROM qna q, member m WHERE q.author=m.id order BY q.par DESC, q.lev ASC, q.qno ASC);

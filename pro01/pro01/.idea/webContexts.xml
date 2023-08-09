@@ -8,6 +8,7 @@
         <entry key="file://$PROJECT_DIR$/web/index.jsp" value="file://$PROJECT_DIR$/web" />
         <entry key="file://$PROJECT_DIR$/web/member/loginpro.jsp" value="file://$PROJECT_DIR$/web/member" />
         <entry key="file://$PROJECT_DIR$/web/member/mypage.jsp" value="file://$PROJECT_DIR$/web/member" />
+        <entry key="file://$PROJECT_DIR$/web/qna/updateQuestionpro.jsp" value="file://$PROJECT_DIR$/web/qna" />
       </map>
     </option>
   </component>

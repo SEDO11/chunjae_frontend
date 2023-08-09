@@ -28,14 +28,17 @@
         pstmt.setInt(5, qno);
         int cnt = pstmt.executeUpdate();
         if(cnt > 0) {
-            System.out.println("댓글 생성 완료");
-            response.sendRedirect("getQna.jsp?qno="+qno);
+            System.out.println("답변 생성 완료");
+            out.println("<script>alert('답변 추가 성공')</script>");
+            out.println("<script>location.href='getQna.jsp?qno="+ qno +"'</script>");
         } else {
-            System.out.println("게시판 생성 실패");
-            response.sendRedirect("addAns.jsp");
+            System.out.println("답변 생성 실패");
+//            response.sendRedirect("addAns.jsp");
+            out.println("<script>alert('답변 실패 성공')</script>");
+            out.println("<script>location.href='addAns.jsp?qno="+ qno +"'</script>");
         }
     } catch (SQLException e) {
-        System.out.println("게시판 생성: sql 에러");
+        System.out.println("답변 생성: sql 에러");
     } finally {
         con.close(pstmt, conn);
     }

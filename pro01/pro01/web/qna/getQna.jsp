@@ -162,7 +162,7 @@
                     <tr>
                         <td class="item1">
                             <% if(sid!=null && (sid.equals(arr.getAuthor()) || sid.equals("admin")) && arr.getLev() != 0) { %>
-                            <a href="/qna/deleteAnspro.jsp?qno=<%=arr.getQno()%>" class="inbtn2"> 삭제 </a>
+                            <a href="/qna/deleteQnapro.jsp?qno=<%=arr.getQno()%>&lev=1" class="inbtn2"> 삭제 </a>
                             <% } %>
                         </td>
                         <td class="item2"><%= (arr.getLev() == 0 ? "[질문] " : "[답변] ") + arr.getContent()%></td>
@@ -181,7 +181,7 @@
                             "targets": 'no-sort',
                             "bSort": false,
 
-                            // 0번째 컬럼을 기준으로 내림차순 정렬
+                            // 3번째 컬럼을 기준으로 내림차순 정렬
                             order: [[3, 'asc']],
                         });
                     } );
@@ -196,7 +196,7 @@
                     <% }
                         String id2 = qnaList.get(0).getAuthor();
                         if (sid != null &&( sid.equals("admin") || sid.equals(id2))) { %>
-                    <a href="/qna/deleteQuestionpro.jsp?qno=<%=qno%>" class="inbtn"> 내용 삭제 </a>
+                    <a href="/qna/deleteQnapro.jsp?qno=<%=qno%>&lev=0" class="inbtn"> 내용 삭제 </a>
                     <% } else {%>
                     <p>해당 글을 작성한 회원만 내용을 삭제할 수 있습니다.</p>
                     <% } if (sid != null && sid.equals(id2)) { %>
