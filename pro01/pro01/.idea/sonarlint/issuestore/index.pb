@@ -23,16 +23,10 @@ I
 web/board/addBoardpro.jsp,d\7\d7c5e52761cc07595e7a1993c79f85d326f6a654
 L
 web/board/updateBoardpro.jsp,2\4\242625025a56cfac757af58547462f3ac0823ae9
->
-web/js/load.js,f\0\f038d0b1ec1c19303e6d34d145ef19c50b9f6c3f
 N
 src/com/chunjae/dto/Board.java,f\c\fc60570f9b76206476074afc3ca578b0cd29158f
 O
 src/com/chunjae/dto/Member.java,2\b\2b48b9bdad6ad80b74f38cc1b66b4a6964b5496f
-C
-web/member/term.jsp,3\6\3619eaa96c134fb9e5401a3bb7a28c0a6d967300
-F
-web/member/joinpro.jsp,c\7\c7f13c3f3dae4df8429e2a3f49fada911b1a8280
 =
 web/index.jsp,9\f\9f198ed450f32e45b10ec3c2b1406e609b4a96cd
 K
@@ -79,5 +73,3 @@ C
 web/qna/qnaList.jsp,5\8\58d1f29887eac3103fe50001cbc39d3dedecb172
 G
 web/member/loginpro.jsp,8\e\8e3070cda67eeb949a64407d592e9f41ef23f848
-L
-src/com/chunjae/dto/Fnq.java,3\7\37d0941e2c6b2d0bd35e0802a86a0d52fed4b854
