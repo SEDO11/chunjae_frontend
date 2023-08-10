@@ -1,8 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
     String path2 = request.getContextPath();
-    String sid = (String) session.getAttribute("id");
-    String sname = (String) session.getAttribute("name");
 %>
 <div class="hd_wrap">
     <nav class="tnb"> <!-- .hd_wrap:first-child  -->
@@ -17,7 +15,7 @@
             <li><%=sname%></li>
             <% } else {%>
             <li><a href=<%=path2%>"/member/login.jsp">로그인</a></li>
-            <li><a href=<%=path2%>"/member/join.jsp">회원가입</a></li>
+            <li><a href=<%=path2%>"/member/term.jsp">회원가입</a></li>
             <li><a href=<%=path2%>"/member/map.jsp">오시는길</a></li>
             <% } %>
         </ul>
@@ -62,7 +60,9 @@
                     <li><a href="/board/boardList.jsp">공지사항</a></li>
                     <li><a href="/qna/qnaList.jsp">QNA</a></li>
                     <li><a href="/faq/faqList.jsp">FNQ</a></li>
-                    <li><a href="./html/marketing.html">이야기</a></li>
+                    <% if(sid!=null) { %>
+                    <li><a href="/faq/online.jsp">온라인 상담</a></li>
+                    <% } %>
                 </ul>
             </li>
             <li class="item5">

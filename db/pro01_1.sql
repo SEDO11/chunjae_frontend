@@ -48,7 +48,18 @@ INSERT INTO member(id, pw, NAME, email, tel)
 INSERT INTO member(id, pw, NAME, email, tel) 
 	VALUES('shin', 'shin4885', '신승원', 'shin@edu.com', '010-8765-1234');
 
+-- SHA256 으로 비밀번호 암호화
+UPDATE member SET pw='edee29f882543b956620b26d0ee0e7e950399b1c4222f5de05e06425b4c995e9' WHERE pw='2222';
 
+UPDATE member SET pw='f20938899dd856a97c943d4ff0a9080a7eb81a51a95966cc15e4df9a88ce15be' WHERE pw='h5678';
+
+UPDATE member SET pw='7aeaf53186ee4ed9d95a67a864065b92bba4b9695ee18ba265162134195149b8' WHERE pw='kang12';
+
+UPDATE member SET pw='03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4' WHERE pw='1234';
+
+UPDATE member SET pw='f572af08dcb6b4bae9cc8d654b1f56f95468f3673114a6d380bea8402c983e23' WHERE pw='lee4885';
+
+UPDATE member SET pw='f280223c722f6d81ef16a6ea00b199e065ca3fc07d135afde3ec5ff4c56182b8' WHERE pw='sony1234';
 
 SELECT * FROM member;
 

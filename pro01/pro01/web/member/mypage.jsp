@@ -2,6 +2,7 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="com.chunjae.db.*" %>
 <%@ page import="com.chunjae.dto.*" %>
+<%@ page import="com.chunjae.util.AES256" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,7 +123,7 @@
                         <th>비밀번호</th>
                         <td class="data"><%=mem.getPw().substring(0, 2)%>
                             <%
-                                for(int i=0; i<mem.getPw().length()-2; i++) {
+                                for(int i=0; i< mem.getPw().length()-2; i++) {
                                     out.print("*");
                                 }
                             %>

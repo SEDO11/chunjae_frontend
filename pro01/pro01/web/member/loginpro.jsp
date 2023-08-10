@@ -1,11 +1,18 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="com.chunjae.db.*" %>
+<%@ page import="com.chunjae.util.AES256" %>
+<%@ page import="java.security.NoSuchAlgorithmException" %>
 <%@ include file="/encoding.jsp"%>
 <%
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
-
+    try {
+        pw = AES256.sha256(pw);
+    } catch (NoSuchAlgorithmException e) {
+        System.out.println("pw 암호화 실패");
+        throw new RuntimeException(e);
+    }
     Connection conn = null;
     PreparedStatement pstmt = null;
     Statement stmt = null;

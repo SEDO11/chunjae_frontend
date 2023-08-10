@@ -3,10 +3,18 @@
 <%@ page import="java.util.*" %>
 <%@ page import="com.chunjae.db.*" %>
 <%@ page import="com.chunjae.dto.*" %>
+<%@ page import="com.chunjae.util.AES256" %>
+<%@ page import="java.security.NoSuchAlgorithmException" %>
 <%@include file="/encoding.jsp"%>
 <%
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
+    try {
+        pw = AES256.sha256(pw);
+    } catch (NoSuchAlgorithmException e) {
+        System.out.println("비밀번호 암호화 오류");
+        throw new RuntimeException(e);
+    }
     String name = request.getParameter("name");
     String tel = request.getParameter("tel");
     String email = request.getParameter("email");

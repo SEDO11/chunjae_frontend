@@ -27,3 +27,9 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+## 네이버 smtp 아이디, 비번
+src/com/chunjae/data/
+
+## 카카오맵 api
+web/api/

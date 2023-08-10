@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리1 - 기초 </title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function() { // 문서가 준비되면 해당 내용을 실행
+            $("#name").text("홍길동");
+        });
+        $(document).ready(function() {
+            ani();
+        });
+        $(function() { // 곧바로 실행
+            $("#name3").html("<span style='color: red'>천사 박진권</span>");
+        })
+    </script>
+</head>
+<body>
+    <h2 id="name"></h2>
+    <h2 id="name2"></h2>
+    <h2 id="name3"></h2>
+    <div id="menu">
+        <ul class="lst">
+            <li>아이템1</li>
+            <li>아이템2</li>
+            <li>아이템3</li>
+            <li>아이템4</li>
+            <li>아이템5</li>
+        </ul>
+        <button id="btn1">요소 추가</button>
+    </div>
+    <script>
+        $(function() { // 곧바로 실행
+            $("#name2").text("천재 홍길동");
+        });
+
+        $(function() {
+            $(".lst li").click(function() { // lst 클래스의 li를 누를 경우
+                alert($(this).text()); // alert 창 표시
+            })
+
+            var sw = true;    
+            $("#btn1").click(function() { // btn1 버튼을 누를경우 실행
+                if(sw) {
+                    $("#name3").text("바보").css("color", "red"); // sw 가 true 이면 실행
+                } else {
+                    $("#name3").html("<span style='color:blue'>천사</span>"); // sw 가 false 이면 실행
+                }
+                sw= !sw;
+
+                var len = $(".lst li").length + 1;
+                $(".lst").append("<li>아이템"+len+"</li>");
+                $(".lst li").css("color", "black");
+                $(".lst li:last-child").css("color", "blue");
+            })
+        })
+    </script>
+</body>
+</html>

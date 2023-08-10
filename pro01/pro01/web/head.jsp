@@ -4,6 +4,8 @@
 --%>
 <%
     String path1 = request.getContextPath();
+    String sid = (String) session.getAttribute("id");
+    String sname = (String) session.getAttribute("name");
 %>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-compatible" content="IE=edge"> <!-- 익스프로어 일 경우 엣지를 사용하라고 안내-->
