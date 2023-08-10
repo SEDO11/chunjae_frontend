@@ -65,8 +65,8 @@
             <li class="item5">
                 <a href="" class="dp1">QnA</a>
                 <ul class="sub">
-                    <li><a class="move" href="/upload/file_upload.html">cos 업로드</a></li>
-                    <li><a class="move" href="/upload/file_upload2.html">apach 업로드</a></li>
+                    <li><a class="move" href="/qna_problem/qnaList.jsp">문제 QnA</a></li>
+                    <li><a class="move" href="/qna_career/qnaList.jsp">진로 상담</a></li>
                     <li><a class="move" href="/qna/qnaList.jsp">업로드 확인</a></li>
                     <li><a class="move" href="/html/brand.html"></a></li>
                 </ul>
