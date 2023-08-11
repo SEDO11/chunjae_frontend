@@ -3,8 +3,6 @@ L
 web/upload/file_upload2.html,5\4\543b9890002df65935aa6071348678b00c18a6f1
 Q
 !src/com/chunjae/util/FeedObj.java,4\1\41c5bd367d5245853946016e9079d2992be79f68
-K
-src/com/chunjae/vo/Qna.java,e\1\e18b091e041d7e9585913d1e4aae76f5430c6413
 Q
 !src/com/chunjae/util/FeedDAO.java,6\f\6f4a0b49ed8d305fd04896f4cc998969372cffe5
 @
@@ -60,14 +58,10 @@ B
 web/qna/addAns.jsp,e\1\e1a9810b1ef720ab07190d367c2447765507821f
 C
 web/qna/qnaList.jsp,5\8\58d1f29887eac3103fe50001cbc39d3dedecb172
-=
-web/index.jsp,9\f\9f198ed450f32e45b10ec3c2b1406e609b4a96cd
 M
 web/board_stu/addBoardStu.jsp,0\9\09e8ad01000c37d82768264ee9f91bfcda3e8250
 K
 web/board_stu/addStuAns.jsp,e\7\e70ced9d3aff8a09cdf344da8bd5877d4a8b5fe4
-N
-web/board_stu/boardStuList.jsp,0\b\0bf70cb818d0bde429debc93b410153ea93f6d63
 S
 #web/board_stu/deleteBoardStupro.jsp,5\d\5dc11d938766f5d640aecdc2f7aa9e384bb7bb26
 N
@@ -80,18 +74,6 @@ P
  web/board_stu/updateBoardStu.jsp,e\9\e94e39c8693f36e42f11b7c78a01f02116d881b3
 S
 #web/board_stu/updateBoardStupro.jsp,e\4\e4a632de81f518c55aae814437fb033680772774
-P
- web/board_tea/addBoardTeapro.jsp,f\0\f007c315f50e11923a8c74c551dfeed501fbb3c1
-K
-web/board_tea/addTeaAns.jsp,4\6\46c12a354396194deb65d60b19b605d176b5b4dc
-N
-web/board_tea/addTeaAnspro.jsp,d\e\de7567620dc32a9aef89819116a3b20943c5a275
-N
-web/board_tea/boardTeaList.jsp,8\8\8816e5fe23a53590a069beb1958cdaf689a9ee6a
-S
-#web/board_tea/updateBoardTeapro.jsp,3\6\36278541fd8dab0e47b0d85d4adb94debcb08268
-M
-web/board_tea/getBoardTea.jsp,9\f\9f75a4c877bb29bfba0715b5d4a4e81d2d82716e
 B
 web/js/rotation.js,1\b\1b13bbcecc3db4e9dcd57fe2676afeaae61048fe
 >
@@ -100,6 +82,7 @@ B
 web/js/slidebox.js,4\4\44ab74ac048da2b84e6a062327e32a72a094e47b
 C
 web/member/term.jsp,3\6\3619eaa96c134fb9e5401a3bb7a28c0a6d967300
+<<<<<<< HEAD
 <
 web/head.jsp,4\a\4a87f90bffcdb4e9d2b938add5b82f2f1ade81b4
 M
@@ -108,6 +91,12 @@ P
  web/board_tea/updateBoardTea.jsp,d\0\d05ee24b4f255b8bb49bbb607a7aafb5688f7d17
 S
 #web/board_tea/deleteBoardTeapro.jsp,9\f\9fb3d6f8926a0ddc0b6cb342e8f96039ce4021a2
+=======
+D
+web/member/login.jsp,c\d\cddfa57185e828d441f3909f460c84bcf200efc0
+F
+web/member/joinpro.jsp,c\7\c7f13c3f3dae4df8429e2a3f49fada911b1a8280
+>>>>>>> ed1316cd618fa42a7032430eab8e43921343f0d2
 E
 web/member/idload.jsp,b\0\b024b5113c5e63a7cbbaa0dacb73532c5fac423b
 H
@@ -120,3 +109,71 @@ F
 web/member/idcheck.jsp,4\2\4289b169a2e3d7981af007951a425840d6e63959
 C
 web/member/join.jsp,a\4\a4d706dcfd7ab74948ee4c3d4507aa85dbe3abf1
+M
+web/board_tea/addBoardTea.jsp,7\1\71c8007c7b33fe10b2a824aa7f675973e8144f98
+K
+web/board_tea/addTeaAns.jsp,4\6\46c12a354396194deb65d60b19b605d176b5b4dc
+N
+web/board_tea/addTeaAnspro.jsp,d\e\de7567620dc32a9aef89819116a3b20943c5a275
+M
+web/board_tea/getBoardTea.jsp,9\f\9f75a4c877bb29bfba0715b5d4a4e81d2d82716e
+P
+ web/board_tea/addBoardTeapro.jsp,f\0\f007c315f50e11923a8c74c551dfeed501fbb3c1
+S
+#web/board_tea/deleteBoardTeapro.jsp,9\f\9fb3d6f8926a0ddc0b6cb342e8f96039ce4021a2
+P
+ web/board_tea/updateBoardTea.jsp,d\0\d05ee24b4f255b8bb49bbb607a7aafb5688f7d17
+S
+#web/board_tea/updateBoardTeapro.jsp,3\6\36278541fd8dab0e47b0d85d4adb94debcb08268
+=
+web/index.jsp,9\f\9f198ed450f32e45b10ec3c2b1406e609b4a96cd
+N
+web/board_tea/boardTeaList.jsp,8\8\8816e5fe23a53590a069beb1958cdaf689a9ee6a
+<
+web/head.jsp,4\a\4a87f90bffcdb4e9d2b938add5b82f2f1ade81b4
+N
+web/qna_career/addQuestion.jsp,0\5\054f5596852825ceda2e9306d832ce17586d3877
+T
+$web/qna_career/updateQuestionpro.jsp,b\b\bb4c76b77d0cc503f8223c08d63addab0d82eb48
+Q
+!web/qna_career/updateQuestion.jsp,d\d\dd6b61c39698f2d48d940bd2a9ce5bfc0a852268
+I
+web/qna_career/addAns.jsp,b\b\bbbe89a6ff82894cae45201a6b1e2dcb27ddb3c1
+O
+web/qna_career/deleteQnapro.jsp,a\d\add0c38b7bf1ee6699fc53c71cf37e227e7cf711
+L
+web/qna_career/addAnspro.jsp,5\8\5805b957d066c14cb4db32cfc771060e70512548
+Q
+!web/qna_career/addQuestionpro.jsp,f\7\f7911db9d0f556473622fd10e5430eb79cae977e
+K
+src/com/chunjae/vo/Qna.java,e\1\e18b091e041d7e9585913d1e4aae76f5430c6413
+E
+web/member/mypage.jsp,b\c\bc55933154d1df80ce1158c71e47b4ae78610c89
+I
+web/qna_career/getQna.jsp,d\3\d38cc7b9abadb20a286bfe04a802c0fb84ef8834
+N
+web/board_stu/boardStuList.jsp,0\b\0bf70cb818d0bde429debc93b410153ea93f6d63
+J
+web/qna_career/qnaList.jsp,a\8\a8acfa8f869b6e46d51fd8a25235dea2e4f8adb2
+J
+web/qna_problem/getQna.jsp,3\e\3e9388cb6d2852a38db9bcdd2a84df0fa0ca5025
+J
+web/qna_problem/addAns.jsp,e\4\e45e6bafca8aeaca33f71a8d4beeadb98556cef0
+M
+web/qna_problem/addAnspro.jsp,9\f\9fd97748aacc303b672e9be651d2ff64807f7753
+K
+web/qna_problem/qnaList.jsp,0\4\040610876b9a417425b3764feee320d58808cf95
+P
+ web/qna_problem/deleteQnapro.jsp,b\5\b5587f4b63d6dcc3fe0ab01a26f914782c6278d7
+O
+web/qna_problem/addQuestion.jsp,b\8\b871b2ee62eee0608ab5238b15a5e17b604af670
+>
+web/header.jsp,f\f\ff77691b3d429e53a4449f401a4cd692f37474d9
+R
+"web/qna_problem/updateQuestion.jsp,4\3\43f4964a70efecaacdefb99fec0043eb00d4438a
+R
+"web/qna_problem/addQuestionpro.jsp,c\0\c0393113397374464ee138e9f37dc2bf208a0e2e
+U
+%web/qna_problem/updateQuestionpro.jsp,6\1\61be3adab0bc8903eaada642f1335a77b1c08e77
+D
+web/menu/company.jsp,a\7\a7c17204387ae30e23a7ec4c09d2c08fb6806b54
