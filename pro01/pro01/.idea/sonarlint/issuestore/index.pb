@@ -26,18 +26,22 @@ O
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-F
-web/member/joinpro.jsp,c\7\c7f13c3f3dae4df8429e2a3f49fada911b1a8280
 Q
 !src/com/chunjae/test/AESTest.java,c\d\cdbdeff19cc2eda99927857407b558775d2eba44
 P
  src/com/chunjae/util/SHA256.java,d\1\d1f19618093dd7d50b451fad6470876cfa9f5347
 P
  src/com/chunjae/util/AES256.java,6\2\62518ab8a5cc34beb0db5392c7dbc7334d9d843c
+F
+web/member/joinpro.jsp,c\7\c7f13c3f3dae4df8429e2a3f49fada911b1a8280
 R
 "src/com/chunjae/db/MariaDBCon.java,7\8\783cacd8a1096e1232b0bccb8add09ef21aed99d
+[
++src/com/chunjae/util/SMTPAuthenficator.java,e\3\e3d51f631a88605315d544fd8a56c9dba05a64f0
 T
 $src/com/chunjae/test/SHA256Test.java,c\8\c8c9f3fa476d1e392dfadf37810c34dbb84ec563
+B
+web/faq/online.jsp,c\b\cb36c5e32fd088cb967d0c6a1a8f08892273a2dd
 >
 web/header.jsp,f\f\ff77691b3d429e53a4449f401a4cd692f37474d9
 G
@@ -46,9 +50,5 @@ D
 web/member/login.jsp,c\d\cddfa57185e828d441f3909f460c84bcf200efc0
 E
 web/member/mypage.jsp,b\c\bc55933154d1df80ce1158c71e47b4ae78610c89
-[
-+src/com/chunjae/util/SMTPAuthenficator.java,e\3\e3d51f631a88605315d544fd8a56c9dba05a64f0
-B
-web/faq/online.jsp,c\b\cb36c5e32fd088cb967d0c6a1a8f08892273a2dd
 E
 web/faq/onlinepro.jsp,0\d\0d455121f9cd3b2763d408e14c39475b9e11f35f

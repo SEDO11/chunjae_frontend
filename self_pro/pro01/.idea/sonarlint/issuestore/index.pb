@@ -22,8 +22,6 @@ K
 web/upload/file_upload.html,d\4\d4e2b72ba8e172ed44a27716bb92df369a683c15
 J
 web/upload/file_upload.jsp,2\6\261e047a7c38a41e586ea4f7d64fdca010f3d4d9
-R
-"src/com/chunjae/db/MariaDBCon.java,7\8\783cacd8a1096e1232b0bccb8add09ef21aed99d
 N
 src/com/chunjae/dto/Board.java,f\c\fc60570f9b76206476074afc3ca578b0cd29158f
 B
@@ -102,8 +100,6 @@ B
 web/js/slidebox.js,4\4\44ab74ac048da2b84e6a062327e32a72a094e47b
 C
 web/member/term.jsp,3\6\3619eaa96c134fb9e5401a3bb7a28c0a6d967300
-E
-web/member/mypage.jsp,b\c\bc55933154d1df80ce1158c71e47b4ae78610c89
 <
 web/head.jsp,4\a\4a87f90bffcdb4e9d2b938add5b82f2f1ade81b4
 M
@@ -112,22 +108,14 @@ P
  web/board_tea/updateBoardTea.jsp,d\0\d05ee24b4f255b8bb49bbb607a7aafb5688f7d17
 S
 #web/board_tea/deleteBoardTeapro.jsp,9\f\9fb3d6f8926a0ddc0b6cb342e8f96039ce4021a2
-D
-web/member/login.jsp,c\d\cddfa57185e828d441f3909f460c84bcf200efc0
 E
 web/member/idload.jsp,b\0\b024b5113c5e63a7cbbaa0dacb73532c5fac423b
 H
 web/member/modifypro.jsp,4\6\46681eb9c898a97c8e3ea5c0b263b8aaf8874392
->
-web/header.jsp,f\f\ff77691b3d429e53a4449f401a4cd692f37474d9
 H
 web/faq/deleteFaqpro.jsp,9\4\94f0f940c60cc778993aae936741976917fb7be5
 E
 web/faq/addFaqpro.jsp,3\1\311d91b1a386fa8ba2d7b9cb1c6706b31d94b83a
-G
-web/member/loginpro.jsp,8\e\8e3070cda67eeb949a64407d592e9f41ef23f848
-F
-web/member/joinpro.jsp,c\7\c7f13c3f3dae4df8429e2a3f49fada911b1a8280
 F
 web/member/idcheck.jsp,4\2\4289b169a2e3d7981af007951a425840d6e63959
 C
