@@ -15,7 +15,7 @@
         <li><a href="test04.jsp">디렉티브 페이지</a></li>
         <li><a href="test05.jsp">request 출력 페이지</a></li>
         <li><a href="test06.jsp">EL 페이지</a></li>
-        <li><a href=""></a></li>
+        <li><a href="test07.jsp">EL & JSTL 페이지</a></li>
         <li><a href=""></a></li>
         <li><a href=""></a></li>
         <li><a href=""></a></li>
