@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 03 - 복수 요소 선택</title>
+    <script src="/jquery-1.12.4.js"></script>
+    <script>
+
+    // span, .simpletext1, p 요소를 선택해서 그 요소의 개수를 클래스 container의 마지막 자식 요소로 추가
+    // 구분을 하는 경우에는 반점(,)을 추가해준다.
+    $(document).ready(function() {
+        // 제이쿼리의 변수의 경우 $를 붙이는데 안붙혀도 동작에는 지장없다.
+        var $cnt = $("span, .simpletext1, p").length; // 각 요소의 개수 저장
+        $(".container:last").append("<p>개수 : " + $cnt+"</p>"); // 요소의 개수를 마지막 해당 클래스에 출력
+
+        $el.each(function() {
+            $(".container:last").append("<p>"+$(this).text()+"</p>");
+        })
+    });
+
+    
+    </script>
+</head>
+<body>
+    <h1>복수 요소의 선택</h1>
+    <div class="container">
+        <span>Simple</span>
+        <div class="simpletext1">jQuery</div>
+        <div>basic</div>
+        <p>example</p>
+        <p>easyJquery</p>
+    </div>
+    <div class="container"></div><div class="container"></div>
+</body>
+</html>
