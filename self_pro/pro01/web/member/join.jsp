@@ -153,7 +153,7 @@
                     var id = document.getElementById("id");
                     if(id.value!="") {
                         child = window.open("idcheck.jsp?id="+id.value, "child", "width=600, height=400");
-                        return false;
+                        return;
                     } else {
                         alert("아이디 입력란에 아이디를 입력하고, 진행하시기 바랍니다.");
                         id.focus();

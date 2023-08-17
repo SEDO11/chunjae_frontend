@@ -31,8 +31,11 @@
 %>
 <script>
     function fnc1(cid){
+        console.log(opener);
+        console.log(opener.document.getElementById("id").value);
+        console.log(opener.document.frm1);
         opener.document.frm1.id.value = cid;
         opener.document.frm1.ck_item.value = "yes";
-        window.close();
+        // window.close();
     }
 </script>
