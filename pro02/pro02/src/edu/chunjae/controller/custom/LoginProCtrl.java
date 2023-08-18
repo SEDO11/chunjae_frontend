@@ -27,8 +27,11 @@ public class LoginProCtrl extends HttpServlet {
             msg = "로그인 성공";
             session.setAttribute("sid", id);
             request.setAttribute("msg", msg);
-            view = request.getRequestDispatcher("/pro02");
-            view.forward(request, response);
+            response.sendRedirect("/pro02");
+//            response.setContentType("text/html;charset=UTF-8");
+//            response.setCharacterEncoding("UTF-8");
+//            view = request.getRequestDispatcher("/pro02");
+//            view.forward(request, response);
         }
     }
 }

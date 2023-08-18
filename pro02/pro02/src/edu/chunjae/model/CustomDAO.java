@@ -82,4 +82,8 @@ public class CustomDAO {
         }
         return pass;
     }
+
+    public boolean join() {
+        return false;
+    }
 }

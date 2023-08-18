@@ -28,11 +28,11 @@
                 <ol class="breadcrumb justify-content-end">
                     <li class="breadcrumb-item"><a href="${path }">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Custom</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">My Page</li>
+                    <li class="breadcrumb-item active" aria-current="page">MyInfo Edit</li>
                 </ol>
             </div>
         </nav>
-        <h2 class="title">내 정보보기</h2>
+        <h2 class="title">내 정보수정</h2>
         <div class="container">
             <div class="box_wrap">
                 <table class="table table-secondary" id="tb1">
