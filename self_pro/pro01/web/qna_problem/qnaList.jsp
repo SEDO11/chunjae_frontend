@@ -6,13 +6,13 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ include file="/encoding.jsp"%>
+<%@ page import="com.chunjae.dto.Board" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QNA</title>
+    <title>문제 QnA</title>
     <%@ include file="../head.jsp" %>
 
     <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
@@ -36,53 +36,149 @@
     <link rel="stylesheet" href="../css/ft.css">
     <style>
         /* 본문 영역 스타일 */
-        .contents { clear:both; min-height: 100vh; background-image: url("../img/login.jpg");
-            background-repeat: no-repeat; background-position: center -250px; }
-        .contents::after { content:""; clear:both; display:block; width:100%; }
+        .contents {
+            clear: both;
+            min-height: 100vh;
+            background-image: url("../img/login.jpg");
+            background-repeat: no-repeat;
+            background-position: center -250px;
+        }
+        .contents::after {
+            content: "";
+            clear: both;
+            display: block;
+            width: 100%;
+        }
 
-        .page { clear:both; width: 100vw; height: 100vh; position:relative; }
-        .page::after { content:""; display:block; width: 100%; clear:both; }
+        .page {
+            clear: both;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        .page::after {
+            content: "";
+            display: block;
+            width: 100%;
+            clear: both;
+        }
 
-        .page_wrap { clear:both; width: 1200px; height: auto; margin:0 auto; }
-        .page_tit { font-size:48px; text-align: center; padding-top:0.7em; color:#fff;
-            padding-bottom: 1.3em; }
+        .page_wrap {
+            clear: both;
+            width: 1200px;
+            height: auto;
+            margin: 0 auto;
 
-        .breadcrumb { clear:both;
-            width:1200px; margin: 0 auto; text-align: right; color:#fff;
-            padding-top: 28px; padding-bottom: 28px; }
-        .breadcrumb a { color:#fff; }
+        }
+        .page_tit {
+            font-size: 48px;
+            text-align: center;
+            /*padding-top: 0.7em;*/
+            color: #fff;
+            padding-bottom: 1.3em;
+        }
 
-        .tb1 { width:600px; margin:0 auto; font-size: 24px;}
-        .tb1 th {line-height: 32px; padding-top:16px; padding-bottom:16px;
-            border-bottom: 1px solid #333; border-top: 1px solid #333; box-sizing: border-box; text-align: center;}
-        .tb1 td {line-height: 32px; padding-top:16px; padding-bottom:16px;
-            border-bottom: 1px solid #333; border-top: 1px solid #333; box-sizing: border-box; text-align: center;}
+        .breadcrumb {
+            clear: both;
+            width: 1200px;
+            margin: 0 auto;
+            text-align: right;
+            color: #fff;
+            padding-top: 28px;
+            padding-bottom: 28px;
+        }
+        .breadcrumb a {
+            color: #fff;
 
-        .tb1 .item1 { width: 10%;}
-        .tb1 .item2 {width: 60%;}
-        .tb1 .item3 {width: 10%;}
-        .tb1 .item4 {width: 20%;}
+        }
 
-        .inbtn { display:block;  border-radius:100px;
-            min-width:140px; padding-left: 24px; padding-right: 24px; text-align: center;
-            line-height: 48px; background-color: #333; color:#fff; font-size: 18px; float:right;
-            cursor: pointer;}
+        /* 테이블 스타일 */
+        .tb1 {
+            width: 80%;
+            margin: 50px auto;
+            font-size: 20px;
+            border-collapse: collapse;
+        }
+        .tb1 th {
+            background-color: yellowgreen;
+            color: black;
+            padding: 16px;
+            border: 1px solid yellowgreen;
 
+        }
+        .tb1 td {
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            text-align: center;
+            line-height: 24px;
+
+        }
+        .tb1 th:first-child {
+            width: 40px;
+        }
+
+        .tb1 tbody {
+
+        }
+
+        .tb1 .item1 {
+            width: 8%;
+        }
+        .tb1 .item2 {
+            width: 60%;
+
+            text-align: left;
+        }
+        .tb1 .item3 {
+            width: 12%;
+        }
+
+        /* 기타 버튼 스타일 */
+        .inbtn {
+            display: block;
+            border-radius: 10px;
+            min-width: 60px;
+            padding-left: 24px;
+            padding-right: 24px;
+            text-align: center;
+            line-height: 38px;
+            background-color: yellowgreen;
+            color: black;
+            font-size: 18px;
+            float: right;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+        }
         .inbtn:hover {
             background-color: #666666;
         }
 
-        .btn_group { margin-top: 20px;}
+        .btn_group {
+            margin-top: -38px;
+            z-index: 1000;
+            position: relative;
+        }
+        .btn_group p {
+            float: right;
+
+        }
+
+
     </style>
 </head>
-
 <%
-    if(sid != null && ( !sid.equals("") || sid.equals("admin"))) {
+    if(sid != null && (!sid.equals("") || sid.equals("admin"))) {
 
     } else {
         out.println("<script>alert('해당 페이지는 회원만 접근 가능합니다.')</script>");
         out.println("<script>location.href='/index.jsp'</script>");
     }
+%>
+<%
+    request.setCharacterEncoding("utf8");
+    response.setContentType("text/html;charset=UTF-8");
+    response.setCharacterEncoding("utf8");
 
     List<Qna> qnaList = new ArrayList<>();
 
@@ -98,16 +194,17 @@
 
     // 해당 회원의 정보를 db에서 가져옴
     try {
-        String sql = "select * from qna_problem where lev=0 order by par desc";
+        String sql = "select * from qna_problem where lev=0 order by resdate desc";
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
         while(rs.next()){
-            Qna q = new Qna();
-            q.setPar(rs.getInt("par"));
-            q.setTitle(rs.getString("title"));
-            q.setAuthor(rs.getString("author"));
-            q.setResdate(rs.getString("resdate"));
-            qnaList.add(q);
+            Qna qna = new Qna();
+            qna.setCnt(rs.getInt("cnt"));
+            qna.setQno(rs.getInt("qno"));
+            qna.setTitle(rs.getString("title"));
+            qna.setAuthor(rs.getString("author"));
+            qna.setResdate(rs.getString("resdate"));
+            qnaList.add(qna);
         }
     } catch(SQLException e) {
         System.out.println("SQL 구문이 처리되지 못했습니다.");
@@ -122,18 +219,19 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="/qna/qnaList.jsp">문제 QNA</a></p>
+            <p><a href="/">HOME</a> &gt; <a href="boardStuList.jsp">문제 QnA</a></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit">문제 QNA</h2>
+                <h2 class="page_tit">문제 QnA</h2>
                 <table class="tb1" id="myTable">
                     <thead>
                         <tr>
-                            <th class="item1">번호</th>
-                            <th class="item2">제목</th>
-                            <th class="item3">작성자</th>
-                            <th class="item4">작성일</th>
+                            <th class="item1" style="text-align: center">번호</th>
+                            <th class="item2" style="text-align: center">제목</th>
+                            <th class="item3" style="text-align: center">작성자</th>
+                            <th class="item3" style="text-align: center">작성일</th>
+                            <th class="item1" style="text-align: center">조회수</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -146,9 +244,10 @@
                     %>
                     <tr>
                         <td class="item1"><%=tot-- %></td>
-                        <td class="item2"><a href="getQna.jsp?qno=<%=arr.getPar() %>"><%=arr.getTitle() %></a></td>
+                        <td class="item2"><a href="getQna.jsp?qno=<%=arr.getQno() %>"><%=arr.getTitle() %></a></td>
                         <td class="item3"><%=arr.getAuthor()%></td>
-                        <td class="item4"><%=date %></td>
+                        <td class="item3"><%=date %></td>
+                        <td class="item1"><%=arr.getCnt() %></td>
                     </tr>
                     <%
                         }
@@ -159,16 +258,38 @@
                     $(document).ready( function () {
                         $('#myTable').DataTable({
                             order: [[0, 'desc']], // 0번째 컬럼을 기준으로 내림차순 정렬
+                            info: false,
+                            dom: 'lt<f>p',
+                            language: {
+                                emptyTable: '작성된 글이 없습니다.'
+                            }
+
                         });
                     } );
+                    $(document).ready(function() {
+                        $('.dataTables_paginate').css({
+                            'textAlign':'left',
+                            'float': 'none',
+                            'margin-top':'10px',
+                        });
+                        $('.dataTables_filter').css({
+                            'float': 'left',
+                            'margin-top':'14px',
+                            'margin-right':'280px'
+                        });
+                        $('#myTable_paginate').css({
+                            'margin-right':'100px'
+                        });
+
+
+                    });
+
                 </script>
+                <% if(sjob.equals("1") || sid.equals("admin")) {%>
                 <div class="btn_group">
-                    <% if (sid != null && (sjob.equals("1") || sid.equals("admin"))) { %>
                     <a href="addQuestion.jsp" class="inbtn"> 글 작성 </a>
-                    <% } else {%>
-                    <p>학생만 질문을 쓸 수 있습니다.</p>
-                    <% } %>
                 </div>
+                <% } %>
             </div>
         </section>
     </div>

@@ -57,6 +57,13 @@
             margin: 0 auto;
         }
 
+        .page_wrap2 {
+            clear: both;
+            width: 800px;
+            height: auto;
+            margin: 0 auto;
+        }
+
         .page_tit {
             font-size: 48px;
             text-align: center;
@@ -87,25 +94,18 @@
 
         .tab_box {
             clear: both;
-            width: 1200px;
+            width: 600px;
             height: 42px;
             margin: 0 auto;
             position: fixed;
             bottom: 0;
             left: 50%;
-            margin-left: -600px;
+            margin-left: -300px;
             z-index: 99;
         }
 
         .tab_box li {
-            width: 25%;
-            height: 42px;
-            line-height: 42px;
-            float: left;
-        }
-
-        .tab_box li:hover {
-            width: 25%;
+            width: 300px;
             height: 42px;
             line-height: 42px;
             float: left;
@@ -153,6 +153,27 @@
         /*.ra1:checked + #tab2 {height: 800px;} 버튼이 체크 되어 있으면*/
 
         /*.maparea { }*/
+
+        .join_type {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.join_type {
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .join_type li:last-child {
+            margin-left: 80px;
+        }
+        h3 {
+            font-size: 30px;
+        }
+        h4 {
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -168,61 +189,56 @@
             </div>
             <div class="tab_box">
                 <ul>
-                    <li><label for="com">회사개요</label></li>
-                    <li><label for="greet">인사말</label></li>
-                    <li><label for="history">회사연혁</label></li>
+                    <li><label for="com">회사소개</label></li>
                     <li><label for="map1">오시는길</label></li>
                 </ul>
-                <!-- <ul>
-                    <li><a href="#com">회사개요</a></li>
-                    <li><a href="#greet">인사말</a></li>
-                    <li><a href="#history">회사연혁</a></li>
-                    <li><a href="#map">오시는길</a></li>
-                </ul> -->
             </div>
 
             <input type="radio" name="ra1" class="ra1" id="com" checked/>
             <section class="page" id="com">
                 <div class="page_wrap">
-                    <h2 class="page_tit">회사개요</h2>
+                    <h2 class="page_tit">회사소개</h2>
                     <div class="com_content">
-                        <h3 class="con_tit">대한민국 1위 교육·출판 전문 기업</h3>
-                        <h3 class="con_tit">교육의 미래를 선도합니다.</h3>
-                        <p class="cont">천재교육은 교과서와 학습 교재를 출간하는 교육·출판 전문 기업입니다. <br><br>
+                        <h3 class="con_tit">대한민국 1위 IT 교육 사이트</h3>
+                        <h3 class="con_tit">IT의 미래를 선도합니다.</h3>
+                        <p class="cont">ITALL은 전 연령을 대상으로 IT 교육을 시켜주는 회사입니다. <br><br>
+                            ITAll은 모든 연령층을 대상으로 한 IT 교육을 제공하는 혁신적인 온라인 교육 플랫폼입니다. 현대 사회에서 IT 기술은 필수불가결한 역할을 하고 있는데요,
+                            ITAll은 이러한 환경을 고려하여 누구나 쉽게 접근하고 배울 수 있는 환경을 제공합니다. <br><br>
 
-                            제5차 교육과정부터 국정·검정·인정 교과용 도서를 개발, 발행하고
-                            연간 3,700여 종에 이르는 유아동·초·중·고등 학습 교재를 발간하고 있습니다. <br><br>
+                            우리는 초보자부터 전문가까지 모든 수준의 학습자를 위한 다양한 코스와 자원을 제공합니다.
+                            입문자를 위한 기본 강좌부터 고급 토픽까지 다양한 분야의 강의를 보유하고 있어, 개인의 수준과 목표에 맞게 학습 경로를 선택할 수 있습니다. <br><br>
 
-                            또한 미래 인재 육성을 위한 학원 프랜차이즈 사업과
-                            4차 산업혁명 시대에 발맞춘 스마트러닝, 에듀테크 사업 등을 통해
-                            대한민국 교육 트렌드를 주도하고 있습니다.</p>
+                            ITAll은 최신 트렌드에 맞춰 개발된 콘텐츠를 제공하여 학습자들이 현업에서 실제로 활용 가능한 기술과 지식을 습득할 수 있습니다.
+                            또한, 상호작용이 가능한 실습과 프로젝트 과제를 통해 이론을 실제 상황에서 적용하는 경험을 제공하여 더 나은 학습 효과를 도모합니다. <br><br>
+                        </p>
                     </div>
                     <img src="../img/company1.jpg" alt="" class="com_img">
                 </div>
             </section>
 
-            <input type="radio" name="ra1" class="ra1" id="greet" />
-            <section class="page" id="greet">
-                <div class="page_wrap">
-                    <h2 class="page_tit">인사말</h2>
-                </div>
-            </section>
-
-            <input type="radio" name="ra1" class="ra1" id="history" />
-            <section class="page" id="history">
-                <div class="page_wrap">
-                    <h2 class="page_tit">회사연혁</h2>
-                </div>
-            </section>
-
             <input type="radio" name="ra1" class="ra1" id="map1"/>
             <section class="page" id="map1">
-                <div class="page_wrap">
+                <div class="page_wrap2">
                     <h2 class="page_tit">오시는길</h2>
-                    <div class="maparea">
-                        <div id="map" style="width:500px;height:400px;"></div>
-                        <!-- 보안성을 위해 자바스크립트에서 실행후 불러옴-->
-                        <script type="text/javascript" src="../api/kakaoMap.js"></script>
+                    <div>
+                        <ul class="join_type">
+                            <li class="maparea">
+                                <div id="map" style="width:500px;height:400px;"></div>
+                                <!-- 보안성을 위해 자바스크립트에서 실행후 불러옴-->
+                                <script type="text/javascript" src="/api/kakaoMap.js"></script>
+                            </li>
+                            <li>
+                                <h3>교통편</h3>
+                                <br>
+                                <h4>버스</h4>
+                                <p>503, 571, 5536, 5616, 5712, 5714</p>
+                                <br>
+                                <hr>
+                                <br>
+                                <h4>지하철</h4>
+                                <p>가산디지털단지역 (7호선)</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>

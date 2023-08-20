@@ -3,7 +3,7 @@
 #page2 {background-color: white;}
 #page2 .page_wrap {width: 100%;}
 
-.slide_box {clear: both; width:calc(100vw - 350px); height: 400px; margin-left: 350px;
+.slide_box {clear: both; width:calc(100vw - 350px); height: 400px; margin-left: 350px; margin-top: 100px;
     -ms-overflow-style: none; scrollbar-width: none;} /*float:right 보다는 margin-left를 이용하자*/
 .slide_box::-webkit-scrollbar {display: none;}
 

@@ -11,8 +11,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-compatible" content="IE=edge"> <!-- 익스프로어 일 경우 엣지를 사용하라고 안내-->
 <meta http-equiv="author" content="오세훈"> <!-- 문서의 제작사 -->
-<meta http-equiv="publisher" content="IT 천재교육 아카데미"> <!-- 문서의 저자 정의 -->
-<meta http-equiv="copyright" content="copyright@chunjae.co.kr"> <!-- 저작권 명시 -->
+<meta http-equiv="publisher" content="ITALL 아카데미"> <!-- 문서의 저자 정의 -->
+<meta http-equiv="copyright" content="copyright@itall.co.kr"> <!-- 저작권 명시 -->
 <title>ITALL</title>
 
 <!-- 검색엔진 최적화(SEO) -->

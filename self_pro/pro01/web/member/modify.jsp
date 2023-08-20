@@ -27,122 +27,132 @@
     <style>
         /* 본문 영역 스타일 */
         .contents {
-            clear: both;
+            clear:both;
             min-height: 100vh;
             background-image: url("../img/login.jpg");
             background-repeat: no-repeat;
             background-position: center -250px;
         }
-
         .contents::after {
-            content: "";
-            clear: both;
-            display: block;
-            width: 100%;
+            content:"";
+            clear:both;
+            display:block;
+            width:100%;
         }
 
         .page {
-            clear: both;
+            clear:both;
             width: 100vw;
             height: 100vh;
-            position: relative;
+            position:relative;
         }
-
         .page::after {
-            content: "";
-            display: block;
+            content:"";
+            display:block;
             width: 100%;
-            clear: both;
+            clear:both;
         }
 
         .page_wrap {
-            clear: both;
+            clear:both;
             width: 1200px;
             height: auto;
-            margin: 0 auto;
+            margin:0 auto;
         }
-
         .page_tit {
-            font-size: 48px;
+            font-size:48px;
             text-align: center;
-            padding-top: 0.7em;
-            color: #fff;
+            padding-top:0.7em;
+            color:#fff;
             padding-bottom: 1.3em;
         }
 
         .breadcrumb {
-            clear: both;
-            width: 1200px;
+            clear:both;
+            width:1200px;
             margin: 0 auto;
             text-align: right;
-            color: #fff;
+            color:#fff;
             padding-top: 28px;
         }
-
         .breadcrumb a {
-            color: #fff;
+            color:#fff;
         }
-
         .frm {
-            clear: both;
-            width: 1200px;
-            margin: 0 auto;
+            clear:both;
+            width:1200px;
+            margin:0 auto;
             padding-top: 80px;
         }
 
         .tb1 {
-            width: 500px;
-            margin: 0 auto;
-            font-size: 24px;
-        }
-
-        .tb1 th {
-            width: 180px;
-            line-height: 48px;
-            padding-top: 24px;
-            padding-bottom: 24px;
-            border: 1px solid #333;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        .tb1 .data {
-            width: 320px;
-            line-height: 48px;
-            padding-top: 24px;
-            padding-bottom: 24px;
-            border: 1px solid #333;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        .indata{
-            width: 300px;
-            height: 24px;
+            width:600px;
+            margin:0 auto;
             font-size: 20px;
+            border-collapse: separate;
+            border-spacing: 0 20px;
+            background-color: #e1e1e1;
+            border-radius: 14px;
+        }
+        .tb1 th {
+            width:180px;
+            line-height: 30px;
+            padding-left: 30px;
+            border-right: 2px solid #6b6b6b;
             box-sizing: border-box;
+            text-align: left;
+        }
+        .tb1 .data {
+            width:320px;
+            line-height: 30px;
+            padding-top:4px;
+            padding-bottom:4px;
+            box-sizing: border-box;
+            text-align: left;
+            padding-left: 50px;
+        }
+
+        .tb2 {
+            width: 600px;
+            margin: 0 auto;
+            margin-top: 50px;
         }
 
         .inbtn {
-            display: block;
-            border-radius: 100px;
-            min-width: 140px;
+            display:block;
+            border-radius:10px;
+            min-width:120px;
             padding-left: 24px;
             padding-right: 24px;
             text-align: center;
-            line-height: 48px;
+            line-height: 38px;
             background-color: #333;
-            color: #fff;
+            color:#fff;
             font-size: 18px;
-            margin-top: 20px;
+            cursor: pointer;
         }
-
         .inbtn:first-child {
-            float: left;
+            float:left;
         }
-
         .inbtn:last-child {
-            float: right;
+            float:right;
+        }
+        .inbtn:hover {
+            background-color: #666666;
+        }
+        .indata {
+            width: 280px;
+            padding: 8px 12px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: #f7f7f7;
+        }
+        .indata:focus {
+            background-color: #fff;
+            outline: none;
+            border-color: #666;
         }
     </style>
 </head>
@@ -206,9 +216,15 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <h2 class="page_tit">정보수정</h2>
-                <form action="modifypro.jsp" method="post">
+                <form name="frm2" action="modifypro.jsp" method="post" onsubmit="return inform(this)">
                     <table class="tb1">
                         <tbody>
+                        <tr>
+                            <th>이름</th>
+                            <td class="data">
+                                <input class="indata" type="text" id="name" name="name" value="<%=mem.getName()%>" disabled>
+                            </td>
+                        </tr>
                         <tr>
                             <%-- 아이디는 바꾸지 않을 거지만 정보를 request 해주기 위해 readonly로 선언--%>
                             <th>아이디</th>
@@ -217,23 +233,24 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>비밀번호</th>
+                            <th>기존 비밀번호</th>
                             <td class="data">
-                                <!-- 변경할 비밀번호 -->
-                                <input class="indata" type="text" value="<%=pw2%>" id="re_pw" name="re_pw" required>
-
-                                <!-- 보안된 비밀번호 -->
-                                <input type="hidden" value="<%=pw2%>" name="pw2" id="pw2">
-                                <!-- 기존 비밀번호 -->
-                                <input type="hidden" value="<%=pw%>" name="pw" id="pw">
+                                <input class="indata" type="password" placeholder="기존 비밀번호" name="pw" id="pw" autofocus required>
                             </td>
                         </tr>
                         <tr>
-                            <th>이름</th>
+                            <th>변경할 비밀번호</th>
                             <td class="data">
-                                <input class="indata" type="text" id="name" name="name" value="<%=mem.getName()%>" disabled>
+                                <input class="indata" type="password" placeholder="새로운 비밀번호" id="new_pw1" name="new_pw1" required>
                             </td>
                         </tr>
+                        <tr>
+                            <th>변경할 비밀번호 확인</th>
+                            <td class="data">
+                                <input class="indata" type="password" placeholder="새로운 비밀번호" id="new_pw2" name="new_pw2" required>
+                            </td>
+                        </tr>
+
                         <tr>
                             <th>전화번호</th>
                             <td class="data">
@@ -246,15 +263,18 @@
                                 <input class="indata" type="text" id="email" name="email" value="<%=mem.getEmail()%>" required>
                             </td>
                         </tr>
+                        </tbody>
+                    </table>
+                    <table class="tb2">
                         <tr>
                             <td colspan="2">
                                 <input type="submit" class="inbtn" value="회원정보수정">
                                 <a href="/member/mypage.jsp" class="inbtn">마이페이지로</a>
                             </td>
                         </tr>
-                        </tbody>
                     </table>
                 </form>
+                <script src="/js/modify.js"></script>
             </div>
         </section>
     </div>

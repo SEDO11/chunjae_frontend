@@ -120,6 +120,7 @@
                                     <th class="item3">제목</th>
                                     <td><input type="text" name="title" id="title" class="indata" value="<%=q.getTitle()%>" autofocus required></td>
                                     <input type="hidden" name="qno" value="<%=qno%>" readonly>
+                                    <input type="hidden" name="lev" value="0" readonly>
                                 </tr>
                                 <tr>
                                     <th colspan="2" class="item4">내용</th>

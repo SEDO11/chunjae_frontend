@@ -51,16 +51,12 @@
             display: block; clear: both; transform-origin: 100% 100%; transform: rotate(45deg); display: none;} /* 화살표 생성 */
         .pic_lst li:hover .pic_arrow::after {display: block;} /*처음엔 안보였다가 호버하면 화살표 생성 */
 
-
-        .card_lst li.item2 .thumb_box {background-image: url("./img/t1.jpg");}
-        .card_lst li.item3 .thumb_box {background-image: url("./img/t2.jpg");}
-        .card_lst li.item4 .thumb_box {background-image: url("./img/t3.jpg");}
-        .card_lst li.item5 .thumb_box {background-image: url("./img/t4.jpg");}
-        .card_lst li.item6 .thumb_box {background-image: url("./img/t5.jpg");}
-        .card_lst li.item7 .thumb_box {background-image: url("./img/t6.jpg");}
-
         .ico.item1 {background-position: -70px -60px;} /*네이버 블로그 아이콘*/
         .ico.item2 {background-position: -140px -120px;} /*인스타 그램 아이콘*/
+
+        .card_lst li .thumb_box {background-image: url("./img/icon_db.png");}
+
+        .slide_box {margin-top: 100px;}
 
     </style>
 </head>
@@ -94,110 +90,101 @@
     </figure>
     <script src="./js/rotation.js"></script>
 
-    <section class="page" id="page1">
-        <div class="page_wrap">
-            <h2 class="page_tit">페이지 제목1</h2>
-            <!-- ul.pic_lst>li.item$*4>a>p.pic_com{설명}+h3.pic_tit{제목}+span.pic_arrow -->
-            <ul class="pic_lst">
-                <li class="item1">
-                    <a href="">
-                        <p class="pic_com">설명</p>
-                        <h3 class="pic_tit">제목</h3>
-                        <span class="pic_arrow"></span>
-                    </a>
-                </li>
-                <li class="item2">
-                    <a href="">
-                        <p class="pic_com">설명</p>
-                        <h3 class="pic_tit">제목</h3>
-                        <span class="pic_arrow"></span>
-                    </a>
-                </li>
-                <li class="item3">
-                    <a href="">
-                        <p class="pic_com">설명</p>
-                        <h3 class="pic_tit">제목</h3>
-                        <span class="pic_arrow"></span>
-                    </a>
-                </li>
-                <li class="item4">
-                    <a href="">
-                        <p class="pic_com">설명</p>
-                        <h3 class="pic_tit">제목</h3>
-                        <span class="pic_arrow"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
     <section class="page" id="page2">
+        <div class="sl-btn-box">
+            <button type="button" class="btn next">&gt;</button>
+            <button type="button" class="btn prev">&lt;</button>
+        </div>
         <div class="page_wrap">
-            <h2 class="page_tit">페이지 제목2</h2>
-            <p class="page_com">페이지 설명</p>
-            <div class="sl-btn-box">
-                <button type="button" class="btn next">&gt;</button>
-                <button type="button" class="btn prev">&lt;</button>
-            </div>
+            <h2 class="page_tit">선생님의 쪽집게</h2>
             <!-- div.slide_box>ul.card_lst>li.item$*7>a>div.thumb_box+p.thumb_tit{썸네일제목$}+(div.ico_box>span.ico_item+span{아이콘$}.thumb_date{2023-07-18}) -->
             <div class="slide_box">
                 <ul class="card_lst">
                     <li class="item1">
-                        <h3 class="cate_tit">언론보도</h3>
+                        <h3 class="cate_tit">파이썬의 개념</h3>
                         <ul class="cate_lst">
-                            <li>
-                                <a href="">
-                                    <p class="bd_content">운필력 키우는 한글 글쓰기, 유아학습지로 창의력과 표현력을 기른다.</p>
-                                    <p class="bd_date">2023-07-17</p>
+                            <li >
+                                <a href="https://ko.wikipedia.org/wiki/%ED%8C%8C%EC%9D%B4%EC%8D%AC" title="자세히" target="_blank">
+                                    <p class="bd_content">파이썬은 1991년 귀도 반 로섬이 발표한 고급 프로그래밍 언어로,
+                                        플랫폼에 독립적이며 인터프리터식, 객체지향적, 동적 타이핑 대화형 언어이다.</p>
+                                    <p class="bd_date">2023-06-13</p>
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    <p class="bd_content">천재교과서, 스마트해법-밀크T 온·오프라인 결합 상품 더블케어 천재패스 출시</p>
+                                    <p class="bd_content">
+                                        파이썬의 변수 선언 <br>
+                                        4250.0 <br>
+                                    </p>
                                     <p class="bd_date">2023-07-17</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="item2">
-                        <a href="">
+                        <a href="https://blog.naver.com/tmvmffpsej/222679218621" target="_blank">
                             <div class="thumb_box"></div>
-                            <p class="thumb_tit">썸네일제목2</p>
-                            <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
+                            <p class="thumb_tit">가변 매개변수, 기본 매개변수, 키워드</p>
+                            <span class="thumb_date">오세훈 강사</span>
+                            <div class="ico_box">
+                                <span class="ico item1"></span>
+                                <span class="thumb_date">2023-07-15</span>
+                            </div>
                         </a>
                     </li>
                     <li class="item3">
-                        <a href="">
+                        <a href="https://blog.naver.com/tmvmffpsej/222679221828" target="_blank">
                             <div class="thumb_box"></div>
-                            <p class="thumb_tit">썸네일제목3</p>
-                            <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
+                            <p class="thumb_tit">재귀 함수</p>
+                            <span class="thumb_date">오세훈 강사</span>
+                            <div class="ico_box">
+                                <span class="ico item1"></span>
+                                <span class="thumb_date">2023-07-18</span>
+                            </div>
                         </a>
                     </li>
                     <li class="item4">
-                        <a href="">
+                        <a href="https://blog.naver.com/tmvmffpsej/222680289660" target="_blank">
                             <div class="thumb_box"></div>
-                            <p class="thumb_tit">썸네일제목4</p>
-                            <div class="ico_box"><span class="ico item2"></span><span class="thumb_date">2023-07-18</span></div>
+                            <p class="thumb_tit">자바 클래스</p>
+                            <span class="thumb_date">오세훈 강사</span>
+                            <div class="ico_box">
+                                <span class="ico item1"></span>
+                                <span class="thumb_date">2022-03-23</span>
+                            </div>
                         </a>
                     </li>
                     <li class="item5">
-                        <a href="">
+                        <a href="https://blog.naver.com/tmvmffpsej/222680281490" target="_blank">
                             <div class="thumb_box"></div>
-                            <p class="thumb_tit">썸네일제목5</p>
-                            <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
+                            <p class="thumb_tit">자바 자료구조</p>
+                            <span class="thumb_date">오세훈 강사</span>
+                            <div class="ico_box">
+                                <span class="ico item1"></span>
+                                <span class="thumb_date">2022-03-23</span>
+                            </div>
                         </a>
                     </li>
                     <li class="item6">
-                        <a href="">
+                        <a href="https://blog.naver.com/tmvmffpsej/222679207398" target="_blank">
                             <div class="thumb_box"></div>
-                            <p class="thumb_tit">썸네일제목6</p>
-                            <div class="ico_box"><span class="ico item2"></span><span class="thumb_date">2023-07-18</span></div>
+                            <p class="thumb_tit">DB 기본 쿼리</p>
+                            <span class="thumb_date">오세훈 강사</span>
+                            <div class="ico_box">
+                                <span class="ico item1"></span>
+                                <span class="thumb_date">2022-03-21</span>
+                            </div>
                         </a>
                     </li>
                     <li class="item7">
-                        <a href="">
+                        <a href="https://blog.naver.com/tmvmffpsej/222679209494" target="_blank">
                             <div class="thumb_box"></div>
-                            <p class="thumb_tit">썸네일제목7</p>
-                            <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
+                            <p class="thumb_tit">DB 기본 쿼리 2</p>
+                            <span class="thumb_date">오세훈 강사</span>
+                            <div class="ico_box">
+                                <span class="ico item1"></span>
+                                <span class="thumb_date">2022-03-22</span>
+                            </div>
                         </a>
                     </li>
                 </ul>
