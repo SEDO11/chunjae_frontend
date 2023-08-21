@@ -44,6 +44,7 @@
                     <ul class="nav justify-content-end">
                         <c:if test="${sid eq 'admin' }">
                             <li class="nav-item"><a href="${path1 }/AdminNoticeList.do" class="nav-link">Admin Notice</a></li>
+                            <li class="nav-item"><a href="${path1 }/AdminCustomList.do" class="nav-link">Custom List</a></li>
                         </c:if>
                         <c:if test="${!empty sid }">
                             <li class="nav-item"><a href="${path1 }/Mypage.do" class="nav-link">Mypage</a></li>

@@ -10,6 +10,7 @@ public class Custom {
     private String email;
     private String birth;
     private String regdate;
+    private String address;
 
     public String getId() {
         return id;
@@ -83,6 +84,14 @@ public class Custom {
         this.regdate = regdate;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Custom{" +
@@ -95,6 +104,7 @@ public class Custom {
                 ", email='" + email + '\'' +
                 ", birth='" + birth + '\'' +
                 ", regdate='" + regdate + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

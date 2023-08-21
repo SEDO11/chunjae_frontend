@@ -18,7 +18,6 @@
             <div class="container">
                 <ol class="breadcrumb justify-content-end">
                     <li class="breadcrumb-item"><a href="${path }">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Custom</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Login</li>
                 </ol>
             </div>
@@ -29,15 +28,15 @@
                 <table class="table">
                     <tbody>
                     <tr>
-                        <td><input type="text" name="id" id="id" class="form-control" placeholder="아이디 입력"></td>
+                        <td><input type="text" name="id" id="id" class="form-control" placeholder="아이디 입력" required></td>
                     </tr>
                     <tr>
-                        <td><input type="password" name="pw" id="pw" class="form-control" placeholder="비밀번호 입력"></td>
+                        <td><input type="password" name="pw" id="pw" class="form-control" placeholder="비밀번호 입력" required></td>
                     </tr>
                     <tr>
                         <td>
                             <input type="submit" value="로그인" class="btn btn-primary">
-                            <a href="" class="btn btn-secondary">회원가입</a>
+                            <a href="${path }/Join.do" class="btn btn-secondary">회원가입</a>
                         </td>
                     </tr>
                     </tbody>

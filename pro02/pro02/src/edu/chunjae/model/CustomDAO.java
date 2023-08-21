@@ -2,10 +2,7 @@ package edu.chunjae.model;
 
 import edu.chunjae.dto.Custom;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +13,7 @@ public class CustomDAO {
 
     public List<Custom> getCustomList() {
         List<Custom> cusList = new ArrayList<>();
-        DBConnect con = new PostgreCon();
+        DBConnect con = new MariaDBCon();
         conn = con.connect();
         try {
             pstmt = conn.prepareStatement(DBConnect.CUSTOM_SELECT_ALL);
@@ -35,14 +32,16 @@ public class CustomDAO {
                 cusList.add(custom);
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("sql 에러");
+        } finally {
+            con.close(rs, pstmt, conn);
         }
         return cusList;
     }
 
     public Custom getCustom(String id) {
         Custom custom = new Custom();
-        DBConnect con = new PostgreCon();
+        DBConnect con = new MariaDBCon();
         conn = con.connect();
         try {
             pstmt = conn.prepareStatement(DBConnect.CUSTOM_SELECT_ONE);
@@ -61,13 +60,15 @@ public class CustomDAO {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            con.close(rs, pstmt, conn);
         }
         return custom;
     }
 
     public boolean login(String id, String pw) {
         boolean pass = false;
-        DBConnect con = new PostgreCon();
+        DBConnect con = new MariaDBCon();
         conn = con.connect();
         try {
             pstmt = conn.prepareStatement(DBConnect.CUSTOM_SELECT_LOG);
@@ -79,11 +80,75 @@ public class CustomDAO {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            con.close(rs, pstmt, conn);
         }
         return pass;
     }
 
-    public boolean join() {
-        return false;
+    public boolean join(String id, String pw, String name, String tel, String email, String birth, String address) {
+        boolean pass = false;
+        DBConnect con = new MariaDBCon();
+        conn = con.connect();
+        try {
+            pstmt = conn.prepareStatement(DBConnect.CUSTOM_INSERT);
+            pstmt.setString(1, id);
+            pstmt.setString(2, pw);
+            pstmt.setString(3, name);
+            pstmt.setString(4, tel);
+            pstmt.setString(5, email);
+            pstmt.setString(6, birth);
+            pstmt.setString(7, address);
+            int cnt = pstmt.executeUpdate();
+            if(cnt > 0) {
+                pass = true;
+            }
+        } catch (SQLException e) {
+            System.out.println("sql 에러");
+        } finally {
+            con.close(pstmt, conn);
+        }
+        return pass;
+    }
+
+    public boolean idCheck(String id) {
+        Custom custom = new Custom();
+        DBConnect con = new PostgreCon();
+        boolean pass = false;
+        conn = con.connect();
+        try {
+            pstmt = conn.prepareStatement(DBConnect.CUSTOM_SELECT_ONE);
+            pstmt.setString(1,id);
+            rs = pstmt.executeQuery();
+            if(!rs.next()) {
+                pass = true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            con.close(rs, pstmt, conn);
+        }
+        return pass;
+    }
+
+    public int deleteCustom(String id){
+        int cnt = 0;
+        DBConnect con = new MariaDBCon();
+        conn = con.connect();
+        if(conn!=null){
+            System.out.println("SQL 연결 성공");
+        }
+
+        String sql = "delete from custom where id=?";
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, id);
+            cnt = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            con.close(pstmt, conn);
+        }
+        return cnt;
     }
 }
