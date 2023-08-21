@@ -33,6 +33,10 @@
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">학습후기</a></li>
                             </ul>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="${path1 }/FileUpload.do">자료실</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">ETC</a>

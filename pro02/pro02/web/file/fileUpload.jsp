@@ -9,31 +9,35 @@
 </head>
 <body>
     <h2>파일 첨부 테스트</h2>
-    <form action="${path}/FileUploadPro.do" method="post" enctype="multipart/form-data">
-        <table class="table">
-            <tbody>
-            <tr>
-                <th></th>
-                <td></td>
-            </tr>
-            <tr>
-                <th></th>
-                <td></td>
-            </tr>
-            <tr>
-                <th></th>
-                <td></td>
-            </tr>
-            <tr>
-                <th></th>
-                <td></td>
-            </tr>
-            <tr>
-                <th></th>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-    </form>
+    <%@ include file="/header.jsp"%>
+    <div class="container">
+        <h2>파일 첨부 테스트</h2>
+        <form action="${path }/FileUploadPro.do" method="post" enctype="multipart/form-data">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th><label for="uname">이름</label></th>
+                    <td><input type="text" name="uname" id="uname" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th><label for="subject">제목</label></th>
+                    <td><input type="text" name="subject" id="subject" class="form-control"></td>
+                </tr>
+                <tr>
+                    <th><label for="content">내용</label></th>
+                    <td><textarea name="content" id="content" class="form-control"></textarea></td>
+                </tr>
+                <tr>
+                    <th><label for="filename">첨부 파일</label></th>
+                    <td><input type="file" name="filename" id="filename" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="등록" class="btn btn-primary"></td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+<%@ include file="/footer.jsp"%>
 </body>
 </html>
