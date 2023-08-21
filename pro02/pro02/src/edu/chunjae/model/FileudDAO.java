@@ -14,9 +14,9 @@ public class FileudDAO {
     static PreparedStatement pstmt = null;
     static ResultSet rs = null;
 
-    public int fileUploadTest(Fileud file){
+    public int fileUpload(Fileud file){
         int cnt = 0;
-        DBConnect con = new PostgreCon();
+        DBConnect con = new MariaDBCon();
         String sql = "insert into file values (?,?,?,?)";
         try {
             conn = con.connect();
@@ -36,10 +36,10 @@ public class FileudDAO {
         return cnt;
     }
 
-    public List<Fileud> getFileTestList(){
+    public List<Fileud> getFileList(){
         List<Fileud> fileList = new ArrayList<>();
-        DBConnect con = new PostgreCon();
-        String sql = "select * from filetest";
+        DBConnect con = new MariaDBCon();
+        String sql = "select * from file";
         try {
             conn = con.connect();
             pstmt = conn.prepareStatement(sql);
@@ -49,7 +49,7 @@ public class FileudDAO {
                 file.setUname(rs.getString("uname"));
                 file.setSubject(rs.getString("subject"));
                 file.setContent(rs.getString("content"));
-                file.setFilename(rs.getString("filename"));
+                file.setFilename(rs.getString("fname"));
                 fileList.add(file);
             }
         } catch (SQLException e) {

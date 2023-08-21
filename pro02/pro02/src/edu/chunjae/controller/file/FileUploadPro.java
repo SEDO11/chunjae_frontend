@@ -49,18 +49,6 @@ public class FileUploadPro extends HttpServlet {
             }
 
             file.setFilename(upfile.getName());
-
-            FileudDAO dao = new FileudDAO();
-            int cnt = dao.fileUploadTest(file);
-            List<Fileud> fileList = new ArrayList<>();
-            if(cnt>0){
-                fileList = dao.getFileTestList();
-                request.setAttribute("fileList",fileList);
-                RequestDispatcher view = request.getRequestDispatcher("/filetest/filelist.jsp");
-                view.forward(request, response);
-            } else {
-                response.sendRedirect("/FileUploadTest.do");
-            }
         } catch(Exception e){
             System.out.println(e.getMessage());
         }

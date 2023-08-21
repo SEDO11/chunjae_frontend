@@ -13,7 +13,7 @@ public class NoticeDAO {
 
     public List<Notice> getNoticeList(){
         List<Notice> notiList = new ArrayList<>();
-        DBConnect con = new PostgreCon();
+        DBConnect con = new MariaDBCon();
         try {
             conn = con.connect();
             pstmt = conn.prepareStatement(DBConnect.NOTICE_SELECT_ALL);
