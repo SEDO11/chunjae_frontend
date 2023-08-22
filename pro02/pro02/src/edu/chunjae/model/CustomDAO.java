@@ -113,7 +113,7 @@ public class CustomDAO {
 
     public boolean idCheck(String id) {
         Custom custom = new Custom();
-        DBConnect con = new PostgreCon();
+        DBConnect con = new MariaDBCon();
         boolean pass = false;
         conn = con.connect();
         try {
