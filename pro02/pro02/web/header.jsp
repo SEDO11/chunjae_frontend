@@ -38,11 +38,13 @@
                             <a class="nav-link" href="">ETC</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"  href="${path1 }/FileUpload.do">파일업로드</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="${path1 }/FileList.do">자료실</a>
                         </li>
+                        <c:if test="${sid eq 'admin' }">
+                            <li class="nav-item">
+                                <a class="nav-link"  href="${path1 }/FileUpload.do">파일업로드</a>
+                            </li>
+                        </c:if>
                     </ul>
                     <ul class="nav justify-content-end">
                         <c:if test="${sid eq 'admin' }">

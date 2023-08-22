@@ -17,7 +17,7 @@ public class FileudDAO {
     public int fileUpload(Fileud file){
         int cnt = 0;
         DBConnect con = new MariaDBCon();
-        String sql = "insert into file values (?,?,?,?)";
+        String sql = DBConnect.FILE_INSERT;
         try {
             conn = con.connect();
             pstmt = conn.prepareStatement(sql);
@@ -39,7 +39,7 @@ public class FileudDAO {
     public List<Fileud> getFileList(){
         List<Fileud> fileList = new ArrayList<>();
         DBConnect con = new MariaDBCon();
-        String sql = "select * from file";
+        String sql = DBConnect.FILE_SELECT_ALL;
         try {
             conn = con.connect();
             pstmt = conn.prepareStatement(sql);
@@ -58,5 +58,24 @@ public class FileudDAO {
             con.close(rs, pstmt, conn);
         }
         return fileList;
+    }
+
+    public int fileDelete(String fname){
+        int cnt = 0;
+        DBConnect con = new MariaDBCon();
+        String sql = DBConnect.FILE_DELETE;
+        try {
+            conn = con.connect();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, fname);
+            cnt = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            con.close(pstmt, conn);
+        }
+        return cnt;
     }
 }

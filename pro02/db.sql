@@ -36,6 +36,10 @@ CREATE TABLE notice (
     visited int DEFAULT 0
 );
 
+
+
+-- 파일 업로드 관련 테이블
+
 -- 하나의 파일 업로드 테이블
 CREATE TABLE FILE(
 	uname VARCHAR(200),
@@ -53,3 +57,160 @@ CREATE TABLE FILE2(
 	fname2 VARCHAR(500),
 	fname3 VARCHAR(500)
 );
+
+
+
+-- 구매 관련 테이블
+
+-- 상품
+CREATE TABLE product(
+	no INT AUTO_INCREMENT PRIMARY key,
+	cate VARCHAR(50) NOT null,
+	cateno VARCHAR(20) NOT null,
+	pname VARCHAR(100) NOT null,
+	pcomment VARCHAR(1000),
+	plist VARCHAR(200),
+	pqty INT,
+	price INT,
+	imgsrc1 VARCHAR(300),
+	imgsrc2 VARCHAR(300),
+	imgsrc3 VARCHAR(300),
+	resdate timestamp DEFAULT CURRENT_TIMESTAMP()
+);
+
+-- 결제(판매)
+CREATE TABLE payment(
+	sno INT AUTO_INCREMENT PRIMARY key,
+	pno INT NOT null,
+	cid VARCHAR(20) NOT null,
+	amount INT NOT NULL,
+	pmethod INT NOT NULL,
+	pcom INT NOT NULL,
+	cnum INT NOT NULL,
+	payprice INT NOT NULL,
+	dno VARCHAR(100)
+);
+
+-- 배송
+CREATE TABLE delivery(
+	dno INT AUTO_INCREMENT PRIMARY key,
+	sno INT,
+	cid VARCHAR(20) NOT NULL,
+	daddr VARCHAR(100) NOT null,
+	custel VARCHAR(20) NOT null,
+	pcom VARCHAR(100), -- 배송회사
+   ptel VARCHAR(20), -- 배송기사연락처
+   pstate INT DEFAULT 0, -- (0:배송전, 1:배송중, 2:도착, 3:구매결정)배송상태
+   bcode VARCHAR(100), -- 화물코드
+	FOREIGN KEY(cid) REFERENCES custom(id) ON DELETE 
+		CASCADE
+);
+
+-- 입고정보
+CREATE TABLE receive(
+	rno INT AUTO_INCREMENT PRIMARY key,
+	pno INT NOT null,
+	amount INT NOT NULL,
+	rprice INT NOT NULL,
+	resdate timestamp DEFAULT CURRENT_TIMESTAMP(),
+	FOREIGN KEY(pno) REFERENCES product(NO) ON DELETE 
+		CASCADE
+);
+
+-- 출고정보
+CREATE TABLE serve(
+	rno INT AUTO_INCREMENT PRIMARY key,
+	pno INT NOT null,
+	amount INT NOT NULL,
+	rprice INT NOT NULL,
+	resdate timestamp DEFAULT CURRENT_TIMESTAMP(),
+	FOREIGN KEY(pno) REFERENCES product(NO) ON DELETE 
+		CASCADE
+);
+
+-- 추가정보
+CREATE TABLE addinfo(
+	ano INT AUTO_INCREMENT PRIMARY key,
+	pno INT NOT null,
+	title VARCHAR(100),
+	movie VARCHAR(200),
+	resdate timestamp DEFAULT CURRENT_TIMESTAMP(),
+	FOREIGN KEY(pno) REFERENCES product(NO) ON DELETE 
+		CASCADE
+);
+
+-- 장바구니
+CREATE TABLE cart(
+	NO INT AUTO_INCREMENT PRIMARY KEY,
+	cid VARCHAR(20) NOT null,
+	pno INT NOT NULL,
+	amount INT,
+	FOREIGN KEY(pno) REFERENCES product(NO) ON DELETE 
+		CASCADE,
+	FOREIGN KEY(cid) REFERENCES custom(id) ON DELETE 
+		CASCADE
+);
+
+-- 카테고리
+CREATE TABLE category(
+	cno INT AUTO_INCREMENT PRIMARY KEY,
+	cname VARCHAR(100) NOT null
+);
+
+-- 재고뷰
+-- CREATE VIEW inventory;
+
+-- 상품등록
+INSERT INTO product VALUES(DEFAULT, ?, '', ?, ?, ?, ?, ?, ?, ?, ?, ?, DEFAULT);
+-- cateno 업데이트
+UPDATE product SET cateno = CONCAT(cate, NO) WHERE NO=?;
+
+-- 입고처리
+INSERT INTO receive VALUES(DEFAULT, ?, ?, ?, DEFAULT);
+
+-- 출고처리 패턴
+-- 구매 처리
+INSERT INTO payment VALUES(DEFAULT, ?, ?, ?, ?, ?, ?, ?, ''); -- 결제
+-- 출고 처리
+INSERT INTO serve VALUES(DEFAULT, ?, ?, ?, DEFAULT); -- 내역 갱신
+-- 배송처리
+INSERT INTO delivery VALUES(DEFAULT, ?, ?, ?, ?, '', '', DEFAULT, DEFAULT, '', ); 
+-- 장바구니 삭제
+DELETE FROM cart WHERE NO=?;
+
+-- 반품처리 패턴
+DELETE FROM payment WHERE sno=?; -- 구매처리 삭제
+-- 상품 다시 추가
+INSERT INTO receive VALUES(DEFAULT, ?, ?, ?, DEFAULT);
+-- 
+DELETE FROM serve WHERE sno=?; -- 출고처리 삭제
+INSERT INTO cart VALUES(DEFAULT, ?, ?, ?);
+-- 배송내역삭제
+DELETE FROM delivery WHERE sno=?;
+
+
+-- 상품정보 변경
+-- UPDATE product SET pname=?, cate=?, pcomment=?, plist=?, price=?, imgsrc=? WHERE ''
+
+-- 상품목록
+SELECT * FROM product ORDER BY NO;
+
+-- 신상품목록
+SELECT * FROM product ORDER BY NO DESC LIMIT 5;
+
+-- 베스트셀러 목록
+SELECT * from product where pno IN (SELECT pno FROM payment GROUP BY pno ORDER BY SUM(amount) DESC LIMIT 5); -- 구매 개수를 통해 베스트셀러 선출
+
+-- 카테고리별 베스트 셀러 상품 목록
+SELECT * from product where pno IN (SELECT pno FROM payment GROUP BY pno ORDER BY SUM(amount) DESC LIMIT 5); -- 구매 개수를 통해 베스트셀러 선출
+
+
+
+-- 배송처리
+-- 출발
+UPDATE delivery SET pcom=?, ptel=?, pstate=1, 
+sdate=CURRENT_TIMESTAMP, rdate=?, bcode=? WHERE dno=?;
+
+-- 도착
+UPDATE delivery SET pcom=?, ptel=?, pstate=2, 
+sdate=CURRENT_TIMESTAMP, rdate=?, bcode=? WHERE dno=?;

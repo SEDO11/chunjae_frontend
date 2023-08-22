@@ -22,6 +22,7 @@
             <th>작성자</th>
             <th>파일이름</th>
             <th>다운로드</th>
+            <th>비고</th>
         </tr>
         </thead>
         <tbody>
@@ -31,6 +32,11 @@
                 <td><img src="${path }/storage/${file.filename }" alt="${file.filename }" width="100"/></td>
                 <td>
                     <a href="${path}/FileDownload.do?file=${file.filename}">download</a>
+                </td>
+                <td>
+                    <c:if test="${sid eq 'admin' }">
+                    <a href="${path}/FileDelete.do?file=${file.filename}">삭제</a>
+                    </c:if>
                 </td>
             </tr>
         </c:forEach>

@@ -24,6 +24,8 @@ public class FileUploadPro extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String msg = "";
         ServletContext application = request.getServletContext();
+        FileudDAO dao = new FileudDAO();
+
         try {
             String saveDirectory = application.getRealPath("/storage"); //실제 저장 경로
             int maxSize = 1024*1024*10;     //10MB
@@ -49,9 +51,11 @@ public class FileUploadPro extends HttpServlet {
             }
 
             file.setFilename(upfile.getName());
+            dao.fileUpload(file);
         } catch(Exception e){
             System.out.println(e.getMessage());
         }
+        response.sendRedirect("/pro02/FileList.do");
     }
 }
 
