@@ -16,10 +16,27 @@
     </style>
     <script>
     $(document).ready(function(){
+        // 브레이크 포인트에 의한 jQuery의 적응형 구현
         //데스크탑(960이상)일 경우 제목, 설명 등의 글자색은 파랑, 글자크기는 제목 : 48px, 설명 : 20px, 이미지는 dy1.jpg로
         //태블릿(768~959)일 경우 제목, 설명 등의 글자색은 초록, 글자크기는 제목 : 36px, 설명 : 18px, 이미지는 dy2.jpg로
         //모바일(~767)일 경우 제목, 설명 등의 글자색은 빨강, 글자크기는 제목 : 24px, 설명 : 14px, 이미지는 dy3.jpg로
-
+        var scr_wd = screen.width;
+        $(window).resize(function() {
+            var wsize = $(window).width();
+            if(wsize>=960) { // 데스크탑
+                $(".title").css({"color":"blue", "font-size":"48px"});
+                $(".comment").css({"color":"blue", "font-size":"20px"});
+                $("img").attr("src", "/data/dy1.jpg").width(600);
+            } else if(wsize>=768) { // 태블릿
+                $(".title").css({"color":"green", "font-size":"36px"});
+                $(".comment").css({"color":"green", "font-size":"18px"});
+                $("img").attr("src", "/data/dy2.jpg").width(400);
+            } else { // 모바일
+                $(".title").css({"color":"red", "font-size":"24px"});
+                $(".comment").css({"color":"red", "font-size":"14px"});
+                $("img").attr("src", "/data/dy3.jpg").width(200);
+            }
+        }).resize(); // 이벤트 트리거 강제 발생(웹을 초기화 해도 바로 인식)
     });
     </script>
 </head>

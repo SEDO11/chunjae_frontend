@@ -15,7 +15,7 @@
   <div class="container-fluid">
       <%@ include file="/header.jsp"%>
       <div class="contents">
-          <h2>사용자 : ${user }</h2>
+          <h2>사용자 : ${user }</h2> <%-- controller.Main에 있다. --%>
           <h2>메인 절대 주소 : ${realPath }</h2>
           <h2>메인 상대 주소 : ${path }</h2>
           <hr>
