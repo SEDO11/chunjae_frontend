@@ -78,6 +78,25 @@ CREATE TABLE product(
 	resdate timestamp DEFAULT CURRENT_TIMESTAMP()
 );
 
+INSERT INTO product VALUES(DEFAULT, '국어', '국어 1', '고등국어1', '설명', '목차',
+	100, 20000, 'main_bottom_1.png', NULL, NULL, DEFAULT);
+	
+INSERT INTO product VALUES(DEFAULT, '수학', '미적분 1', '고등수학1', '수학 설명', ' 수학 목차',
+	50, 25000, 'test2.jpg', 'test2.mp4', NULL, DEFAULT);
+	
+-- 후기 테이블
+DROP TABLE review;
+
+CREATE TABLE review(
+	NO INT AUTO_INCREMENT PRIMARY KEY,
+	cid VARCHAR(20) NOT NULL,
+	content VARCHAR(300) NOT NULL,
+	resdate timestamp DEFAULT CURRENT_TIMESTAMP(),
+	par INT,
+	FOREIGN KEY(cid) REFERENCES custom(id) ON DELETE
+		CASCADE
+);
+
 -- 결제(판매)
 CREATE TABLE payment(
 	sno INT AUTO_INCREMENT PRIMARY key,
