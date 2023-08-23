@@ -29,7 +29,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="${path1 }/NoticeList.do">공지사항</a></li>
-                                <li><a class="dropdown-item" href="#">묻고답하기</a></li>
+                                <li><a class="dropdown-item" href="${path1}/ProList.do">상품목록</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">학습후기</a></li>
                             </ul>
