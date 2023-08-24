@@ -97,6 +97,20 @@ CREATE TABLE review(
 		CASCADE
 );
 
+-- qna
+CREATE TABLE qna(
+	qno INT PRIMARY KEY AUTO_INCREMENT, -- qna 글 번호
+	title VARCHAR(200) NOT NULL, -- 제목
+	content VARCHAR(1000), -- 내용
+	cid VARCHAR(20), -- 작성자
+	resdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP(), -- 작성일
+	cnt INT DEFAULT 0, -- 조회수
+	lev INT DEFAULT 0, -- 게시글 0, 답글 1 이상
+	par INT, -- 부모 게시글 번호
+	FOREIGN KEY(cid) REFERENCES custom(id) ON DELETE 		
+		CASCADE -- 작성자를 member id를 이용해 외래키로 사용
+);
+
 -- 결제(판매)
 CREATE TABLE payment(
 	sno INT AUTO_INCREMENT PRIMARY key,
@@ -161,7 +175,7 @@ CREATE TABLE addinfo(
 -- 장바구니
 CREATE TABLE cart(
 	NO INT AUTO_INCREMENT PRIMARY KEY,
-	cid VARCHAR(20) NOT null,
+	cid VARCHAR(20) NOT NULL,
 	pno INT NOT NULL,
 	amount INT,
 	FOREIGN KEY(pno) REFERENCES product(NO) ON DELETE 
