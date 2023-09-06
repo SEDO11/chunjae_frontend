@@ -14,6 +14,8 @@
     <org.springframework-version>5.3.20</org.springframework-version>
     <org.aspectj-version>1.9.0</org.aspectj-version>
     <org.slf4j-version>2.0.0</org.slf4j-version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -35,31 +37,24 @@
       <!--      영역을 미치는 영역이 scope. runtime으로 되어있으면 실행할때만 가능-->
     </dependency>
 
-    <!-- slf4j -->
-    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+    <!-- slf4j and log4j-->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>${org.slf4j-version}</version>
     </dependency>
-
-    <!-- spring context -->
-    <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>${org.springframework-version}</version>
-      <exclusions>
-        <exclusion>
-          <!--          컨트롤러, 서비스에서 사용할 수 있는 commons-logging. -->
-          <groupId>commons-logging</groupId>
-          <artifactId>commons-logging</artifactId>
-        </exclusion>
-        <!-- artifactId: war, jar의 이름 -->
-      </exclusions>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>${org.slf4j-version}</version>
+      <scope>runtime</scope>
     </dependency>
-
-    <!-- log4j -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${org.slf4j-version}</version>
+      <scope>runtime</scope>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/log4j/log4j -->
     <dependency>
       <groupId>log4j</groupId>
@@ -84,6 +79,22 @@
         </exclusion>
       </exclusions>
       <scope>runtime</scope>
+    </dependency>
+
+    <!-- spring context -->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${org.springframework-version}</version>
+      <exclusions>
+        <exclusion>
+          <!--          컨트롤러, 서비스에서 사용할 수 있는 commons-logging. -->
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+        <!-- artifactId: war, jar의 이름 -->
+      </exclusions>
     </dependency>
 
     <!-- 의존성 주입 라이브러리 -->

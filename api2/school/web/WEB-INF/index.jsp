@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="path" value="<%=request.getContextPath() %>" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,11 @@
 </head>
 <body>
 <div>
+    <div>
+        <a href="${path}/GetApi1?name=신구로초">신구로초등학교</a>
+        <a href="${path}/GetApi1?name=고척중">고척중학교</a>
+        <a href="${path}/GetApi1?name=경인고">경인고등학교</a>
+    </div>
     <h2>${schoolName}등학교 식단표</h2>
     <c:forEach var="eat" items="${ddishList }" varStatus="status">
         <div>
