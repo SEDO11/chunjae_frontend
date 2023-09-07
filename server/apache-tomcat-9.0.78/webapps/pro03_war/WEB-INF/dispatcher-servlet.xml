@@ -31,7 +31,7 @@
         /WEB-INF/views, .jsp 를 합쳐서 불러옴
     -->
     <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <beans:property name="prefix" value="/WEB-INF/views/" /> <!-- 접두사 -->
+        <beans:property name="prefix" value="/WEB-INF/views" /> <!-- 접두사 -->
         <beans:property name="suffix" value=".jsp" /> <!-- 접미사 -->
     </beans:bean>
 

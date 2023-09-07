@@ -20,6 +20,6 @@ public class HomeCtrl {
         String today = dateFormat.format(date);
         model.addAttribute("today", today);
         model.addAttribute("myName", "홍길동");
-        return "index";
+        return "/index";
     }
 }
