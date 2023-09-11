@@ -30,21 +30,15 @@
 
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
-                        More
+                        게시판
                     </a>
 
                     <div class="navbar-dropdown">
                         <a href="${path2}/board/list.do" class="navbar-item">
-                            Board
+                            자유게시판
                         </a>
                         <a href="${path2}/sample2/list.do" class="navbar-item">
                             Sample
-                        </a>
-                        <a href="${path2}/member/list.do" class="navbar-item">
-                            MemberList
-                        </a>
-                        <a href="${path2}/member/mypage.do" class="navbar-item">
-                            MyPage
                         </a>
                         <hr class="navbar-divider">
                         <a class="navbar-item">
@@ -57,7 +51,7 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <c:if test="${!empty sid}">
+                        <c:if test="${not empty sid}"> <%-- 로그인한 경우 --%>
                             <a href="${path2}/member/mypage.do" class="button is-primary">
                                 <strong>MyPage</strong>
                             </a>
@@ -65,7 +59,7 @@
                                 LogOut
                             </a>
                         </c:if>
-                        <c:if test="${empty sid}">
+                        <c:if test="${empty sid}"> <%-- 로그인을 안 한 경우 --%>
                             <a href="${path2}/member/term.do" class="button is-primary">
                                 <strong>Sign up</strong>
                             </a>
@@ -73,14 +67,11 @@
                                 Log in
                             </a>
                         </c:if>
-                        <c:if test="${sid.equals('admin')}">
+                        <c:if test="${sid.equals('admin')}"> <%-- 관리자인 경우 --%>
                             <a href="${path2}/member/list.do" class="button is-light">
                                 MemberList
                             </a>
                         </c:if>
-                        <a href="${path2}/member/list.do" class="button is-light">
-                            MemberList
-                        </a>
                     </div>
                 </div>
             </div>
