@@ -57,11 +57,29 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-primary">
-                            <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light">
-                            Log in
+                        <c:if test="${!empty sid}">
+                            <a href="${path2}/member/mypage.do" class="button is-primary">
+                                <strong>MyPage</strong>
+                            </a>
+                            <a href="${path2}/member/logout.do" class="button is-light">
+                                LogOut
+                            </a>
+                        </c:if>
+                        <c:if test="${empty sid}">
+                            <a href="${path2}/member/term.do" class="button is-primary">
+                                <strong>Sign up</strong>
+                            </a>
+                            <a href="${path2}/member/login.do" class="button is-light">
+                                Log in
+                            </a>
+                        </c:if>
+                        <c:if test="${sid.equals('admin')}">
+                            <a href="${path2}/member/list.do" class="button is-light">
+                                MemberList
+                            </a>
+                        </c:if>
+                        <a href="${path2}/member/list.do" class="button is-light">
+                            MemberList
                         </a>
                     </div>
                 </div>
