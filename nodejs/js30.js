@@ -49,7 +49,10 @@ app.get('/get/:no', (req, res) => {
     let body = "";
     dbCon.getSample(req.params.no)
         .then((row) => {
-            body = `<p>no : ${row.no}, name : ${row.name }</p>`
+            console.log(row);
+            row.forEach((item) => {
+                body = `<p>no : ${item.NO}, name : ${item.NAME }</p>`;
+              });
             res.send(tmp1 + title + body + tmp2);
         })
         .catch((errMsg) => {

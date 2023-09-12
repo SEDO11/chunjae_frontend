@@ -21,16 +21,18 @@ async function GetSampleList(){
 }
 
 async function GetSample(no){
-    let conn, rows;
+    let conn, row;
+    console.log(no);
     try {
         conn = await pool.getConnection();
         conn.query('USE teaspoon');
-        row = await conn.query(`select * from sample where no=${no}`);
-    } catch(err){
-        throw err;
-    } finally {
-        if(conn) conn.end();
+        row = await conn.query(`select * from sample where no=?`, no);
+        conn.release();
+        console.log(row);
         return row;
+    } catch(err){
+        console.error(err);
+        throw err;
     }
 }
 
