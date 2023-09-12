@@ -97,7 +97,7 @@
     <section class="hero is-primary">
         <div class="hero-body">
             <p class="title">
-                자유게시판
+                선생님 게시판
             </p>
             <p class="subtitle">
                 작성
@@ -107,7 +107,7 @@
     <div class="contents" id="contents">
         <section class="page" id="page1">
             <div class="page_wrap">
-                <form action="${path}/board/insert.do" id="login_frm" class="frm" method="post">
+                <form action="${path}/boardPar/insert.do" id="login_frm" class="frm" method="post">
                     <table class="tb1">
                         <tbody>
                         <tr>

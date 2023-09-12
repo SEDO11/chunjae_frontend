@@ -97,7 +97,7 @@
     <section class="hero is-primary">
         <div class="hero-body">
             <p class="title">
-                자유게시판
+                선생님 게시판
             </p>
             <p class="subtitle">
                 작성
