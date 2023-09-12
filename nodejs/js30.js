@@ -1,10 +1,12 @@
-const dbCon = require("./model/sample.js");
+let port = 4000;
+const dbCon = require("./model/sample");
 const express = require("express");
-const bodyPaser = require('body-parser');
 const app = express();
-app.use(bodyPaser.urlencoded({extended: false}));
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended : false}));
+
 let title = "";
-let tmp1 = `<!DOCTYPE html>
+let temp1 = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,48 +18,63 @@ let tmp1 = `<!DOCTYPE html>
         <li><a href="/list">목록</a></li>
         <li><a href="/addSample">샘플 추가</a></li>
     </ul>
-    <hr>
-`;
-let tmp2 = `</body></html>`;
+    <hr>`;
+let temp2 = `</body>
+</html>`;
+
+let updateTemp1 = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Sample</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/list">목록</a></li>
+        <li><a href="/addSample">샘플 추가</a></li>
+    </ul>
+    <form action="/editSamplePro" method="post">`;
+let updateTemp2 = `<p><input type="submit"></p>
+        </form>
+    </body>
+</html>`;
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/sampleMain.html");
 });
 
 app.get('/list', (req, res) => {
-    title = `<h2>샘플 항목</h2>`;
-    let li = `<ul>`;
+    title = "<h2>샘플 항목</h2>";
+    let li = "<ul>";
     dbCon.getSampleList()
-        .then((rows) => {
-            // 만약 rows가 객체로 반환된다면 처리 방법을 수정해야 함
-            rows.forEach((item) => {
-                li += `<li><a href="/get/${item.NO}">${item.NAME}</a></li>`;
-              });
-              
-              // ul을 닫아서 완전한 HTML 목록을 만듦
-              li += '</ul>';
-            res.send(tmp1 + title + li + tmp2);
-            console.log(rows);
-        })
-        .catch((errMsg) => {
-            res.send(tmp1 + title + errMsg + tmp2);
+    .then((rows) => {
+        rows.forEach(row => {
+            li = li + `<li><a href="/get/${row.NO}">${row.NAME}</a></li>`;
         });
+        li = li + `</ul>`;
+        res.send(temp1 + title + li + temp2);
+    })
+    .catch((errMsg) => {
+        res.send(temp1 + title + errMsg + temp2);
+    });
 });
 
 app.get('/get/:no', (req, res) => {
-    title = `<h2>샘플 상세보기</h2>`;
+    title = "<h2>샘플 상세정보</h2>";
     let body = "";
-    dbCon.getSample(req.params.no)
-        .then((row) => {
-            console.log(row);
-            row.forEach((item) => {
-                body = `<p>no : ${item.NO}, name : ${item.NAME }</p>`;
-              });
-            res.send(tmp1 + title + body + tmp2);
-        })
-        .catch((errMsg) => {
-            res.send(errMsg);
+    dbCon.getSampleOne(req.params.no)
+    .then((row) => {
+        row.forEach(index => {
+            body = `<p>no : ${index.NO}, name : ${index.NAME}</p><hr>
+            <p><a href="/editSample/${index.NO}">수정하기</a></p>
+            <p><a href="/deleteSamplePro/${index.NO}">삭제하기</a></p>`;
         });
+        res.send(temp1 + title + body + temp2);
+    })
+    .catch((errMsg) => {
+        res.send(temp1 + title + errMsg + temp2);
+    });
 });
 
 app.get('/addSample', (req, res) => {
@@ -65,22 +82,57 @@ app.get('/addSample', (req, res) => {
 });
 
 app.post('/addSamplePro', (req, res) => {
-    const { no, name } = req.body;
-    // 가져온 데이터를 sample 객체에 저장
-    const sample = { no, name };
-    console.log(no);
-    console.log(name);
-    dbCon.addSample(sample)
-        .then((msg) => {
-            console.log(msg);
-        })
-        .catch((errMsg) => {
-            console.log(errMsg);
-        });
-    res.sendFile(__dirname + "/sampleMain.html");
+    title = "<h2>샘플 상세정보</h2>";
+    dbCon.insertSample(req.body.name)
+    .then((msg) => {
+        res.send(temp1 + title + msg + temp2);
+    })
+    .catch((errMsg) => {
+        res.send(temp1 + title + errMsg + temp2);
+    });
+    //res.sendFile(__dirname + "/sampleMain.html");
 });
 
-let port = 4000;
+app.get('/editSample/:no', (req, res) => {
+    let body = "";
+    dbCon.getSampleOne(req.params.no)
+    .then((row) => {
+        row.forEach(index => {
+            body = `<p><input type="hidden" name="no" value="${index.NO}" placeholder="no hidden"></p>
+            <p><input type="text" name="name" value="${index.NAME}" placeholder="name input"></p>`;
+        });
+        res.send(updateTemp1 + body + updateTemp2);
+    })
+    .catch((errMsg) => {
+        res.send(temp1 + title + errMsg + temp2);
+    });
+});
+
+app.post('/editSamplePro', (req, res) => {
+    title = "<h2>샘플 수정하기</h2>";
+    let smaple = [req.body.name, req.body.no];
+    dbCon.updateSample(smaple)
+    .then((msg) => {
+        res.send(temp1 + title + msg + temp2);
+    })
+    .catch((errMsg) => {
+        res.send(temp1 + title + errMsg + temp2);
+    });
+    //res.sendFile(__dirname + "/sampleMain.html");
+});
+
+app.get('/deleteSamplePro/:no', (req, res) => {
+    title = "<h2>샘플 삭제하기</h2>";
+    dbCon.deleteSample(req.params.no)
+    .then((msg) => {
+        res.send(temp1 + title + msg + temp2);
+    })
+    .catch((errMsg) => {
+        res.send(temp1 + title + errMsg + temp2);
+    });
+    //res.sendFile(__dirname + "/sampleMain.html");
+});
+
 app.listen(port, () => {
-    console.log(`Sever Starting on ${port}`);
+    console.log(`Server Starting on ${port}`);
 });
