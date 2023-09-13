@@ -24,8 +24,8 @@
                     Home
                 </a>
 
-                <a class="navbar-item">
-                    Documentation
+                <a href="${path2}/free/list.do" class="navbar-item">
+                    파일업로드 게시판
                 </a>
 
                 <div class="navbar-item has-dropdown is-hoverable">
@@ -39,6 +39,9 @@
                         </a>
                         <a href="${path2}/boardTea/list.do" class="navbar-item">
                             선생님게시판
+                        </a>
+                        <a href="${path2}/boardPar/list.do" class="navbar-item">
+                            학부모게시판
                         </a>
                         <hr class="navbar-divider">
                         <a class="navbar-item">

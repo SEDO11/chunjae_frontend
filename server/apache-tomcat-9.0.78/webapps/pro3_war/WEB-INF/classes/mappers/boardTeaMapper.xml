@@ -13,7 +13,7 @@
     </select>
     <!-- 글 수 카운트 -->
     <select id="totalCount" resultType="integer" >
-        select count(*) from board
+        select count(*) from board_tea
     </select>
     <insert id="boardInsert">
         INSERT INTO board_tea(title, content, author) VALUES(#{title}, #{content}, #{author})
