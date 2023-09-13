@@ -10,11 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>학부모 게시판 목록</title>
-=======
-    <title>선생님 게시판 목록</title>
->>>>>>> d0bad5852e6a4d6134c2fe095f48eecc28a1f057
     <!-- 헤드 부분 인클루드 -->
     <jsp:include page="../include/head.jsp"></jsp:include>
 </head>
@@ -24,11 +20,7 @@
 <section class="hero is-primary">
     <div class="hero-body">
         <p class="title">
-<<<<<<< HEAD
             학부모 게시판
-=======
-            선생님 게시판
->>>>>>> d0bad5852e6a4d6134c2fe095f48eecc28a1f057
         </p>
         <p class="subtitle">
             목록

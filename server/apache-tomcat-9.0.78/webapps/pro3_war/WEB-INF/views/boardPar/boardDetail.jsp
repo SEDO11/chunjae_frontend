@@ -243,11 +243,7 @@
     <section class="hero is-primary">
         <div class="hero-body">
             <p class="title">
-<<<<<<< HEAD
                 학부모 게시판
-=======
-                선생님 게시판
->>>>>>> d0bad5852e6a4d6134c2fe095f48eecc28a1f057
             </p>
             <p class="subtitle">
                 상세
