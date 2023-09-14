@@ -24,9 +24,23 @@
                     Home
                 </a>
 
-                <a class="navbar-item">
-                    Documentation
-                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        고객센터
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a href="${path2}/notice/list.do" class="navbar-item">
+                            공지사항
+                        </a>
+                        <a href="${path2}/faq/list.do" class="navbar-item">
+                            FAQ
+                        </a>
+                        <a href="${path2}/qna/list.do" class="navbar-item">
+                            QnA
+                        </a>
+                    </div>
+                </div>
 
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
@@ -46,6 +60,26 @@
                         <hr class="navbar-divider">
                         <a class="navbar-item">
                             Report an issue
+                        </a>
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        정보
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a href="${path2}/infoStu/list.do" class="navbar-item">
+                            교육 정보
+                        </a>
+                        <hr class="navbar-divider">
+                        <a href="${path2}/infoUni/list.do" class="navbar-item">
+                            대입 정보
+                        </a>
+                        <hr class="navbar-divider">
+                        <a href="${path2}/infoAct/list.do" class="navbar-item">
+                            대외 활동 정보
                         </a>
                     </div>
                 </div>
