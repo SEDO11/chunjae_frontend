@@ -11,6 +11,7 @@ import Test5 from './Test5';
 import Test6 from './Test6';
 import Test7 from './Test7';
 import Test8 from './Test8';
+import Test9 from './Test9';
 
 // 실제 구동 파일
 // app.js 파일을 여기에서 출력한다.
@@ -30,6 +31,7 @@ root.render(
     <Test6 irum="김철수" age="19" addr="경기도 하남시" />
     <Test7 irum="홍진호" age="33" addr="경기도 부평시" />
     <Test8 />
+    <Test9 />
   </React.StrictMode>
 );
 
