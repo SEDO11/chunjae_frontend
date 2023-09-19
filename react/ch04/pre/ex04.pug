@@ -1,0 +1,27 @@
+- var name = '홍길동'
+- var student = {no:1, name:'강감찬'}
+- var arr = ['봄', '여름', '가을', '겨울']
+doctype html
+html 
+    head 
+        title jade(pug)
+    body 
+        h1 안녕하세요 pug4 입니다.
+        h2= name
+        h3= student.no
+        h3= student.name
+        h3 #{student.no}
+        h3 #{student.name}
+        ul
+            for season in arr 
+                li= season 
+        select#sel
+            each season, index in arr
+                option(value=index) #{season}
+        div.controls
+            label(for="id")
+            input(type="text", placeholder='아이디 입력')#id
+        if name === '홍길동'
+            p nice to meet you
+        else
+            p babo
