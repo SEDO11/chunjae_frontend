@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    // ellipse의 중심점이 아래에 있다.
+    // 시작색 #1b2735, 끝 색 #090a0f
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    filter: drop-shadow(0 0 10px white);
+}
+
+@function random_range($min, $max) {
+    $rand: random(); // Define $rand here
+    $range: $min + floor($rand * ($max - $min) + 1);
+    @return $range;
+}
+
+.snow {
+    $total : 500; // 총 개수
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    @for $i from 1 through $total {
+        // 새로 저장할 때 마다 색상 변경
+        $r:random_range(30, 255);
+        $g:random_range(30, 255);
+        $b:random_range(30, 255);
+
+        $random-x:random(1000000) * 0.0001vw;
+        $random-offset:random_range(-100000, 100000) * 0.0001vw;
+        $random-x-end:$random-x + $random-offset;
+        $random-x-end-yoyo:$random-x + ($random-offset / 2);
+        $random-yoyo-time:random_range(30000, 80000) / 100000; // 30~80초
+
+        $random-y:$random-yoyo-time * 100vh;
+        $random-scale:random(10000) * 0.0001;
+        $fall-duration:random_range(10, 30) * 1s;
+        $fall-delay:random(30) * -1s;
+        &:nth-child(#{$i}) { // 눈 한개의 요소
+            opacity: random(10000) * 0.0001;
+            transform:translate($random-x, -10px) scale($random-scale);
+            animation: fall-#{$i} $fall-duration $fall-delay linear infinite; // infinite : 애니메이션을 계속 실행해라
+            background-color: rgb($r, $g, $b);
+        }
+        @keyframes fall-#{$i} {
+            #{percentage($random-yoyo-time)} {
+                transform: translate($random-x-end, $random-y) scale($random-scale);
+            }
+            to {
+                transform: translate($random-x-end-yoyo, 100vh) scale($random-scale);
+            }
+        }
+    }
+}

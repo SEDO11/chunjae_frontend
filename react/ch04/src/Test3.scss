@@ -1,0 +1,126 @@
+// include-media 불러오기
+@import '~include-media/dist/include-media';
+@import '~open-color/open-color';
+
+$red:#fa5252;
+$orange:#fd7e14;
+$yellow:#fcc419;
+$green:#40c057;
+$blue:#2d31ff;
+$indigo:#5c7cfa;
+$violet:#7950f2;
+
+@mixin rectangle($size) {
+    $calculated:150px * $size; 
+    width: $calculated; // width 사이즈를 150 * a
+    height: 60px;
+}
+
+.Test3 {
+    clear: both;
+    width: 100vw;
+    height: 600px;
+    display: flex;
+    background: $oc-gray-2;
+
+    // 모바일
+    // @media screen and (max-width:768px) { }
+    @include media('<768px') { // width 가 768 보다 작으면 mobile
+        background-color: $oc-gray-9;
+    }
+
+    // 태블릿
+    @include media('<960px') { // width 가 768 보다 작으면 mobile
+        background-color: $oc-gray-6;
+    }
+
+    ul {
+        clear: both;
+        width: 1200px;
+        height: 600px;
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    ul:hover {
+        .box {
+            clear: both;
+            cursor: pointer;
+            transition-duration: 2.5s;
+            width: 5px;
+            height: 60px;
+            &.red {
+                background-color: $red;
+                transition-delay: 0s;
+                @include rectangle(1); // 배율 1
+            }
+            &.orange{
+                background-color: $orange;
+                transition-delay: 0.5s;
+                @include rectangle(2); // 배율 2
+            }
+            &.yellow{
+                background-color: $yellow;
+                transition-delay: 1s;
+                @include rectangle(3); // 배율 3
+            }
+            &.green{
+                background-color: $green;
+                transition-delay: 1.5s;
+                @include rectangle(4); // 배율 4
+            }
+            &.blue{
+                background-color: $blue;
+                transition-delay: 2s;
+                @include rectangle(5); // 배율 5
+            }
+            &.indigo{
+                background-color: $indigo;
+                transition-delay: 2.5s;
+                @include rectangle(6); // 배율 6
+            }
+            &.violet{
+                background-color: $violet;
+                transition-delay: 3s;
+                @include rectangle(7); // 배율 7
+            }
+        }
+    }
+
+    .box {
+        clear: both;
+        cursor: pointer;
+        transition-duration: 2.5s;
+        width: 5px;
+        height: 60px;
+        &.red {
+            background-color: $red;
+            transition-delay: 0s;
+        }
+        &.orange{
+            background-color: $orange;
+            transition-delay: 0.5s;
+        }
+        &.yellow{
+            background-color: $yellow;
+            transition-delay: 1s;
+        }
+        &.green{
+            background-color: $green;
+            transition-delay: 1.5s;
+        }
+        &.blue{
+            background-color: $blue;
+            transition-delay: 2s;
+        }
+        &.indigo{
+            background-color: $indigo;
+            transition-delay: 2.5s;
+        }
+        &.violet{
+            background-color: $violet;
+            transition-delay: 3s;
+        }
+    }
+}
