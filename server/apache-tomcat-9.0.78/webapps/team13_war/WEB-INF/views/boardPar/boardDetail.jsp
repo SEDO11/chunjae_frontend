@@ -82,10 +82,10 @@
          }
         .tb1 thead td:nth-child(3) {
             font-weight: 600;
-            width: 62%;
+            width: 55%;
         }
         .tb1 thead td:nth-child(4) {
-            width: 10%;
+            width: 15%;
         }
         .tb1 thead td:nth-child(5) {
             width: 8%;
@@ -240,12 +240,12 @@
 <div class="wrap">
     <!-- 헤더 부분 인클루드 -->
     <jsp:include page="../include/header.jsp"></jsp:include>
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <p class="title">
+    <section class="hero is-white is-medium">
+        <div class="hero-body has-text-centered">
+            <p class="title is-size-3">
                 학부모 게시판
             </p>
-            <p class="subtitle">
+            <p class="subtitle is-size-5">
                 상세
             </p>
         </div>
@@ -284,6 +284,11 @@
                             </div>
                         </td>
                     </tr>
+                    <c:if test="${not empty sid}">
+                        <tr >
+                            <td colspan="5"style="text-align: right" ><button class="button is-danger is-hovered" onclick="openReportPopup()">게시글 신고</button></td>
+                        </tr>
+                    </c:if>
                     </tbody>
 
                 </table>
@@ -312,6 +317,17 @@
                     </c:forEach>
                     </tbody>
                 </table>
+                <script>
+                    function openReportPopup() {
+                        // 팝업 창의 크기 및 위치를 지정합니다. 필요에 따라 조절할 수 있습니다.
+                        let width = 400;
+                        let height = 300;
+                        let left = (screen.width/2) - (width/2);
+                        let top = (screen.height/2) - (height/2);
+
+                        window.open('${path}/boardPar/reportPopup.do?bno=${dto.bno}&id=${sid}', '신고', 'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left);
+                    }
+                </script>
                 <script>
                     $(document).ready( function () {
                         $('#myTable').DataTable({

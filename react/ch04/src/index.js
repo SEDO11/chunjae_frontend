@@ -9,13 +9,19 @@ import Test2 from './Test2';
 // import './Test2.scss'
 import Test3 from './Test3';
 
+import Test4 from './Test4';
+
+import Test5 from './Test5';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Test1 /> */}
     {/* <Test2 /> */}
-    <Test3 />
+    {/* <Test3 /> */}
+    {/* <Test4 /> */}
+    <Test5 />
   </React.StrictMode>
 );
 

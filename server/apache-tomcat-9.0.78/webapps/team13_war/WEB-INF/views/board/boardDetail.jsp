@@ -82,10 +82,10 @@
          }
         .tb1 thead td:nth-child(3) {
             font-weight: 600;
-            width: 62%;
+            width: 55%;
         }
         .tb1 thead td:nth-child(4) {
-            width: 10%;
+            width: 15%;
         }
         .tb1 thead td:nth-child(5) {
             width: 8%;
@@ -240,12 +240,12 @@
 <div class="wrap">
     <!-- 헤더 부분 인클루드 -->
     <jsp:include page="../include/header.jsp"></jsp:include>
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <p class="title">
+    <section class="hero is-whtie is-medium">
+        <div class="hero-body has-text-centered">
+            <p class="title is-size-3">
                 자유게시판
             </p>
-            <p class="subtitle">
+            <p class="subtitle is-size-5">
                 상세
             </p>
         </div>
@@ -292,7 +292,7 @@
                     </tbody>
 
                 </table>
-                <table class="tb2" id="myTable">
+                <table class="tb2">
                     <thead>
                     <tr>
                         <th class="item1">작성자</th>
@@ -353,7 +353,7 @@
                     } );
                 </script>
                 <form action="${path}/board/commentInsert.do" id="login_frm" class="frm" method="post">
-                    <table class="tb3">
+                    <table class="tb3" id="myTable">
                         <tbody>
                         <tr>
                             <c:if test="${not empty sid}">
@@ -367,6 +367,35 @@
                         </tbody>
                     </table>
                 </form>
+                <script>
+                    $(document).ready( function () {
+                        $('#myTable').DataTable({
+                            pageLength : 10,
+                            order: [[0, 'desc']], // 0번째 컬럼을 기준으로 내림차순 정렬
+                            info: false,
+                            dom: 't<f>p',
+                            language: {
+                                emptyTable: '등록된 글이 없습니다.'
+                            }
+
+                        });
+                    } );
+                    $(document).ready(function() {
+                        $('.dataTables_paginate').css({
+                            'textAlign':'left',
+                            'float': 'none',
+                            'margin-top':'10px',
+                        });
+                        $('.dataTables_filter').css({
+                            'float': 'left',
+                            'margin-top':'14px',
+                            'margin-right':'280px'
+                        });
+                        $('#myTable_paginate').css({
+                            'margin-right':'120px'
+                        });
+                    });
+                </script>
             </div>
         </section>
     </div>
