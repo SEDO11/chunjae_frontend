@@ -30,7 +30,16 @@
     <!--Favicon-->
     <link rel="shortcut icon" href="${path}/resources/theme/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="${path}/resources/theme/images/favicon.ico" type="image/x-icon">
+
+
+    <!-- 슬라이드 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
     <style>
+        .swiper {
+            z-index: 2;
+        }
+
         * {
             font-family: 'NanumSquare' !important;
         }
@@ -67,6 +76,9 @@
                     </a>
                     <a href="${path}/file/filelist1.do" class="navbar-item">
                         자료실
+                    </a>
+                    <a href="${path}/news/list.do" class="navbar-item">
+                        뉴스
                     </a>
                 </div>
             </div>
@@ -163,8 +175,58 @@
 <!-- hero area -->
 <section class="hero-area has-background-primary" id="parallax" >
     <div class="columns">
-        <img src="${path }/resources/img/new_main.png">
+        <img src="${path }/resources/img/new_main3.png">
     </div>
+
+    <%--<div class="columns">
+        <img src="${path }/resources/img/index_1.png">
+    </div>--%>
+
+    <!-- slidebar banner -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="${path }/resources/img/index_1.png" alt="메인페이지 배너1" style="width: 100vw">
+            </div>
+            <div class="swiper-slide">
+                <img src="${path }/resources/img/index_2.png" alt="메인페이지 배너2" style="width: 100vw">
+            </div>
+            <div class="swiper-slide">
+                <img src="${path }/resources/img/index_3.png" alt="메인페이지 배너3" style="width: 100vw">
+            </div>
+            <div class="swiper-slide">
+                <img src="${path }/resources/img/index_4.png" alt="메인페이지 배너4" style="width: 100vw">
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true, // 무한 루프
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
 </section>
 <!-- /hero area -->
 <!-- 사이드 메뉴 -->
