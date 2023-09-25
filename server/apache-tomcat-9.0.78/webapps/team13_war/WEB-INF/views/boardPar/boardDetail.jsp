@@ -267,12 +267,12 @@
                         <tr>
                             <td>
                                 <c:if test="${not empty sid && (sid eq 'admin' || dto.author eq sid)}">
-                                <a href="${path}/boardPar/delete.do?bno=${dto.bno}" class="button is-danger is-small is-outlined is-rounded" >삭제</a>
+                                <a href="${path}/boardPar/delete.do?bno=${dto.bno}" class="button is-danger is-outlined " >삭제</a>
                                </c:if>
                             </td>
                             <td>
                                 <c:if test="${dto.author eq sid && not empty sid}">
-                                    <a href="${path}/boardPar/edit.do?bno=${dto.bno}" class="button is-link is-small is-outlined is-rounded">수정</a>
+                                    <a href="${path}/boardPar/edit.do?bno=${dto.bno}" class="button is-link is-outlined ">수정</a>
                                 </c:if>
                             </td>
                             <td>${dto.author}</td>
@@ -364,11 +364,7 @@
                         <tr>
                             <c:if test="${not empty sid}">
                                 <th class="has-text-centered">${sid}</th>
-<<<<<<< HEAD
-                                <th><textarea name="content" id="content" cols="100" rows="5" placeholder="리뷰 작성" required ></textarea></th>
-=======
                                 <th><textarea name="content" id="content" cols="100" rows="5" placeholder="댓글 작성" required ></textarea></th>
->>>>>>> 78101c5a355b000d9947f98c11e30c4178302864
                                 <th><input type="submit" value="글쓰기" class="inbtn" id="ans_btn"></th>
                                 <input type="hidden" name="bno" value="${dto.bno}" readonly>
                                 <input type="hidden" name="id" value="${sid}" readonly>
