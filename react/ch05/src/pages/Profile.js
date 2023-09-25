@@ -24,7 +24,7 @@ const Profile = () => {
             <div>
                 <h2>{profile.name}</h2>
                 <p>{profile.desc}</p>
-                <img src={profile.src}/>
+                <img src={profile.src} className='image'/>
             </div>
         ) : (
             <p>존재하지 않습니다.</p>

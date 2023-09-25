@@ -16,11 +16,11 @@ const Articles = () => {
 }
 
 const ArticleItem = ({id}) => {
-    const activeStyle = {color:'red', fontSize:'24px' }
+    const activeStyle = {color:'blue', fontSize:'24px' }
     return (
         <li>
-            <NavLink to={`/articles/${id}`} style={({isActice}) => 
-                (isActice ? activeStyle : undefined)
+            <NavLink to={`/articles/${id}`} style={({isActive}) => 
+                isActive ? activeStyle : undefined
             }>게시글 {id} 번째</NavLink>
         </li>
     )
