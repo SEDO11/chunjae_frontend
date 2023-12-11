@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Draggable - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/UI-darkness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="jui.css" />
+  <style>
+  .ui-widget-content { width: 150px; height: 150px; padding: 0.5em; 
+  box-sizing:border-box;  }
+  </style>
+  <script>
+    $(function() {
+        $( ".ui-widget-content" ).draggable();
+    });
+  </script>
+</head>
+<body>
+ 
+<div id="draggable1" class="ui-widget-content">
+  <p>Drag me around1</p>
+</div>
+<div id="draggable2" class="ui-widget-content">
+  <p>Drag me around2</p>
+</div>
+<div id="draggable3" class="ui-widget-content">
+  <p>Drag me around3</p>
+</div>
+<div id="draggable4" class="ui-widget-content">
+  <p>Drag me around4</p>
+</div>
+</body>
+</html>

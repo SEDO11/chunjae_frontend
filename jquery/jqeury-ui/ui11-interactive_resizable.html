@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Resizable - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="jui.css" />
+  <style>
+  #resizable { width: 150px; height: 150px; padding: 0.5em; overflow:hidden; }
+  #resizable h3 { text-align: center; margin: 0; }
+  #resizable img { display:block; width:100%; height:auto; }
+  </style>
+  <script>
+    $(function() {
+        $("#resizable").draggable();
+        $("#resizable").resizable();
+    });
+  </script>
+</head>
+<body>
+ 
+<div id="resizable" class="ui-widget-content">
+  <h3 class="ui-widget-header">Resizable</h3>
+  <img src="http://placehold.it/150x135/333/fff" alt="">
+</div>
+<p></p>
+
+ 
+</body>
+</html>

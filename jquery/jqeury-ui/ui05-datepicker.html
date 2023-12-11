@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI 아코디언</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/sunny/jquery-ui.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            font-size: 1em;
+        }
+
+        .title {
+            color: #11c9fc;
+            font-size: 48px;
+            text-align: center;
+        }
+
+        .ui-draggable,
+        .ui-droppable {
+            background-position: top;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $('.date').datepicker();
+            $('#date2').datepicker(
+                "option", "showAnim", "slideDown"
+            ); // 애니메이션 추가
+        } );
+    </script>
+</head>
+
+<body>
+    <h2 class="title">달력</h2>
+    <hr>
+    <div class="widget">
+        <fieldset>
+            <legend>달력1</legend>
+            <label for="date1">해법</label>
+            <input type="text" name="date" id="date1" class="date" checked>
+        </fieldset>
+
+        <div>
+            <h3>달력2</h3>
+            <label for="date2">밀크티</label>
+            <input type="text" name="date" id="date2" class="date">
+            <select name="anim" id="anim">
+                <option value="v1">v1</option>
+                <option value="v2">v2</option>
+                <option value="v3">v3</option>
+                <option value="v4">v4</option>
+                <option value="v5">v5</option>
+            </select>
+        </div>
+
+        <div>
+            <h3>달력3</h3>
+            <label for="date3">셀파</label>
+            <div id="date3" class="date"></div>
+        </div>
+    </div>
+</body>
+
+</html>
