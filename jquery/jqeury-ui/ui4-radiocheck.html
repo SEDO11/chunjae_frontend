@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI 아코디언</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/sunny/jquery-ui.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            font-size: 1em;
+        }
+
+        .title {
+            color: #11c9fc;
+            font-size: 48px;
+            text-align: center;
+        }
+
+        .ui-draggable,
+        .ui-droppable {
+            background-position: top;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            // checkbox, radio 버튼을 각각 알아서 잘 나타냄
+            $(".ra, .ck").checkboxradio();
+        } );
+    </script>
+</head>
+
+<body>
+    <h2 class="title">라디오 체크 버튼</h2>
+    <hr>
+    <div class="widget">
+        <fieldset>
+            <label for="ra1">해법</label>
+            <input type="radio" name="ra" id="ra1" class="ra" checked>
+
+            <label for="ra2">밀크티</label>
+            <input type="radio" name="ra" id="ra2" class="ra">
+
+            <label for="ra3">셀파</label>
+            <input type="radio" name="ra" id="ra3" class="ra">
+
+            <label for="ra4">에듀몬</label>
+            <input type="radio" name="ra" id="ra4" class="ra">
+        </fieldset>
+
+        <fieldset>
+            <label for="ck1">해법</label>
+            <input type="checkbox" name="ra" id="ck1" class="ck" checked>
+
+            <label for="ck2">밀크티</label>
+            <input type="checkbox" name="ck" id="ck2" class="ck">
+
+            <label for="ck3">셀파</label>
+            <input type="checkbox" name="ck" id="ck3" class="ck">
+
+            <label for="ck4">에듀몬</label>
+            <input type="checkbox" name="ck" id="ck4" class="ck">
+        </fieldset>
+    </div>
+</body>
+
+</html>
