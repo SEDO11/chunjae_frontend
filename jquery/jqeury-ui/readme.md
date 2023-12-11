@@ -1,4 +1,57 @@
-# easing(가속, 감속 효과)
+# jquery ui
+[jquery ui 링크](https://jqueryui.com/demos/)
+
+# 주소
+
+[Accordion](https://jqueryui.com/accordion/#collapsible)
+
+# Demos
+
+## Accordion
+
+> faq 같은거 만들때 사용하면 좋을 것 같다.
+
+![이미지](./readme/demos.png)
+
+# 테마
+
+## Download
+
+> 띄어쓰기 되있는건 하이픈(-) 써서 붙혀라
+
+![이미지](./readme/theme.png)
+
+## 코드 테마 변경
+
+> base 부분을 다른걸로 바꾸면 된다.
+
+![이미지](./readme/code.png)
+
+# Autocomplete
+
+[Autocomplete](https://jqueryui.com/autocomplete/)
+
+# Button
+
+[Button](https://jqueryui.com/button/)
+
+# Checkboxradio
+
+[Checkboxradio](https://jqueryui.com/checkboxradio/)
+
+# Datepicker
+
+[Datepicker](https://jqueryui.com/datepicker/)
+
+# dialog
+
+[Dialog](https://jqueryui.com/dialog/)
+
+# menu
+
+[Menu](https://jqueryui.com/menu/)
+
+## easing(가속, 감속 효과)
 
 ```
 linear
@@ -35,7 +88,7 @@ easeOutBounce
 easeInOutBounce
 ```
 
-# dialog위젯에 버튼 추가와 여러 가지 옵션들
+## dialog위젯에 버튼 추가와 여러 가지 옵션들
 ```javascript
 appendTo : 현재 문서의 다른 부분에 있는 요소를 대화상자에 추가
 Selector : 대화상자에 추가할 요소 선택
